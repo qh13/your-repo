@@ -46,8 +46,9 @@ async function getVideoDetail(id: string): Promise<VideoDetailResponse | null> {
   }
 }
 
-export async function generateMetadata({ params }: { params: { id: string } }): Promise<Metadata> {
-  const response = await getVideoDetail(params.id);
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await params;
+  const response = await getVideoDetail(id);
   
   if (!response?.success) {
     return {
@@ -67,22 +68,23 @@ export async function generateMetadata({ params }: { params: { id: string } }): 
   };
 }
 
-export default async function VideoPage({ params }: { params: { id: string } }) {
-  const response = await getVideoDetail(params.id);
-  
+export default async function VideoPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const response = await getVideoDetail(id);
+
   // 如果 API 获取失败，尝试使用本地模拟数据作为后备
   let video = response?.data;
-  
+
   if (!video) {
     // 后备：使用简化的本地数据
     video = {
-      id: params.id,
-      title: `视频详情 - ${params.id}`,
+      id: id,
+      title: `视频详情 - ${id}`,
       description: '视频描述加载中...',
       duration: '--:--',
       views: '0',
       publishDate: new Date().toISOString().split('T')[0],
-      coverUrl: `https://picsum.photos/seed/${params.id}/1280/720`,
+      coverUrl: `https://picsum.photos/seed/${id}/1280/720`,
       category: 'unknown',
       categoryName: '未知分类',
       authorName: '未知作者',
