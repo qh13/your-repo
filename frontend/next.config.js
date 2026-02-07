@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  output: 'export',  // 静态导出模式，适合 Cloudflare Pages
   reactStrictMode: true,
   images: {
-    unoptimized: true,  // Cloudflare Pages 需要禁用图片优化
+    unoptimized: true,  // 静态导出需要禁用图片优化
     remotePatterns: [
       {
         protocol: 'https',
@@ -17,23 +18,6 @@ const nextConfig = {
         hostname: 'via.placeholder.com',
       },
     ],
-  },
-  async headers() {
-    return [
-      {
-        source: '/:path*',
-        headers: [
-          {
-            key: 'X-Frame-Options',
-            value: 'SAMEORIGIN',
-          },
-          {
-            key: 'X-Content-Type-Options',
-            value: 'nosniff',
-          },
-        ],
-      },
-    ];
   },
   // Aggressive webpack optimization for Cloudflare Pages 25MiB limit
   webpack: (config, { isServer }) => {
