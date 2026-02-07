@@ -5,12 +5,10 @@ import { API_BASE_URL } from '@/lib/api';
 
 // Dynamic imports to reduce main bundle size
 const AdBanner = dynamic(() => import('@/components/AdBanner'), {
-  ssr: false,
   loading: () => <div className="ad-placeholder" style={{ height: '100px', margin: '20px 0' }} />,
 });
 
 const DirectVideoPlayer = dynamic(() => import('@/components/DirectVideoPlayer'), {
-  ssr: false,
   loading: () => <div className="player-placeholder" style={{ aspectRatio: '16/9', background: '#000' }} />,
 });
 
