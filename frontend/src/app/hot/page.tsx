@@ -1,6 +1,13 @@
 import { Metadata } from 'next';
-import AdBanner from '@/components/AdBanner';
-import VideoGrid from '@/components/VideoGrid';
+import dynamic from 'next/dynamic';
+
+const AdBanner = dynamic(() => import('@/components/AdBanner'), {
+  loading: () => <div style={{ height: '100px', margin: '20px 0' }} />,
+});
+
+const VideoGrid = dynamic(() => import('@/components/VideoGrid'), {
+  loading: () => <div className="video-grid-skeleton" style={{ display: 'grid', gap: '20px' }}><div className="skeleton" style={{ aspectRatio: '16/9' }} /><div className="skeleton" style={{ aspectRatio: '16/9' }} /><div className="skeleton" style={{ aspectRatio: '16/9' }} /></div>,
+});
 
 export const metadata: Metadata = {
   title: '🔥 热门视频 - 发现精彩',
