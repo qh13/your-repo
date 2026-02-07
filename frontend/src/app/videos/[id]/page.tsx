@@ -1,8 +1,18 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import AdBanner from '@/components/AdBanner';
-import DirectVideoPlayer from '@/components/DirectVideoPlayer';
+import dynamic from 'next/dynamic';
 import { API_BASE_URL } from '@/lib/api';
+
+// Dynamic imports to reduce main bundle size
+const AdBanner = dynamic(() => import('@/components/AdBanner'), {
+  ssr: false,
+  loading: () => <div className="ad-placeholder" style={{ height: '100px', margin: '20px 0' }} />,
+});
+
+const DirectVideoPlayer = dynamic(() => import('@/components/DirectVideoPlayer'), {
+  ssr: false,
+  loading: () => <div className="player-placeholder" style={{ aspectRatio: '16/9', background: '#000' }} />,
+});
 
 // 视频详情响应类型
 interface VideoDetailResponse {
