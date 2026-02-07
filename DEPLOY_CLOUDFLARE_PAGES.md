@@ -79,17 +79,19 @@ git push -u origin main
    
    Project name: jable-frontend
    
-   Framework preset: Next.js (Static Exports) ▼
+   Framework preset: None ▼
    
-   Build command: npm run build
+   Build command: cd frontend && npm run build
    
-   Build output directory: .next
+   Build output directory: frontend/.next
    
-   Root directory (optional): /frontend
+   Root directory: (留空)
    
    ─────────────────────────────────────
    [Deploy site]
    ```
+
+   ⚠️ **注意**：
 
 5. **等待构建完成**
    - 首次构建可能需要 2-5 分钟
