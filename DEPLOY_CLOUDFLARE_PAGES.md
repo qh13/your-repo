@@ -81,7 +81,7 @@ git push -u origin main
    
    Framework preset: None ▼
    
-   Build command: cd frontend && npm run build
+   Build command: cd frontend && npm install && npm run build
    
    Build output directory: frontend/.next
    
