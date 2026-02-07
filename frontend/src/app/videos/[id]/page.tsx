@@ -108,7 +108,7 @@ export default async function VideoPage({ params }: { params: Promise<{ id: stri
           <div className="player-container">
             {streamUrl ? (
               <DirectVideoPlayer
-                videoId={params.id}
+                videoId={id}
                 streamUrl={streamUrl}
                 backupUrls={video.streamBackupUrls || []}
                 poster={video.coverUrl}
@@ -122,7 +122,7 @@ export default async function VideoPage({ params }: { params: Promise<{ id: stri
                     <polygon points="10 8 16 12 10 16 10 8" fill="currentColor" />
                   </svg>
                   <p>视频加载中...</p>
-                  <span>ID: {params.id}</span>
+                  <span>ID: {id}</span>
                 </div>
               </div>
             )}
@@ -195,7 +195,7 @@ export default async function VideoPage({ params }: { params: Promise<{ id: stri
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg>
             <span>视频来源：</span>
-            <a href={`https://jable.tv/videos/${params.id}/`} target="_blank" rel="noopener noreferrer">
+            <a href={`https://jable.tv/videos/${id}/`} target="_blank" rel="noopener noreferrer">
               jable.tv
             </a>
           </div>
