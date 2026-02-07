@@ -29,32 +29,100 @@
 
 ### 方式一：通过 Cloudflare 仪表板（推荐）
 
-1. **推送代码到 Git 仓库**
+#### 步骤 1：推送代码到 GitHub
 
 ```bash
-# 如果还没有远程仓库，先在 GitHub/GitLab 创建仓库
-git remote add origin https://github.com/yourusername/your-repo.git
+# 如果还没有远程仓库，先在 GitHub 创建仓库
+# 仓库名建议：otherweb2
+
+# 添加远程仓库（如果还没添加）
+git remote add origin git@github.com:qh13/otherweb2.git
+
+# 推送代码
 git push -u origin main
 ```
 
-2. **连接 Cloudflare Pages**
+#### 步骤 2：在 Cloudflare Dashboard 中连接 GitHub 仓库
 
-- 登录 [Cloudflare Dashboard](https://dash.cloudflare.com/)
-- 进入 **Workers & Pages** → **Pages** → **Create a project**
-- 选择 **Connect to Git**
-- 选择刚才推送的仓库
+1. **打开 Cloudflare Dashboard**
+   - 访问：https://dash.cloudflare.com/
+   - 登录您的账户
 
-3. **配置构建设置**
+2. **进入 Pages 设置**
+   - 点击左侧菜单 **Workers & Pages**
+   - 点击顶部的 **Pages** 标签
+   - 点击 **Create a project**
 
-| 设置项 | 值 |
-|--------|-----|
-| Framework preset | Next.js |
-| Build command | `npm run build` |
-| Build output directory | `.next` |
+3. **连接 GitHub 仓库**
+   ```
+   ┌─────────────────────────────────────────┐
+   │  Create a project using Git           │
+   │                                         │
+   │  Connect to Git                        │
+   │  ─────────────────────                  │
+   │  ● GitHub                              │
+   │  ○ GitLab                              │
+   │  ○ Bitbucket                           │
+   │                                         │
+   │  [Account] [Repository]                │
+   │  qh13        ▼ otherweb2               │
+   │                                         │
+   │  [Begin setup]                         │
+   └─────────────────────────────────────────┘
+   ```
 
-4. **部署完成**
+4. **配置构建设置**
 
-部署成功后，您会得到一个类似 `https://your-project.pages.dev` 的 URL。
+   ```
+   Project setup
+   ─────────────────────────────────────
+   
+   Project name: jable-frontend
+   
+   Framework preset: Next.js (Static Exports) ▼
+   
+   Build command: npm run build
+   
+   Build output directory: .next
+   
+   Root directory (optional): /frontend
+   
+   ─────────────────────────────────────
+   [Deploy site]
+   ```
+
+5. **等待构建完成**
+   - 首次构建可能需要 2-5 分钟
+   - 查看 **Build logs** 查看构建进度
+
+6. **部署完成**
+   ```
+   Success!
+   Your site is live!
+   
+   https://jable-frontend.pages.dev
+   ```
+
+#### 步骤 3：配置环境变量（重要！）
+
+部署完成后，需要配置 API 地址：
+
+1. 进入 **Pages** → **jable-frontend** → **Settings**
+2. 点击 **Environment variables**
+3. 添加以下变量：
+
+| 变量名 | 值 | 类型 |
+|--------|-----|------|
+| `NEXT_PUBLIC_API_URL` | `https://jable-video-proxy.qh13.workers.dev` | Production & Preview |
+
+4. 点击 **Save and Deploy** 重新部署
+
+#### 步骤 4：设置自定义域名（可选）
+
+1. 进入 **Pages** → **jable-frontend** → **Custom domains**
+2. 点击 **Set up a custom domain**
+3. 输入您的域名（如 `video.yourdomain.com`）
+4. 按照提示配置 DNS
 
 ### 方式二：通过 Wrangler CLI
 
