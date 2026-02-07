@@ -83,7 +83,8 @@ git push -u origin main
    
    Build command: cd frontend && npm install && npm run build
    
-   Build output directory: frontend/.next
+   Build output directory: frontend/.next/server/app
+   (Next.js 15 App Router 的 HTML 输出位置)
    
    Root directory: (留空)
    

@@ -17,3 +17,39 @@
 [2026-02-06T02:29:14.327Z] [INFO] Saved 1 videos to disk 
 [2026-02-06T02:29:14.328Z] [INFO] Saved 0 categories to disk 
 [2026-02-06T02:29:14.356Z] [INFO] Browser closed 
+[2026-02-07T08:17:18.350Z] [INFO] Loaded 1 videos from disk 
+[2026-02-07T08:17:18.352Z] [INFO] Loaded 0 categories from disk 
+[2026-02-07T08:17:18.352Z] [INFO] Initializing browser... 
+[2026-02-07T08:17:18.690Z] [INFO] Browser initialized 
+[2026-02-07T08:17:18.690Z] [INFO] Scraping video detail: dldss-460 
+[2026-02-07T08:17:22.322Z] [DEBUG] Found m3u8 URL {"url":"https://amuse-lefty.mushroomtrack.com/hls/m02je_Yj7Q_kTTNk8auSUw/1770462755/56000/56644/56644.m3u8"}
+[2026-02-07T08:17:28.683Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/156819639/master/156819639_240p.m3u8"}
+[2026-02-07T08:17:29.791Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:17:32.036Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:17:34.447Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:17:36.858Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:17:39.327Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:17:41.742Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:17:43.985Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:17:46.407Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:17:48.694Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://jable.tv/videos/dldss-460/\", waiting until \"networkidle\"\u001b[22m\n"}
+[2026-02-07T08:17:48.812Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:17:51.057Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:17:59.909Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/156819639/master/156819639_240p.m3u8"}
+[2026-02-07T08:18:00.318Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:18:02.733Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-32/156819639/156819639_240p.m3u8"}
+[2026-02-07T08:18:03.048Z] [DEBUG] Found m3u8 URL {"url":"https://amuse-lefty.mushroomtrack.com/hls/m02je_Yj7Q_kTTNk8auSUw/1770462755/56000/56644/56644.m3u8"}
+[2026-02-07T08:18:40.307Z] [WARN] No m3u8 URL found in network requests 
+[2026-02-07T08:18:40.307Z] [INFO] Video detail scraped:  {"id":"dldss-460"}
+[2026-02-07T08:18:40.310Z] [INFO] Saved 1 videos to disk 
+[2026-02-07T08:18:40.311Z] [INFO] Saved 0 categories to disk 
+[2026-02-07T08:18:40.358Z] [INFO] Browser closed 
+[2026-02-07T08:27:13.815Z] [INFO] Loaded 1 videos from disk 
+[2026-02-07T08:27:13.816Z] [INFO] Loaded 0 categories from disk 
+[2026-02-07T08:27:13.817Z] [INFO] Initializing browser... 
+[2026-02-07T08:27:14.375Z] [INFO] Browser initialized 
+[2026-02-07T08:27:14.376Z] [INFO] Found 0 videos needing update 
+[2026-02-07T08:27:14.377Z] [INFO] Saved 1 videos to disk 
+[2026-02-07T08:27:14.377Z] [INFO] Saved 0 categories to disk 
+[2026-02-07T08:27:14.377Z] [INFO] Incremental update complete: 0 updated, 0 failed 
+[2026-02-07T08:27:14.408Z] [INFO] Browser closed 
