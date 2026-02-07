@@ -67,7 +67,7 @@ export default function VideoPlayer({
         }
       });
 
-      hls.on(Hls.Events.ERROR, (_, data) => {
+      hls.on(Hls.Events.ERROR, (_event: any, data: any) => {
         console.error('HLS error:', data);
         if (data.fatal) {
           onError?.(new Error(data.details));
