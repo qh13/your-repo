@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import type { Video } from '@/lib/video-data';
+import { getVideoListUrl } from '@/lib/api';
 
 // Dynamic imports to reduce main bundle size
 const AdBanner = dynamic(() => import('@/components/AdBanner'), {
@@ -40,7 +41,8 @@ function VideoGridComponent({ videos = [], title = '精彩视频', showHeader = 
   const fetchVideos = async (pageNum: number) => {
     setLoading(true);
     try {
-      const response = await fetch(`/api/videos?page=${pageNum}&limit=12`);
+      const url = getVideoListUrl({ page: pageNum, limit: 12 });
+      const response = await fetch(url);
       const data = await response.json();
       
       if (data.success) {
