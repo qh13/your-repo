@@ -3,7 +3,7 @@ import Link from 'next/link';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: '🔥 视频聚合平台 - 发现精彩',
+  title: '视频聚合平台 - 发现精彩',
   description: '聚合来自各平台的精彩视频内容，提供极致的浏览体验',
   keywords: ['视频', '聚合', '在线观看', '短视频', '娱乐'],
   openGraph: {
@@ -20,26 +20,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="zh-CN">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-      </head>
       <body>
-        {/* 背景光效 */}
-        <div className="bg-glow bg-glow-1" />
-        <div className="bg-glow bg-glow-2" />
-        <div className="bg-glow bg-glow-3" />
-        
-        {/* 网格背景 */}
-        <div className="grid-bg" />
-        
         <header className="site-header">
           <div className="header-container">
             <Link href="/" className="logo">
               <span className="logo-icon">▶</span>
               <span className="logo-text">视频聚合</span>
-              <span className="logo-badge">PRO</span>
             </Link>
             
             <nav className="main-nav">
@@ -82,7 +68,6 @@ export default function RootLayout({
             
             <div className="header-actions">
               <div className="source-notice">
-                <span className="pulse-dot" />
                 内容实时聚合
               </div>
             </div>
