@@ -38,7 +38,6 @@ const nextConfig = {
   experimental: {
     // Optimize server bundle size
     serverMinification: true,
-    optimizeCss: true,
   },
   // Optimize webpack for Cloudflare Pages 25MiB limit
   webpack: (config, { isServer }) => {
