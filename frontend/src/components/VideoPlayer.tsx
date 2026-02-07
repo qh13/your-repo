@@ -1,7 +1,6 @@
 'use client';
 
-import { useEffect, useRef } from 'react';
-import Hls from 'hls.js';
+import { useEffect, useRef, useState } from 'react';
 import { getVideoM3u8Url } from '@/lib/api';
 
 interface VideoPlayerProps {
@@ -12,6 +11,9 @@ interface VideoPlayerProps {
   onLoaded?: () => void;
 }
 
+// Dynamic import for hls.js to reduce main bundle size
+let Hls: any;
+
 export default function VideoPlayer({
   videoId,
   poster,
@@ -20,12 +22,21 @@ export default function VideoPlayer({
   onLoaded,
 }: VideoPlayerProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
-  const hlsRef = useRef<Hls | null>(null);
+  const hlsRef = useRef<any>(null);
+  const [hlsLoaded, setHlsLoaded] = useState(false);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    // Dynamic import hls.js
+    import('hls.js').then((module) => {
+      Hls = module.default;
+      setHlsLoaded(true);
+    });
+  }, []);
 
+  useEffect(() => {
+    if (!hlsLoaded || !videoRef.current) return;
+
+    const video = videoRef.current;
     const videoSrc = getVideoM3u8Url(videoId);
 
     // 检查浏览器是否原生支持 HLS
@@ -39,7 +50,7 @@ export default function VideoPlayer({
     }
 
     // 使用 hls.js
-    if (Hls.isSupported()) {
+    if (Hls && Hls.isSupported()) {
       const hls = new Hls({
         enableWorker: true,
         lowLatencyMode: true,
@@ -79,14 +90,16 @@ export default function VideoPlayer({
       hlsRef.current = hls;
 
       return () => {
-        hls.destroy();
-        hlsRef.current = null;
+        if (hlsRef.current) {
+          hlsRef.current.destroy();
+          hlsRef.current = null;
+        }
       };
     }
 
     // 不支持 HLS 的降级处理
     onError?.(new Error('Browser does not support HLS'));
-  }, [videoId, autoplay, onError, onLoaded]);
+  }, [videoId, autoplay, onError, onLoaded, hlsLoaded]);
 
   return (
     <div className="video-container">
