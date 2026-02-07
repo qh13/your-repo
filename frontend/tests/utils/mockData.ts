@@ -2,6 +2,8 @@
  * 测试工具函数和 Mock 数据
  */
 
+import type { Route } from '@playwright/test';
+
 /**
  * 模拟视频数据
  */
@@ -227,7 +229,7 @@ export const getElementText = async (page: any, selector: string): Promise<strin
  * 模拟 API 响应
  */
 export const createApiMock = (page: any, url: string, response: any, status = 200) => {
-  return page.route(url, route => {
+  return page.route(url, (route: Route) => {
     route.fulfill({
       status,
       contentType: 'application/json',
@@ -240,7 +242,7 @@ export const createApiMock = (page: any, url: string, response: any, status = 20
  * 模拟页面路由
  */
 export const createPageMock = (page: any, url: string, html: string) => {
-  return page.route(url, route => {
+  return page.route(url, (route: Route) => {
     route.fulfill({
       status: 200,
       contentType: 'text/html',
