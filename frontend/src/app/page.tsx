@@ -1,9 +1,24 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import AdBanner from '@/components/AdBanner';
-import VideoGrid from '@/components/VideoGrid';
-import StatsDisplay from '@/components/StatsDisplay';
+import dynamic from 'next/dynamic';
+import type { Video } from '@/lib/video-data';
+
+// Dynamic imports to reduce main bundle size
+const AdBanner = dynamic(() => import('@/components/AdBanner'), {
+  ssr: false,
+  loading: () => <div className="ad-placeholder" style={{ height: '100px', margin: '20px 0' }} />,
+});
+
+const VideoGrid = dynamic(() => import('@/components/VideoGrid'), {
+  ssr: false,
+  loading: () => <div className="video-grid-skeleton" style={{ display: 'grid', gap: '20px' }}><div className="skeleton" style={{ aspectRatio: '16/9' }} /><div className="skeleton" style={{ aspectRatio: '16/9' }} /><div className="skeleton" style={{ aspectRatio: '16/9' }} /></div>,
+});
+
+const StatsDisplay = dynamic(() => import('@/components/StatsDisplay'), {
+  ssr: false,
+  loading: () => <div className="stats-bar skeleton-stats" />,
+});
 
 interface Video {
   id: string;
