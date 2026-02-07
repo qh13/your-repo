@@ -34,10 +34,16 @@ const nextConfig = {
       },
     ];
   },
+  // Experimental optimizations for Cloudflare Pages
+  experimental: {
+    // Optimize server bundle size
+    serverMinification: true,
+    optimizeCss: true,
+  },
   // Optimize webpack for Cloudflare Pages 25MiB limit
   webpack: (config, { isServer }) => {
+    // Client-side optimization
     if (!isServer) {
-      // Force smaller chunks to avoid 25MiB limit
       config.optimization = {
         ...config.optimization,
         splitChunks: {
@@ -45,7 +51,6 @@ const nextConfig = {
           maxInitialRequests: 25,
           minSize: 20000,
           cacheGroups: {
-            // Group vendor libs into smaller chunks
             hlsjs: {
               test: /[\\/]node_modules[\\/]hls\.js[\\/]/,
               name: 'hlsjs',
@@ -68,6 +73,19 @@ const nextConfig = {
         },
       };
     }
+
+    // Server-side optimization - reduce server bundle size
+    if (isServer) {
+      // Disable source maps to reduce bundle size
+      config.devtool = false;
+
+      // Optimize server output
+      config.output = {
+        ...config.output,
+        pathinfo: false,
+      };
+    }
+
     return config;
   },
 };
