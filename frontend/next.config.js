@@ -34,16 +34,8 @@ const nextConfig = {
       },
     ];
   },
-  // Reduce webpack cache size for Cloudflare Pages (max 25 MiB per file)
-  webpack: (config, { isServer }) => {
-    if (!isServer) {
-      config.cache = {
-        type: 'memory',
-        maxMemoryGenerations: 1,
-      };
-    }
-    return config;
-  },
+  // Disable filesystem cache to avoid Cloudflare Pages 25MiB limit
+  cache: false,
 };
 
 module.exports = nextConfig;
