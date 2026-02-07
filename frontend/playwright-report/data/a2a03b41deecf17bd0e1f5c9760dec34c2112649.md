@@ -1,0 +1,173 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "▶视频聚合" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "首页" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - text: 首页
+        - link "最新" [ref=e10] [cursor=pointer]:
+          - /url: /category/recent
+          - img [ref=e11]
+          - text: 最新
+        - link "热门" [ref=e14] [cursor=pointer]:
+          - /url: /hot
+          - img [ref=e15]
+          - text: 热门
+        - link "搜索" [ref=e17] [cursor=pointer]:
+          - /url: /search
+          - img [ref=e18]
+          - text: 搜索
+        - link "关于" [ref=e21] [cursor=pointer]:
+          - /url: /about
+          - img [ref=e22]
+          - text: 关于
+      - generic [ref=e26]: 内容实时聚合
+  - main [ref=e27]:
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - heading "探索精彩视频世界" [level=1] [ref=e31]
+          - paragraph [ref=e32]: 聚合全网优质内容，发现属于你的精彩
+          - generic [ref=e33]:
+            - generic [ref=e34]: 10K+视频资源
+            - generic [ref=e35]: 50+内容来源
+            - generic [ref=e36]: 24/7实时更新
+        - generic [ref=e37]:
+          - generic [ref=e38]: 🎵
+          - generic [ref=e39]: 🎬
+          - generic [ref=e40]: 🔥
+          - generic [ref=e41]: ⭐
+      - generic [ref=e45]:
+        - paragraph [ref=e46]: 📢 广告位 home-top
+        - paragraph [ref=e47]: Monetag 广告
+        - paragraph [ref=e48]: 部署后替换为实际广告代码
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic:
+            - img
+          - generic [ref=e53]: 1,000视频
+        - generic [ref=e54]:
+          - generic:
+            - img
+          - generic [ref=e57]: 50,000,000观看
+        - generic [ref=e58]:
+          - generic:
+            - img
+          - generic [ref=e60]: 15分类
+      - generic [ref=e62]:
+        - link "全部" [ref=e63] [cursor=pointer]:
+          - /url: /
+        - link "最新" [ref=e64] [cursor=pointer]:
+          - /url: /recent
+        - link "热门" [ref=e65] [cursor=pointer]:
+          - /url: /hot
+        - link "娱乐" [ref=e66] [cursor=pointer]:
+          - /url: /entertainment
+        - link "音乐" [ref=e67] [cursor=pointer]:
+          - /url: /music
+        - link "体育" [ref=e68] [cursor=pointer]:
+          - /url: /sports
+        - link "游戏" [ref=e69] [cursor=pointer]:
+          - /url: /gaming
+      - generic [ref=e70]:
+        - generic [ref=e71]:
+          - generic [ref=e73]:
+            - link "全部" [ref=e74] [cursor=pointer]:
+              - /url: /
+            - link "最新发布" [ref=e75] [cursor=pointer]:
+              - /url: /category/recent
+            - link "🔥 热门推荐" [ref=e76] [cursor=pointer]:
+              - /url: /hot
+            - link "娱乐综艺" [ref=e77] [cursor=pointer]:
+              - /url: /category/entertainment
+            - link "音乐现场" [ref=e78] [cursor=pointer]:
+              - /url: /category/music
+            - link "体育赛事" [ref=e79] [cursor=pointer]:
+              - /url: /category/sports
+            - link "游戏解说" [ref=e80] [cursor=pointer]:
+              - /url: /category/gaming
+            - link "科技数码" [ref=e81] [cursor=pointer]:
+              - /url: /category/tech
+            - link "生活日常" [ref=e82] [cursor=pointer]:
+              - /url: /category/lifestyle
+          - generic [ref=e84]:
+            - heading "🎬精彩视频" [level=2] [ref=e85]
+            - generic [ref=e86]: 0 个视频
+        - complementary [ref=e87]:
+          - generic [ref=e88]:
+            - heading "热门标签" [level=3] [ref=e89]:
+              - img [ref=e90]
+              - text: 热门标签
+            - generic [ref=e92]:
+              - generic [ref=e93] [cursor=pointer]: 🔥 热门视频
+              - generic [ref=e94] [cursor=pointer]: ⚡ 最新发布
+              - generic [ref=e95] [cursor=pointer]: ✨ 精选推荐
+              - generic [ref=e96] [cursor=pointer]: 🎭 娱乐八卦
+              - generic [ref=e97] [cursor=pointer]: 🎵 音乐现场
+              - generic [ref=e98] [cursor=pointer]: ⚽ 体育赛事
+              - generic [ref=e99] [cursor=pointer]: 🎮 游戏解说
+              - generic [ref=e100] [cursor=pointer]: 🔬 科技数码
+              - generic [ref=e101] [cursor=pointer]: 🍳 美食教程
+              - generic [ref=e102] [cursor=pointer]: ✈️ 旅游探险
+              - generic [ref=e103] [cursor=pointer]: 💄 时尚美妆
+              - generic [ref=e104] [cursor=pointer]: 🏠 家居生活
+          - generic [ref=e108]:
+            - paragraph [ref=e109]: 📢 广告位 sidebar-home
+            - paragraph [ref=e110]: Monetag 广告
+            - paragraph [ref=e111]: 部署后替换为实际广告代码
+          - generic [ref=e112]:
+            - heading "关于我们" [level=3] [ref=e113]:
+              - img [ref=e114]
+              - text: 关于我们
+            - paragraph [ref=e117]:
+              - text: 内容聚合平台，整合全网优质视频资源。
+              - text: 专注于发现和分享有趣、有价值的视频内容，为用户提供一站式视频观看体验。
+            - generic [ref=e118]:
+              - generic [ref=e119]: 🚀实时更新
+              - generic [ref=e120]: 💯高清画质
+              - generic [ref=e121]: ⚡极速加载
+          - generic [ref=e122]:
+            - heading "快捷链接" [level=3] [ref=e123]:
+              - img [ref=e124]
+              - text: 快捷链接
+            - generic [ref=e128]:
+              - link "🔥热门排行" [ref=e129] [cursor=pointer]:
+                - /url: /hot
+                - text: 🔥热门排行
+                - img [ref=e130]
+              - link "🔍搜索视频" [ref=e132] [cursor=pointer]:
+                - /url: /search
+                - text: 🔍搜索视频
+                - img [ref=e133]
+              - link "ℹ️了解更多" [ref=e135] [cursor=pointer]:
+                - /url: /about
+                - text: ℹ️了解更多
+                - img [ref=e136]
+  - contentinfo [ref=e138]:
+    - generic [ref=e139]:
+      - generic [ref=e140]:
+        - heading "关于我们" [level=4] [ref=e141]
+        - paragraph [ref=e142]: 视频聚合平台致力于为用户提供便捷的视频发现和浏览服务。
+      - generic [ref=e143]:
+        - heading "免责声明" [level=4] [ref=e144]
+        - paragraph [ref=e145]: 本站内容均来自第三方公开平台，仅供学习交流使用。
+        - paragraph [ref=e146]: 如有侵权，请联系我们处理。
+      - generic [ref=e147]:
+        - heading "联系我们" [level=4] [ref=e148]
+        - paragraph [ref=e149]: 邮箱：contact@example.com
+    - paragraph [ref=e151]: © 2024 视频聚合平台. All rights reserved.
+  - status [ref=e152]:
+    - generic [ref=e153]:
+      - img [ref=e155]
+      - generic [ref=e157]:
+        - text: Static route
+        - button "Hide static indicator" [ref=e158] [cursor=pointer]:
+          - img [ref=e159]
+  - alert [ref=e162]
+```

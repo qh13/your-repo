@@ -53,3 +53,54 @@
 [2026-02-07T08:27:14.377Z] [INFO] Saved 0 categories to disk 
 [2026-02-07T08:27:14.377Z] [INFO] Incremental update complete: 0 updated, 0 failed 
 [2026-02-07T08:27:14.408Z] [INFO] Browser closed 
+[2026-02-07T12:02:58.956Z] [INFO] Loaded 1 videos from disk 
+[2026-02-07T12:02:58.957Z] [INFO] Loaded 0 categories from disk 
+[2026-02-07T12:02:58.957Z] [INFO] Initializing browser... 
+[2026-02-07T12:02:59.541Z] [INFO] Browser initialized 
+[2026-02-07T12:02:59.541Z] [INFO] Starting to scrape category: /recent/ 
+[2026-02-07T12:02:59.541Z] [INFO] Scraping video list: https://jable.tv/recent/page/1/ 
+[2026-02-07T12:03:11.312Z] [INFO] Found 0 videos on page 1 
+[2026-02-07T12:03:11.312Z] [INFO] Finished scraping category: /recent/, found 0 videos 
+[2026-02-07T12:03:11.354Z] [INFO] Browser closed 
+[2026-02-07T12:08:34.193Z] [INFO] Loaded 1 videos from disk 
+[2026-02-07T12:08:34.194Z] [INFO] Loaded 0 categories from disk 
+[2026-02-07T12:08:34.194Z] [INFO] Initializing browser... 
+[2026-02-07T12:08:34.695Z] [INFO] Browser initialized 
+[2026-02-07T12:08:34.695Z] [INFO] Scraping video detail: dldss-460 
+[2026-02-07T12:08:41.041Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/IpnDKO-lzps1I0TO54AERw/1770476374/56000/56644/56644.m3u8"}
+[2026-02-07T12:08:48.298Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/23938902/master/23938902_240p.m3u8"}
+[2026-02-07T12:08:49.418Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-26/23938902/23938902_240p.m3u8"}
+[2026-02-07T12:08:51.823Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-26/23938902/23938902_240p.m3u8"}
+[2026-02-07T12:08:54.989Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-26/23938902/23938902_240p.m3u8"}
+[2026-02-07T12:08:57.402Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-26/23938902/23938902_240p.m3u8"}
+[2026-02-07T12:08:59.809Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-26/23938902/23938902_240p.m3u8"}
+[2026-02-07T12:09:02.223Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-26/23938902/23938902_240p.m3u8"}
+[2026-02-07T12:09:04.641Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-26/23938902/23938902_240p.m3u8"}
+[2026-02-07T12:09:06.892Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-26/23938902/23938902_240p.m3u8"}
+[2026-02-07T12:09:09.409Z] [INFO] Video detail scraped:  {"id":"dldss-460"}
+[2026-02-07T12:09:09.413Z] [INFO] Saved 1 videos to disk 
+[2026-02-07T12:09:09.414Z] [INFO] Saved 0 categories to disk 
+[2026-02-07T12:09:09.451Z] [INFO] Browser closed 
+[2026-02-07T12:10:39.616Z] [INFO] Loaded 1 videos from disk 
+[2026-02-07T12:10:39.617Z] [INFO] Loaded 0 categories from disk 
+[2026-02-07T12:10:39.617Z] [INFO] Initializing browser... 
+[2026-02-07T12:10:40.164Z] [INFO] Browser initialized 
+[2026-02-07T12:10:40.164Z] [INFO] Scraping video detail: dldss-460 
+[2026-02-07T12:10:47.727Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/IpnDKO-lzps1I0TO54AERw/1770476374/56000/56644/56644.m3u8"}
+[2026-02-07T12:10:54.242Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/23938902/master/23938902_240p.m3u8"}
+[2026-02-07T12:10:55.487Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-26/23938902/23938902_240p.m3u8"}
+[2026-02-07T12:11:02.208Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/149375024/master/149375024_240p.m3u8"}
+[2026-02-07T12:11:02.449Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/149375024/149375024_240p.m3u8"}
+[2026-02-07T12:11:05.757Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/149375024/149375024_240p.m3u8"}
+[2026-02-07T12:11:08.219Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/149375024/149375024_240p.m3u8"}
+[2026-02-07T12:11:10.629Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/149375024/149375024_240p.m3u8"}
+[2026-02-07T12:11:12.872Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/149375024/149375024_240p.m3u8"}
+[2026-02-07T12:11:15.282Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/149375024/149375024_240p.m3u8"}
+[2026-02-07T12:11:17.730Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/149375024/149375024_240p.m3u8"}
+[2026-02-07T12:11:20.221Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/149375024/149375024_240p.m3u8"}
+[2026-02-07T12:11:22.697Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/149375024/149375024_240p.m3u8"}
+[2026-02-07T12:11:25.011Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/149375024/149375024_240p.m3u8"}
+[2026-02-07T12:11:27.016Z] [INFO] Video detail scraped:  {"id":"dldss-460"}
+[2026-02-07T12:11:27.019Z] [INFO] Saved 1 videos to disk 
+[2026-02-07T12:11:27.019Z] [INFO] Saved 0 categories to disk 
+[2026-02-07T12:11:27.057Z] [INFO] Browser closed 

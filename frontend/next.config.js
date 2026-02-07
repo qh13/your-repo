@@ -26,8 +26,6 @@ const nextConfig = {
         ...config.optimization,
         // Use deterministic module ids for better caching
         moduleIds: 'deterministic',
-        // Enable tree shaking
-        usedExports: true,
         // Split chunks aggressively
         splitChunks: {
           chunks: 'all',

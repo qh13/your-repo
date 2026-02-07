@@ -8,9 +8,15 @@ const isDevelopment = process.env.NODE_ENV === 'development' ||
                       !process.env.VERCEL_ENV;
 
 // Worker 代理地址 - 已部署到 Cloudflare Workers
+// 注意：中国大陆可能无法访问 workers.dev，需要使用自定义域名
+const isDevelopment = process.env.NODE_ENV === 'development' || 
+                      process.env.VERCEL_ENV === 'development' ||
+                      !process.env.VERCEL_ENV;
+
+// 使用自定义域名（如果已配置），否则回退到 workers.dev
 export const WORKER_URL = isDevelopment 
   ? process.env.NEXT_PUBLIC_WORKER_URL || 'http://localhost:3000'
-  : 'https://jable-video-proxy.qh13.workers.dev';
+  : (process.env.NEXT_PUBLIC_WORKER_URL || 'https://api.sexxyvideo.dpdns.org');
 
 // API 基础地址
 export const API_BASE_URL = `${WORKER_URL}/api`;

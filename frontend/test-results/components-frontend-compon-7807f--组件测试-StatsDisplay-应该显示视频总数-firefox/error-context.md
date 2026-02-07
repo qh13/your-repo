@@ -1,0 +1,150 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "▶视频聚合" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "首页" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - text: 首页
+        - link "最新" [ref=e10] [cursor=pointer]:
+          - /url: /category/recent
+          - img [ref=e11]
+          - text: 最新
+        - link "热门" [ref=e14] [cursor=pointer]:
+          - /url: /hot
+          - img [ref=e15]
+          - text: 热门
+        - link "搜索" [ref=e17] [cursor=pointer]:
+          - /url: /search
+          - img [ref=e18]
+          - text: 搜索
+        - link "关于" [ref=e21] [cursor=pointer]:
+          - /url: /about
+          - img [ref=e22]
+          - text: 关于
+      - generic [ref=e27]: 内容实时聚合
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - heading "探索精彩视频世界" [level=1] [ref=e32]
+          - paragraph [ref=e33]: 聚合全网优质内容，发现属于你的精彩
+          - generic [ref=e34]:
+            - generic [ref=e35]: 10K+视频资源
+            - generic [ref=e36]: 50+内容来源
+            - generic [ref=e37]: 24/7实时更新
+        - generic [ref=e38]:
+          - generic [ref=e39]: 🎵
+          - generic [ref=e40]: 🎬
+          - generic [ref=e41]: 🔥
+          - generic [ref=e42]: ⭐
+      - generic [ref=e58]:
+        - link "全部" [ref=e59] [cursor=pointer]:
+          - /url: /
+        - link "最新" [ref=e60] [cursor=pointer]:
+          - /url: /recent
+        - link "热门" [ref=e61] [cursor=pointer]:
+          - /url: /hot
+      - generic [ref=e62]:
+        - generic [ref=e63]:
+          - generic [ref=e65]:
+            - link "全部" [ref=e66] [cursor=pointer]:
+              - /url: /
+            - link "最新发布" [ref=e67] [cursor=pointer]:
+              - /url: /category/recent
+            - link "🔥 热门推荐" [ref=e68] [cursor=pointer]:
+              - /url: /hot
+            - link "娱乐综艺" [ref=e69] [cursor=pointer]:
+              - /url: /category/entertainment
+            - link "音乐现场" [ref=e70] [cursor=pointer]:
+              - /url: /category/music
+            - link "体育赛事" [ref=e71] [cursor=pointer]:
+              - /url: /category/sports
+            - link "游戏解说" [ref=e72] [cursor=pointer]:
+              - /url: /category/gaming
+            - link "科技数码" [ref=e73] [cursor=pointer]:
+              - /url: /category/tech
+            - link "生活日常" [ref=e74] [cursor=pointer]:
+              - /url: /category/lifestyle
+          - generic [ref=e76]:
+            - heading "🎬精彩视频" [level=2] [ref=e77]
+            - generic [ref=e78]: 0 个视频
+        - complementary [ref=e79]:
+          - generic [ref=e80]:
+            - heading "热门标签" [level=3] [ref=e81]:
+              - img [ref=e82]
+              - text: 热门标签
+            - generic [ref=e84]:
+              - generic [ref=e85] [cursor=pointer]: 🔥 热门视频
+              - generic [ref=e86] [cursor=pointer]: ⚡ 最新发布
+              - generic [ref=e87] [cursor=pointer]: ✨ 精选推荐
+              - generic [ref=e88] [cursor=pointer]: 🎭 娱乐八卦
+              - generic [ref=e89] [cursor=pointer]: 🎵 音乐现场
+              - generic [ref=e90] [cursor=pointer]: ⚽ 体育赛事
+              - generic [ref=e91] [cursor=pointer]: 🎮 游戏解说
+              - generic [ref=e92] [cursor=pointer]: 🔬 科技数码
+              - generic [ref=e93] [cursor=pointer]: 🍳 美食教程
+              - generic [ref=e94] [cursor=pointer]: ✈️ 旅游探险
+              - generic [ref=e95] [cursor=pointer]: 💄 时尚美妆
+              - generic [ref=e96] [cursor=pointer]: 🏠 家居生活
+          - generic [ref=e98]:
+            - heading "关于我们" [level=3] [ref=e99]:
+              - img [ref=e100]
+              - text: 关于我们
+            - paragraph [ref=e104]:
+              - text: 内容聚合平台，整合全网优质视频资源。
+              - text: 专注于发现和分享有趣、有价值的视频内容，为用户提供一站式视频观看体验。
+            - generic [ref=e105]:
+              - generic [ref=e106]: 🚀实时更新
+              - generic [ref=e107]: 💯高清画质
+              - generic [ref=e108]: ⚡极速加载
+          - generic [ref=e109]:
+            - heading "快捷链接" [level=3] [ref=e110]:
+              - img [ref=e111]
+              - text: 快捷链接
+            - generic [ref=e115]:
+              - link "🔥热门排行" [ref=e116] [cursor=pointer]:
+                - /url: /hot
+                - text: 🔥热门排行
+                - img [ref=e117]
+              - link "🔍搜索视频" [ref=e119] [cursor=pointer]:
+                - /url: /search
+                - text: 🔍搜索视频
+                - img [ref=e120]
+              - link "ℹ️了解更多" [ref=e122] [cursor=pointer]:
+                - /url: /about
+                - text: ℹ️了解更多
+                - img [ref=e123]
+  - contentinfo [ref=e125]:
+    - generic [ref=e126]:
+      - generic [ref=e127]:
+        - heading "关于我们" [level=4] [ref=e128]
+        - paragraph [ref=e129]: 视频聚合平台致力于为用户提供便捷的视频发现和浏览服务。
+      - generic [ref=e130]:
+        - heading "免责声明" [level=4] [ref=e131]
+        - paragraph [ref=e132]: 本站内容均来自第三方公开平台，仅供学习交流使用。
+        - paragraph [ref=e133]: 如有侵权，请联系我们处理。
+      - generic [ref=e134]:
+        - heading "联系我们" [level=4] [ref=e135]
+        - paragraph [ref=e136]: 邮箱：contact@example.com
+    - paragraph [ref=e138]: © 2024 视频聚合平台. All rights reserved.
+  - generic:
+    - generic [ref=e141] [cursor=pointer]:
+      - img [ref=e142]
+      - generic [ref=e146]: 1 error
+      - button "Hide Errors" [ref=e147]:
+        - img [ref=e148]
+    - status [ref=e151]:
+      - generic [ref=e152]:
+        - img [ref=e154]
+        - generic [ref=e156]:
+          - text: Static route
+          - button "Hide static indicator" [ref=e157] [cursor=pointer]:
+            - img [ref=e158]
+  - alert [ref=e161]
+```

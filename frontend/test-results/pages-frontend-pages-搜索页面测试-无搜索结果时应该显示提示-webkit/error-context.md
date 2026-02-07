@@ -1,0 +1,85 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "▶视频聚合" [ref=e4]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "首页" [ref=e6]:
+          - /url: /
+          - img [ref=e7]
+          - text: 首页
+        - link "最新" [ref=e10]:
+          - /url: /category/recent
+          - img [ref=e11]
+          - text: 最新
+        - link "热门" [ref=e14]:
+          - /url: /hot
+          - img [ref=e15]
+          - text: 热门
+        - link "搜索" [ref=e17]:
+          - /url: /search
+          - img [ref=e18]
+          - text: 搜索
+        - link "关于" [ref=e21]:
+          - /url: /about
+          - img [ref=e22]
+          - text: 关于
+      - generic [ref=e26]: 内容实时聚合
+  - main [ref=e27]:
+    - generic [ref=e28]:
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - 'heading "🔍 搜索: \"不存在的关键词\"" [level=1] [ref=e31]'
+          - paragraph [ref=e32]: 探索海量视频内容，找到属于你的精彩
+        - generic [ref=e34]:
+          - generic [ref=e35]:
+            - generic [ref=e36]:
+              - img [ref=e37]
+              - textbox "搜索视频、标签、创作者..." [ref=e40]: 不存在的关键词
+              - button [ref=e41]:
+                - img [ref=e42]
+            - button "搜索" [ref=e45] [cursor=pointer]:
+              - text: 搜索
+              - img [ref=e46]
+          - generic [ref=e48]:
+            - generic [ref=e49]: "热门搜索:"
+            - generic [ref=e50]:
+              - button "🔥 热门" [ref=e51] [cursor=pointer]
+              - button "✨ 最新" [ref=e52] [cursor=pointer]
+              - button "🎵 音乐" [ref=e53] [cursor=pointer]
+              - button "🎮 游戏" [ref=e54] [cursor=pointer]
+              - button "🎬 电影" [ref=e55] [cursor=pointer]
+      - generic [ref=e59]:
+        - paragraph [ref=e60]: 📢 广告位 search-top
+        - paragraph [ref=e61]: Monetag 广告
+        - paragraph [ref=e62]: 部署后替换为实际广告代码
+      - generic [ref=e63]:
+        - heading "视频列表" [level=2] [ref=e64]
+        - generic [ref=e65]:
+          - paragraph [ref=e66]: "⚠️ API request failed: 404 Not Found"
+          - button "重新加载" [ref=e67]
+  - contentinfo [ref=e68]:
+    - generic [ref=e69]:
+      - generic [ref=e70]:
+        - heading "关于我们" [level=4] [ref=e71]
+        - paragraph [ref=e72]: 视频聚合平台致力于为用户提供便捷的视频发现和浏览服务。
+      - generic [ref=e73]:
+        - heading "免责声明" [level=4] [ref=e74]
+        - paragraph [ref=e75]: 本站内容均来自第三方公开平台，仅供学习交流使用。
+        - paragraph [ref=e76]: 如有侵权，请联系我们处理。
+      - generic [ref=e77]:
+        - heading "联系我们" [level=4] [ref=e78]
+        - paragraph [ref=e79]: 邮箱：contact@example.com
+    - paragraph [ref=e81]: © 2024 视频聚合平台. All rights reserved.
+  - status [ref=e82]:
+    - generic [ref=e83]:
+      - img [ref=e85]
+      - generic [ref=e87]:
+        - text: Static route
+        - button "Hide static indicator" [ref=e88] [cursor=pointer]:
+          - img [ref=e89]
+  - alert [ref=e92]
+```

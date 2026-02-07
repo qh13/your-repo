@@ -5,6 +5,11 @@ compatibility_date = "2024-01-01"
 # 使用 Cloudflare 免费 workers.dev 子域名
 workers_dev = true
 
+# 自定义域名路由
+[[routes]]
+pattern = "api.sexxyvideo.dpdns.org/*"
+zone_name = "sexxyvideo.dpdns.org"
+
 [vars]
 ORIGIN_DOMAIN = "jable.tv"
 

@@ -6,15 +6,24 @@
     "dev": "next dev",
     "build": "next build && rm -rf .next/cache",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "playwright test",
+    "test:ui": "playwright test --ui",
+    "test:api": "playwright test --grep=@api",
+    "test:pages": "playwright test --grep=@pages",
+    "test:components": "playwright test --grep=@components",
+    "test:video": "playwright test --grep=@video",
+    "test:report": "playwright show-report",
+    "test:install": "playwright install --with-deps chromium"
   },
   "dependencies": {
+    "hls.js": "^1.5.1",
     "next": "15.1.3",
     "react": "19.0.0",
-    "react-dom": "19.0.0",
-    "hls.js": "^1.5.1"
+    "react-dom": "19.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.58.2",
     "@types/node": "^20.11.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",

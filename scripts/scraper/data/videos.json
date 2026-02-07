@@ -126,8 +126,9 @@
       "4小時以上"
     ],
     "streamUrls": {
-      "url": null
+      "url": "https://media-hls.saawsedge.com/b-hls-06/149375024/149375024_240p.m3u8",
+      "format": "direct"
     },
-    "scrapedAt": "2026-02-07T08:18:25.298Z"
+    "scrapedAt": "2026-02-07T12:11:24.773Z"
   }
 ]

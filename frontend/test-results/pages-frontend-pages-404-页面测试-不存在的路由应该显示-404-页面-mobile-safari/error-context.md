@@ -1,0 +1,59 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "▶视频聚合" [ref=e4]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "首页" [ref=e6]:
+          - /url: /
+          - img [ref=e7]
+          - text: 首页
+        - link "最新" [ref=e10]:
+          - /url: /category/recent
+          - img [ref=e11]
+          - text: 最新
+        - link "热门" [ref=e14]:
+          - /url: /hot
+          - img [ref=e15]
+          - text: 热门
+        - link "搜索" [ref=e17]:
+          - /url: /search
+          - img [ref=e18]
+          - text: 搜索
+        - link "关于" [ref=e21]:
+          - /url: /about
+          - img [ref=e22]
+          - text: 关于
+      - generic [ref=e26]: 内容实时聚合
+  - main [ref=e27]:
+    - generic [ref=e28]:
+      - generic [ref=e29]: "404"
+      - heading "页面未找到" [level=1] [ref=e30]
+      - paragraph [ref=e31]: 抱歉，您访问的页面不存在或已被移除。
+      - link "返回首页" [ref=e32]:
+        - /url: /
+  - contentinfo [ref=e33]:
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - heading "关于我们" [level=4] [ref=e36]
+        - paragraph [ref=e37]: 视频聚合平台致力于为用户提供便捷的视频发现和浏览服务。
+      - generic [ref=e38]:
+        - heading "免责声明" [level=4] [ref=e39]
+        - paragraph [ref=e40]: 本站内容均来自第三方公开平台，仅供学习交流使用。
+        - paragraph [ref=e41]: 如有侵权，请联系我们处理。
+      - generic [ref=e42]:
+        - heading "联系我们" [level=4] [ref=e43]
+        - paragraph [ref=e44]: 邮箱：contact@example.com
+    - paragraph [ref=e46]: © 2024 视频聚合平台. All rights reserved.
+  - status [ref=e47]:
+    - generic [ref=e48]:
+      - img [ref=e50]
+      - generic [ref=e52]:
+        - text: Static route
+        - button "Hide static indicator" [ref=e53] [cursor=pointer]:
+          - img [ref=e54]
+  - alert [ref=e57]
+```

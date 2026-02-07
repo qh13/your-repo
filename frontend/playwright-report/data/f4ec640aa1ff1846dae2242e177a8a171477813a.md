@@ -1,0 +1,184 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "▶视频聚合" [ref=e4] [cursor=pointer]:
+        - /url: /
+      - navigation [ref=e5]:
+        - link "首页" [ref=e6] [cursor=pointer]:
+          - /url: /
+          - img [ref=e7]
+          - text: 首页
+        - link "最新" [ref=e10] [cursor=pointer]:
+          - /url: /category/recent
+          - img [ref=e11]
+          - text: 最新
+        - link "热门" [ref=e14] [cursor=pointer]:
+          - /url: /hot
+          - img [ref=e15]
+          - text: 热门
+        - link "搜索" [ref=e17] [cursor=pointer]:
+          - /url: /search
+          - img [ref=e18]
+          - text: 搜索
+        - link "关于" [ref=e21] [cursor=pointer]:
+          - /url: /about
+          - img [ref=e22]
+          - text: 关于
+      - generic [ref=e27]: 内容实时聚合
+  - main [ref=e28]:
+    - generic [ref=e29]:
+      - generic [ref=e33]:
+        - paragraph [ref=e34]: 📢 广告位 video-top
+        - paragraph [ref=e35]: Monetag 广告
+        - paragraph [ref=e36]: 部署后替换为实际广告代码
+      - generic [ref=e37]:
+        - generic [ref=e38]:
+          - generic [ref=e41]:
+            - img [ref=e42]
+            - paragraph [ref=e45]: 视频加载中...
+            - generic [ref=e46]: "ID: test-video-123"
+          - generic [ref=e47]:
+            - heading "视频详情 - test-video-123" [level=1] [ref=e48]
+            - generic [ref=e49]:
+              - generic [ref=e50]:
+                - img [ref=e51]
+                - text: 0 次观看
+              - generic [ref=e54]:
+                - img
+                - text: "--:--"
+              - generic [ref=e55]:
+                - img
+                - text: 2026-02-07
+          - generic [ref=e56]:
+            - generic [ref=e57]:
+              - generic [ref=e58]: 未
+              - generic [ref=e59]:
+                - generic [ref=e60]: 未知作者
+                - generic [ref=e61]: 上传者
+            - generic [ref=e62]:
+              - heading "视频描述" [level=3] [ref=e63]
+              - paragraph [ref=e64]: 视频描述加载中...
+          - generic [ref=e65]:
+            - img [ref=e66]
+            - generic [ref=e70]: 视频来源：
+            - link "jable.tv" [ref=e71] [cursor=pointer]:
+              - /url: https://jable.tv/videos/test-video-123/
+          - generic [ref=e75]:
+            - paragraph [ref=e76]: 📢 广告位 video-infeed
+            - paragraph [ref=e77]: Monetag 广告
+            - paragraph [ref=e78]: 部署后替换为实际广告代码
+          - generic [ref=e79]:
+            - heading "相关视频" [level=2] [ref=e80]:
+              - img [ref=e81]
+              - text: 相关视频
+            - generic [ref=e83]:
+              - link "相关视频 1 08:30 相关视频标题 1 500K 次观看" [ref=e84] [cursor=pointer]:
+                - /url: /videos/video-1
+                - generic [ref=e85]:
+                  - img "相关视频 1" [ref=e86]
+                  - generic [ref=e87]: 08:30
+                  - img [ref=e89]
+                - generic [ref=e91]:
+                  - heading "相关视频标题 1" [level=4] [ref=e92]
+                  - text: 500K 次观看
+              - link "相关视频 2 08:30 相关视频标题 2 500K 次观看" [ref=e93] [cursor=pointer]:
+                - /url: /videos/video-2
+                - generic [ref=e94]:
+                  - img "相关视频 2" [ref=e95]
+                  - generic [ref=e96]: 08:30
+                  - img [ref=e98]
+                - generic [ref=e100]:
+                  - heading "相关视频标题 2" [level=4] [ref=e101]
+                  - text: 500K 次观看
+              - link "相关视频 3 08:30 相关视频标题 3 500K 次观看" [ref=e102] [cursor=pointer]:
+                - /url: /videos/video-3
+                - generic [ref=e103]:
+                  - img "相关视频 3" [ref=e104]
+                  - generic [ref=e105]: 08:30
+                  - img [ref=e107]
+                - generic [ref=e109]:
+                  - heading "相关视频标题 3" [level=4] [ref=e110]
+                  - text: 500K 次观看
+              - link "相关视频 4 08:30 相关视频标题 4 500K 次观看" [ref=e111] [cursor=pointer]:
+                - /url: /videos/video-4
+                - generic [ref=e112]:
+                  - img "相关视频 4" [ref=e113]
+                  - generic [ref=e114]: 08:30
+                  - img [ref=e116]
+                - generic [ref=e118]:
+                  - heading "相关视频标题 4" [level=4] [ref=e119]
+                  - text: 500K 次观看
+        - complementary [ref=e120]:
+          - generic [ref=e121]:
+            - heading "热门视频" [level=3] [ref=e122]:
+              - img [ref=e123]
+              - text: 热门视频
+            - generic [ref=e125]:
+              - link "热门视频 112:45 热门视频标题 1 200K 次观看" [ref=e126] [cursor=pointer]:
+                - /url: /videos/video-1
+                - generic [ref=e127]:
+                  - img "热门视频 1" [ref=e128]
+                  - text: 12:45
+                - generic [ref=e129]:
+                  - heading "热门视频标题 1" [level=4] [ref=e130]
+                  - text: 200K 次观看
+              - link "热门视频 212:45 热门视频标题 2 200K 次观看" [ref=e131] [cursor=pointer]:
+                - /url: /videos/video-2
+                - generic [ref=e132]:
+                  - img "热门视频 2" [ref=e133]
+                  - text: 12:45
+                - generic [ref=e134]:
+                  - heading "热门视频标题 2" [level=4] [ref=e135]
+                  - text: 200K 次观看
+              - link "热门视频 312:45 热门视频标题 3 200K 次观看" [ref=e136] [cursor=pointer]:
+                - /url: /videos/video-3
+                - generic [ref=e137]:
+                  - img "热门视频 3" [ref=e138]
+                  - text: 12:45
+                - generic [ref=e139]:
+                  - heading "热门视频标题 3" [level=4] [ref=e140]
+                  - text: 200K 次观看
+              - link "热门视频 412:45 热门视频标题 4 200K 次观看" [ref=e141] [cursor=pointer]:
+                - /url: /videos/video-4
+                - generic [ref=e142]:
+                  - img "热门视频 4" [ref=e143]
+                  - text: 12:45
+                - generic [ref=e144]:
+                  - heading "热门视频标题 4" [level=4] [ref=e145]
+                  - text: 200K 次观看
+              - link "热门视频 512:45 热门视频标题 5 200K 次观看" [ref=e146] [cursor=pointer]:
+                - /url: /videos/video-5
+                - generic [ref=e147]:
+                  - img "热门视频 5" [ref=e148]
+                  - text: 12:45
+                - generic [ref=e149]:
+                  - heading "热门视频标题 5" [level=4] [ref=e150]
+                  - text: 200K 次观看
+          - generic [ref=e151]:
+            - heading "分类" [level=3] [ref=e152]
+            - generic [ref=e153]: 未知分类
+  - contentinfo [ref=e154]:
+    - generic [ref=e155]:
+      - generic [ref=e156]:
+        - heading "关于我们" [level=4] [ref=e157]
+        - paragraph [ref=e158]: 视频聚合平台致力于为用户提供便捷的视频发现和浏览服务。
+      - generic [ref=e159]:
+        - heading "免责声明" [level=4] [ref=e160]
+        - paragraph [ref=e161]: 本站内容均来自第三方公开平台，仅供学习交流使用。
+        - paragraph [ref=e162]: 如有侵权，请联系我们处理。
+      - generic [ref=e163]:
+        - heading "联系我们" [level=4] [ref=e164]
+        - paragraph [ref=e165]: 邮箱：contact@example.com
+    - paragraph [ref=e167]: © 2024 视频聚合平台. All rights reserved.
+  - status [ref=e168]:
+    - generic [ref=e169]:
+      - img [ref=e171]
+      - generic [ref=e173]:
+        - text: Static route
+        - button "Hide static indicator" [ref=e174] [cursor=pointer]:
+          - img [ref=e175]
+  - alert [ref=e178]
+```
