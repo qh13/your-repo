@@ -22,12 +22,18 @@ export interface Video {
   views: string;
   publishDate: string;
   coverUrl: string;
+  // 封面图别名
+  thumbnail?: string;
   category: string;
   categoryName: string;
   authorName: string;
+  // 作者别名
+  author?: string;
   tags: string[];
   scrapedAt: string;
   viewCount: number;
+  // 来源标识
+  source?: string;
   // 视频详情额外字段
   streamUrl?: string;
   streamBackupUrls?: string[];
