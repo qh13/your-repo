@@ -20,18 +20,7 @@ const StatsDisplay = dynamic(() => import('@/components/StatsDisplay'), {
   loading: () => <div className="stats-bar skeleton-stats" />,
 });
 
-interface Video {
-  id: string;
-  title: string;
-  thumbnail: string;
-  duration: string;
-  views: string;
-  author: string;
-  pubdate: string;
-  source: string;
-  url: string;
-}
-
+// VideoGridProps uses the imported Video type from '@/lib/video-data'
 interface VideoGridProps {
   videos?: Video[];
   title?: string;
