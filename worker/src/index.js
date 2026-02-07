@@ -1,0 +1,963 @@
+/**
+ * Cloudflare Worker - jable.tv 视频代理 + D1 数据库 API v4
+ *
+ * 功能：
+ * 1. 代理 m3u8 播放列表（短期缓存）
+ * 2. 代理视频分片（长期缓存）
+ * 3. Range 请求支持（视频拖拽）
+ * 4. 完整的防盗链处理
+ * 5. D1 数据库 API（视频 CRUD）
+ */
+
+// 配置
+const ORIGIN_DOMAIN = 'jable.tv';
+const WORKER_URL = 'https://jable-video-proxy.qh13.workers.dev';
+
+// 缓存配置
+const CACHE_CONFIG = {
+  m3u8: {
+    maxAge: 3, // 秒 - m3u8 短期缓存
+    cacheKey: 'm3u8-cache'
+  },
+  ts: {
+    maxAge: 31536000, // 1年 - 视频分片长期缓存
+    cacheKey: 'ts-cache'
+  },
+  api: {
+    maxAge: 60, // 60秒 - API 缓存
+    cacheKey: 'api-cache'
+  }
+};
+
+// ============= 缓存操作 =============
+
+/**
+ * 从缓存获取响应
+ * @param {string} cacheKey - 缓存键
+ * @param {Request} request - 请求对象
+ */
+async function getFromCache(cacheKey, request) {
+  const cache = caches.default;
+  const cachedResponse = await cache.match(request);
+  
+  if (cachedResponse) {
+    // 检查缓存是否过期
+    const dateHeader = cachedResponse.headers.get('Date');
+    if (dateHeader) {
+      const cachedTime = new Date(dateHeader).getTime();
+      const now = Date.now();
+      const maxAge = CACHE_CONFIG[cacheKey]?.maxAge || 60;
+      
+      if (now - cachedTime < maxAge * 1000) {
+        return cachedResponse;
+      }
+    }
+  }
+  
+  return null;
+}
+
+/**
+ * 保存响应到缓存
+ * @param {string} cacheKey - 缓存键
+ * @param {Request} request - 请求对象
+ * @param {Response} response - 响应对象
+ */
+async function saveToCache(cacheKey, request, response) {
+  const cache = caches.default;
+  const maxAge = CACHE_CONFIG[cacheKey]?.maxAge || 60;
+  
+  // 克隆响应以避免修改原始响应
+  const responseToCache = new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers: new Headers(response.headers)
+  });
+  
+  // 更新缓存控制头
+  responseToCache.headers.set('Cache-Control', `public, max-age=${maxAge}`);
+  responseToCache.headers.set('X-Cache-Status', 'MISS');
+  
+  // 保存到缓存
+  await cache.put(request, responseToCache);
+  
+  return responseToCache;
+}
+
+/**
+ * 获取缓存状态
+ */
+function getCacheStatus(request) {
+  return caches.default.match(request).then(response => {
+    if (response) {
+      return response.headers.get('X-Cache-Status') || 'HIT';
+    }
+    return 'MISS';
+  });
+}
+
+// ============= 数据库操作 =============
+
+/**
+ * 查询视频列表
+ * @param {Object} env - 环境变量
+ * @param {Object} params - 查询参数
+ */
+async function getVideoList(env, params = {}) {
+  const {
+    page = 1,
+    limit = 20,
+    category = null,
+    search = null
+  } = params;
+  const offset = (page - 1) * limit;
+  
+  let conditions = [];
+  let queryParams = [];
+  
+  if (category && category !== 'all' && category !== 'uncategorized') {
+    conditions.push('v.category = ?');
+    queryParams.push(category);
+  }
+  
+  if (search) {
+    conditions.push('(v.title LIKE ? OR v.description LIKE ?)');
+    const searchTerm = `%${search}%`;
+    queryParams.push(searchTerm, searchTerm);
+  }
+  
+  const whereClause = conditions.length > 0 
+    ? `WHERE ${conditions.join(' AND ')}` 
+    : '';
+  
+  const videosQuery = `
+    SELECT v.id, v.title, v.description, v.duration, v.views, v.publish_date,
+           v.cover_url, v.category, v.author_name, v.tags, v.scraped_at, v.view_count,
+           c.name as category_name
+    FROM videos v
+    LEFT JOIN categories c ON v.category = c.slug
+    ${whereClause}
+    ORDER BY v.scraped_at DESC
+    LIMIT ? OFFSET ?
+  `;
+  
+  queryParams.push(limit.toString(), offset.toString());
+  
+  const countQuery = `
+    SELECT COUNT(*) as total FROM videos v
+    ${whereClause}
+  `;
+  
+  try {
+    const videos = await env.DB.prepare(videosQuery)
+      .bind(...queryParams)
+      .all();
+    
+    const countResult = await env.DB.prepare(countQuery)
+      .bind(...queryParams.slice(0, -2))
+      .first();
+    
+    return {
+      success: true,
+      data: {
+        videos: videos.results.map(formatVideoForApi),
+        pagination: {
+          page,
+          limit,
+          total: countResult?.total || 0,
+          totalPages: Math.ceil((countResult?.total || 0) / limit)
+        }
+      }
+    };
+  } catch (error) {
+    console.error('getVideoList error:', error);
+    return { success: false, error: error.message };
+  }
+}
+
+/**
+ * 查询单个视频
+ * @param {Object} env - 环境变量
+ * @param {string} videoId - 视频 ID
+ */
+async function getVideoDetail(env, videoId) {
+  try {
+    const stmt = env.DB.prepare(`
+      SELECT v.*, c.name as category_name
+      FROM videos v
+      LEFT JOIN categories c ON v.category = c.slug
+      WHERE v.id = ?
+    `);
+    
+    const result = await stmt.bind(videoId).first();
+    
+    if (!result) {
+      return { success: false, error: 'Video not found', errorCode: 'NOT_FOUND' };
+    }
+    
+    // 增加浏览次数
+    await env.DB.prepare(`
+      UPDATE videos SET view_count = view_count + 1 WHERE id = ?
+    `).bind(videoId).run();
+    
+    const streamUrl = `${WORKER_URL}/${videoId}.m3u8`;
+    const tags = result.tags ? JSON.parse(result.tags) : [];
+    const streamBackupUrls = result.stream_backup_urls 
+      ? JSON.parse(result.stream_backup_urls) 
+      : [];
+    const streamQualities = result.stream_qualities 
+      ? JSON.parse(result.stream_qualities) 
+      : {};
+    
+    return {
+      success: true,
+      data: {
+        ...formatVideoForApi(result),
+        streamUrl,
+        streamBackupUrls,
+        streamQualities,
+        tags
+      }
+    };
+  } catch (error) {
+    console.error('getVideoDetail error:', error);
+    return { success: false, error: error.message };
+  }
+}
+
+/**
+ * 搜索视频
+ */
+async function searchVideos(env, keyword) {
+  return getVideoList(env, { search: keyword, limit: 50 });
+}
+
+/**
+ * 获取热门视频
+ */
+async function getHotVideos(env, limit = 10) {
+  try {
+    const stmt = env.DB.prepare(`
+      SELECT id, title, description, duration, views, cover_url, 
+             category, author_name, scraped_at, view_count
+      FROM videos
+      ORDER BY view_count DESC
+      LIMIT ?
+    `);
+    
+    const result = await stmt.bind(limit.toString()).all();
+    
+    return {
+      success: true,
+      data: {
+        videos: result.results.map(formatVideoForApi)
+      }
+    };
+  } catch (error) {
+    console.error('getHotVideos error:', error);
+    return { success: false, error: error.message };
+  }
+}
+
+/**
+ * 获取所有分类
+ */
+async function getCategories(env) {
+  try {
+    const result = await env.DB.prepare(`
+      SELECT c.*, COUNT(v.id) as video_count
+      FROM categories c
+      LEFT JOIN videos v ON v.category = c.slug
+      GROUP BY c.slug
+      ORDER BY video_count DESC
+    `).all();
+    
+    return {
+      success: true,
+      data: {
+        categories: result.results.map(cat => ({
+          slug: cat.slug,
+          name: cat.name,
+          description: cat.description,
+          videoCount: cat.video_count || 0
+        }))
+      }
+    };
+  } catch (error) {
+    console.error('getCategories error:', error);
+    return { success: false, error: error.message };
+  }
+}
+
+/**
+ * 获取统计信息
+ */
+async function getStats(env) {
+  try {
+    const totalResult = await env.DB.prepare('SELECT COUNT(*) as total FROM videos').first();
+    const viewResult = await env.DB.prepare('SELECT SUM(view_count) as total FROM videos').first();
+    const categoryResult = await env.DB.prepare('SELECT COUNT(DISTINCT category) as total FROM videos').first();
+    
+    return {
+      success: true,
+      data: {
+        totalVideos: totalResult?.total || 0,
+        totalViews: viewResult?.total || 0,
+        totalCategories: categoryResult?.total || 0
+      }
+    };
+  } catch (error) {
+    console.error('getStats error:', error);
+    return { success: false, error: error.message };
+  }
+}
+
+/**
+ * 保存视频到数据库
+ */
+async function saveVideo(env, video) {
+  try {
+    const existing = await env.DB.prepare(
+      'SELECT id FROM videos WHERE id = ?'
+    ).bind(video.id).first();
+    
+    const now = new Date().toISOString();
+    
+    if (existing) {
+      await env.DB.prepare(`
+        UPDATE videos SET
+          title = ?, description = ?, duration = ?, views = ?,
+          cover_url = ?, category = ?, author_name = ?, author_avatar_url = ?,
+          tags = ?, stream_primary_url = ?, stream_backup_urls = ?,
+          stream_qualities = ?, updated_at = ?
+        WHERE id = ?
+      `).bind(
+        video.title, video.description || null, video.duration || null, video.views || null,
+        video.coverUrl || null, video.category || 'uncategorized',
+        video.author?.name || null, video.author?.avatarUrl || null,
+        JSON.stringify(video.tags || []),
+        video.streamUrls?.primary || null,
+        JSON.stringify(video.streamUrls?.backups || []),
+        JSON.stringify(video.streamUrls?.qualities || {}),
+        now, video.id
+      ).run();
+      
+      return { success: true, action: 'updated', id: video.id };
+    } else {
+      await env.DB.prepare(`
+        INSERT INTO videos (
+          id, title, description, duration, views, publish_date,
+          cover_url, thumbnail_url, source_url, category,
+          author_name, author_avatar_url, tags,
+          stream_primary_url, stream_backup_urls, stream_qualities,
+          scraped_at, updated_at, view_count
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)
+      `).bind(
+        video.id, video.title, video.description || null, video.duration || null,
+        video.views || null, video.publishDate || null,
+        video.coverUrl || null, video.thumbnailUrl || null,
+        video.sourceUrl || null, video.category || 'uncategorized',
+        video.author?.name || null, video.author?.avatarUrl || null,
+        JSON.stringify(video.tags || []),
+        video.streamUrls?.primary || null,
+        JSON.stringify(video.streamUrls?.backups || []),
+        JSON.stringify(video.streamUrls?.qualities || {}),
+        now, now
+      ).run();
+      
+      return { success: true, action: 'created', id: video.id };
+    }
+  } catch (error) {
+    console.error('saveVideo error:', error);
+    return { success: false, error: error.message, id: video.id };
+  }
+}
+
+/**
+ * 批量保存视频
+ */
+async function saveVideosBatch(env, videos) {
+  const results = { success: true, saved: 0, failed: 0, errors: [] };
+  
+  for (const video of videos) {
+    const result = await saveVideo(env, video);
+    if (result.success) {
+      results.saved++;
+    } else {
+      results.failed++;
+      results.errors.push(`${video.id}: ${result.error}`);
+    }
+  }
+  
+  return results;
+}
+
+/**
+ * 格式化视频数据用于 API 输出
+ */
+function formatVideoForApi(video) {
+  return {
+    id: video.id,
+    title: video.title,
+    description: video.description,
+    duration: video.duration,
+    views: video.views,
+    publishDate: video.publish_date,
+    coverUrl: video.cover_url,
+    category: video.category,
+    categoryName: video.category_name,
+    authorName: video.author_name,
+    tags: video.tags ? JSON.parse(video.tags) : [],
+    scrapedAt: video.scraped_at,
+    viewCount: video.view_count
+  };
+}
+
+// ============= 视频代理功能 =============
+
+/**
+ * 从 URL 中提取视频 ID
+ */
+function extractVideoId(pathname) {
+  const match = pathname.match(/\/([a-zA-Z0-9_-]+)\.m3u8$/);
+  if (match) {
+    return match[1];
+  }
+  return null;
+}
+
+/**
+ * 重写 m3u8 文件中的分片 URL
+ */
+function rewriteManifestUrls(manifest, videoId) {
+  let rewritten = manifest;
+  
+  rewritten = rewritten.replace(
+    /^(?!#)([^"\s]*(?:\.ts))/gm,
+    `https://${ORIGIN_DOMAIN}/videos/${videoId}/$1`
+  );
+  
+  rewritten = rewritten.replace(
+    /^(?!#)([^"\s]*(?:\.m3u8))/gm,
+    `https://${ORIGIN_DOMAIN}/videos/${videoId}/$1`
+  );
+  
+  rewritten = rewritten.replace(
+    /^(?!#)([^"\s]*(?:\.key))/gm,
+    `https://${ORIGIN_DOMAIN}/videos/${videoId}/$1`
+  );
+  
+  rewritten = rewritten.replace(
+    /^(?!#)([^"\s]*(?:\.vtt|\.srt))/gm,
+    `https://${ORIGIN_DOMAIN}/videos/${videoId}/$1`
+  );
+  
+  return rewritten;
+}
+
+/**
+ * 获取 Range 头
+ */
+function getRangeHeader(request) {
+  return request.headers.get('Range');
+}
+
+/**
+ * 解析 Range 头
+ */
+function parseRange(range) {
+  if (!range) return null;
+  
+  const match = range.match(/^bytes=(\d+)-(\d*)$/);
+  if (match) {
+    return {
+      start: parseInt(match[1], 10),
+      end: match[2] ? parseInt(match[2], 10) : undefined
+    };
+  }
+  return null;
+}
+
+/**
+ * 构建发送给 jable.tv 的请求头
+ */
+function buildOriginHeaders(request) {
+  const headers = {
+    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+    'Accept': '*/*',
+    'Accept-Language': 'en-US,en;q=0.9',
+    'Referer': `https://${ORIGIN_DOMAIN}/`,
+    'Origin': `https://${ORIGIN_DOMAIN}`,
+  };
+  
+  const range = getRangeHeader(request);
+  if (range) {
+    headers['Range'] = range;
+  }
+  
+  const copyHeaders = ['Cookie', 'Accept-Encoding'];
+  for (const header of copyHeaders) {
+    if (request.headers.has(header)) {
+      headers[header] = request.headers.get(header);
+    }
+  }
+  
+  return headers;
+}
+
+/**
+ * 处理 Range 请求
+ */
+async function handleRangeRequest(request, originResponse, videoId, segmentPath) {
+  const range = getRangeHeader(request);
+  if (!range) {
+    return originResponse;
+  }
+  
+  const parsedRange = parseRange(range);
+  if (!parsedRange) {
+    return new Response('Invalid Range header', {
+      status: 416,
+      headers: {
+        'Content-Type': 'text/plain',
+        'Access-Control-Allow-Origin': '*',
+        'Accept-Ranges': 'bytes'
+      }
+    });
+  }
+  
+  const originUrl = `https://${ORIGIN_DOMAIN}/videos/${videoId}/${segmentPath}`;
+  const originReq = await fetch(originUrl, {
+    headers: buildOriginHeaders(request)
+  });
+  
+  if (!originReq.ok) {
+    return new Response('Failed to fetch segment', {
+      status: originReq.status,
+      headers: {
+        'Content-Type': 'text/plain',
+        'Access-Control-Allow-Origin': '*',
+      }
+    });
+  }
+  
+  const contentLength = originReq.headers.get('Content-Length');
+  const totalSize = parseInt(contentLength || '0', 10);
+  
+  let start = parsedRange.start;
+  let end = parsedRange.end !== undefined ? parsedRange.end : totalSize - 1;
+  
+  if (start >= totalSize) {
+    return new Response('Range Not Satisfiable', {
+      status: 416,
+      headers: {
+        'Content-Range': `bytes */${totalSize}`,
+        'Access-Control-Allow-Origin': '*',
+        'Accept-Ranges': 'bytes'
+      }
+    });
+  }
+  
+  if (end >= totalSize) {
+    end = totalSize - 1;
+  }
+  
+  const rangeUrl = `${originUrl}?range=bytes=${start}-${end}`;
+  const rangeReq = await fetch(rangeUrl, {
+    headers: {
+      ...buildOriginHeaders(request),
+      'Range': `bytes=${start}-${end}`
+    }
+  });
+  
+  const rangeData = await rangeReq.arrayBuffer();
+  const contentRange = `bytes ${start}-${end}/${totalSize}`;
+  
+  return new Response(rangeData, {
+    status: 206,
+    headers: {
+      'Content-Type': 'video/mp2t',
+      'Content-Length': rangeData.byteLength.toString(),
+      'Content-Range': contentRange,
+      'Accept-Ranges': 'bytes',
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Expose-Headers': 'Content-Length, Content-Range'
+    }
+  });
+}
+
+/**
+ * 处理 .ts 分片请求（使用缓存）
+ */
+async function handleSegmentRequest(request, videoId, segmentPath) {
+  // 尝试从缓存获取
+  const cached = await getFromCache('ts', request);
+  if (cached) {
+    cached.headers.set('X-Cache-Status', 'HIT');
+    return cached;
+  }
+  
+  const originUrl = `https://${ORIGIN_DOMAIN}/videos/${videoId}/${segmentPath}`;
+  
+  try {
+    const originResponse = await fetch(originUrl, {
+      method: 'GET',
+      headers: buildOriginHeaders(request)
+    });
+    
+    if (!originResponse.ok) {
+      return new Response(`Segment not found: ${originResponse.status}`, {
+        status: originResponse.status,
+        headers: {
+          'Content-Type': 'text/plain',
+          'Access-Control-Allow-Origin': '*',
+        }
+      });
+    }
+    
+    const range = getRangeHeader(request);
+    if (range) {
+      return handleRangeRequest(request, originResponse, videoId, segmentPath);
+    }
+    
+    // 创建可缓存的响应
+    const response = new Response(originResponse.body, {
+      status: originResponse.status,
+      headers: {
+        'Content-Type': 'video/mp2t',
+        'Content-Length': originResponse.headers.get('Content-Length') || '',
+        'Accept-Ranges': 'bytes',
+        'Access-Control-Allow-Origin': '*',
+      }
+    });
+    
+    // 异步保存到缓存
+    saveToCache('ts', request, response);
+    
+    return response;
+  } catch (error) {
+    return new Response(`Error fetching segment: ${error.message}`, {
+      status: 500,
+      headers: {
+        'Content-Type': 'text/plain',
+        'Access-Control-Allow-Origin': '*',
+      }
+    });
+  }
+}
+
+/**
+ * 处理 .m3u8 播放列表请求（短期缓存）
+ */
+async function handleM3u8Request(request, videoId) {
+  // 尝试从缓存获取
+  const cached = await getFromCache('m3u8', request);
+  if (cached) {
+    cached.headers.set('X-Cache-Status', 'HIT');
+    return cached;
+  }
+  
+  const originUrl = `https://${ORIGIN_DOMAIN}/videos/${videoId}/index.m3u8`;
+  
+  try {
+    const originResponse = await fetch(originUrl, {
+      method: 'GET',
+      headers: buildOriginHeaders(request)
+    });
+    
+    if (!originResponse.ok) {
+      return new Response(`Failed to fetch m3u8: ${originResponse.status}`, {
+        status: originResponse.status,
+        headers: {
+          'Content-Type': 'text/plain',
+          'Access-Control-Allow-Origin': '*',
+        }
+      });
+    }
+    
+    const manifest = await originResponse.text();
+    const rewrittenManifest = rewriteManifestUrls(manifest, videoId);
+    
+    const response = new Response(rewrittenManifest, {
+      status: 200,
+      headers: {
+        'Content-Type': 'application/vnd.apple.mpegurl',
+        'Content-Length': Buffer.byteLength(rewrittenManifest),
+        'Access-Control-Allow-Origin': '*',
+      }
+    });
+    
+    // 异步保存到缓存
+    saveToCache('m3u8', request, response);
+    
+    return response;
+  } catch (error) {
+    return new Response(`Error fetching m3u8: ${error.message}`, {
+      status: 500,
+      headers: {
+        'Content-Type': 'text/plain',
+        'Access-Control-Allow-Origin': '*',
+      }
+    });
+  }
+}
+
+/**
+ * 处理请求路由
+ */
+async function handleRequest(request, env) {
+  const url = new URL(request.url);
+  const pathname = url.pathname;
+  
+  // API 路由
+  if (pathname.startsWith('/api/')) {
+    return handleApiRequest(request, env);
+  }
+  
+  // 提取视频 ID
+  const videoId = extractVideoId(pathname);
+  
+  if (!videoId) {
+    return new Response('Invalid video ID', {
+      status: 400,
+      headers: {
+        'Content-Type': 'text/plain',
+        'Access-Control-Allow-Origin': '*',
+      }
+    });
+  }
+  
+  // 处理 .ts 分片请求
+  if (pathname.endsWith('.ts')) {
+    const segmentMatch = pathname.match(/\/videos\/[^\/]+\/(.+)$/);
+    const segmentPath = segmentMatch ? segmentMatch[1] : pathname;
+    return handleSegmentRequest(request, videoId, segmentPath);
+  }
+  
+  // 处理 .m3u8 播放列表请求
+  if (pathname.endsWith('.m3u8')) {
+    return handleM3u8Request(request, videoId);
+  }
+  
+  // 其他文件请求
+  if (pathname.match(/\.(key|vtt|srt)$/)) {
+    const segmentMatch = pathname.match(/\/videos\/[^\/]+\/(.+)$/);
+    const segmentPath = segmentMatch ? segmentMatch[1] : pathname;
+    return handleSegmentRequest(request, videoId, segmentPath);
+  }
+  
+  return new Response('Not Found', {
+    status: 404,
+    headers: {
+      'Content-Type': 'text/plain',
+      'Access-Control-Allow-Origin': '*',
+    }
+  });
+}
+
+/**
+ * 处理 API 请求
+ */
+async function handleApiRequest(request, env) {
+  const url = new URL(request.url);
+  const pathname = url.pathname;
+  
+  const corsHeaders = {
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
+    'Content-Type': 'application/json'
+  };
+  
+  if (request.method === 'OPTIONS') {
+    return new Response(null, {
+      status: 204,
+      headers: corsHeaders
+    });
+  }
+  
+  // POST: 保存视频
+  if (request.method === 'POST' && pathname === '/api/admin/save-video') {
+    try {
+      const video = await request.json();
+      
+      if (!video || !video.id) {
+        return new Response(JSON.stringify({ 
+          success: false, 
+          error: 'Invalid video data: missing id' 
+        }), {
+          status: 400,
+          headers: corsHeaders
+        });
+      }
+      
+      const result = await saveVideo(env, video);
+      return new Response(JSON.stringify(result), {
+        headers: corsHeaders
+      });
+    } catch (error) {
+      console.error('save-video API error:', error);
+      return new Response(JSON.stringify({ 
+        success: false, 
+        error: error.message 
+      }), {
+        status: 500,
+        headers: corsHeaders
+      });
+    }
+  }
+  
+  // POST: 批量保存视频
+  if (request.method === 'POST' && pathname === '/api/admin/save-videos') {
+    try {
+      const { videos } = await request.json();
+      
+      if (!Array.isArray(videos) || videos.length === 0) {
+        return new Response(JSON.stringify({ 
+          success: false, 
+          error: 'Invalid videos data' 
+        }), {
+          status: 400,
+          headers: corsHeaders
+        });
+      }
+      
+      const result = await saveVideosBatch(env, videos);
+      return new Response(JSON.stringify(result), {
+        headers: corsHeaders
+      });
+    } catch (error) {
+      console.error('save-videos API error:', error);
+      return new Response(JSON.stringify({ 
+        success: false, 
+        error: error.message 
+      }), {
+        status: 500,
+        headers: corsHeaders
+      });
+    }
+  }
+  
+  // 只允许 GET 请求
+  if (request.method !== 'GET') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
+      status: 405,
+      headers: corsHeaders
+    });
+  }
+  
+  try {
+    const page = parseInt(url.searchParams.get('page') || '1');
+    const limit = parseInt(url.searchParams.get('limit') || '20');
+    const category = url.searchParams.get('category');
+    const search = url.searchParams.get('search');
+    
+    // API 路由匹配
+    if (pathname === '/api/videos') {
+      const result = await getVideoList(env, { page, limit, category, search });
+      return new Response(JSON.stringify(result), {
+        headers: corsHeaders
+      });
+    }
+    
+    if (pathname.startsWith('/api/videos/')) {
+      const videoId = pathname.split('/').pop();
+      const result = await getVideoDetail(env, videoId);
+      return new Response(JSON.stringify(result), {
+        headers: corsHeaders
+      });
+    }
+    
+    if (pathname === '/api/search') {
+      const keyword = url.searchParams.get('q') || url.searchParams.get('keyword');
+      if (!keyword) {
+        return new Response(JSON.stringify({ 
+          success: false, 
+          error: 'Missing keyword' 
+        }), {
+          status: 400,
+          headers: corsHeaders
+        });
+      }
+      const result = await searchVideos(env, keyword);
+      return new Response(JSON.stringify(result), {
+        headers: corsHeaders
+      });
+    }
+    
+    if (pathname === '/api/hot') {
+      const result = await getHotVideos(env, limit);
+      return new Response(JSON.stringify(result), {
+        headers: corsHeaders
+      });
+    }
+    
+    if (pathname === '/api/categories') {
+      const result = await getCategories(env);
+      return new Response(JSON.stringify(result), {
+        headers: corsHeaders
+      });
+    }
+    
+    if (pathname === '/api/stats') {
+      const result = await getStats(env);
+      return new Response(JSON.stringify(result), {
+        headers: corsHeaders
+      });
+    }
+    
+    // 未知 API
+    return new Response(JSON.stringify({ error: 'API not found' }), {
+      status: 404,
+      headers: corsHeaders
+    });
+    
+  } catch (error) {
+    console.error('API error:', error);
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+      headers: corsHeaders
+    });
+  }
+}
+
+// ============= 主入口 =============
+
+export default {
+  async fetch(request, env) {
+    if (request.method === 'OPTIONS') {
+      return new Response(null, {
+        status: 204,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, OPTIONS',
+          'Access-Control-Allow-Headers': 'Range, Content-Type',
+          'Access-Control-Max-Age': '86400',
+        }
+      });
+    }
+    
+    if (request.method !== 'GET' && !request.url.includes('/api/admin')) {
+      return new Response('Method not allowed', {
+        status: 405,
+        headers: {
+          'Content-Type': 'text/plain',
+          'Access-Control-Allow-Origin': '*',
+        }
+      });
+    }
+    
+    try {
+      return await handleRequest(request, env);
+    } catch (error) {
+      console.error(`Worker error: ${error.message}`);
+      return new Response(JSON.stringify({ error: error.message }), {
+        status: 500,
+        headers: {
+          'Content-Type': 'application/json',
+          'Access-Control-Allow-Origin': '*',
+        }
+      });
+    }
+  }
+};

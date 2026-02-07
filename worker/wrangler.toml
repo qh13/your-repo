@@ -1,0 +1,15 @@
+name = "jable-video-proxy"
+main = "src/index.js"
+compatibility_date = "2024-01-01"
+
+# 使用 Cloudflare 免费 workers.dev 子域名
+workers_dev = true
+
+[vars]
+ORIGIN_DOMAIN = "jable.tv"
+
+# D1 数据库配置
+[[d1_databases]]
+binding = "DB"
+database_name = "jable-videos"
+database_id = "640ca570-785d-438d-b649-619e4c15266d"

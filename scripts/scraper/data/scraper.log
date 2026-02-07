@@ -1,0 +1,19 @@
+{"timestamp":"2026-02-04T00:53:02.543Z","level":"ERROR","message":"Failed to scrape video dldss-460","data":"page.waitForSelector: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator('.video-container, .player-wrapper') to be visible\n"}
+[2026-02-06T02:28:42.432Z] [INFO] Initializing browser... 
+[2026-02-06T02:28:43.058Z] [INFO] Browser initialized 
+[2026-02-06T02:28:43.058Z] [INFO] Scraping video detail: dldss-460 
+[2026-02-06T02:28:46.706Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/94KqMcajlzKW_ZVL6l-iqQ/1770355712/56000/56644/56644.m3u8"}
+[2026-02-06T02:28:53.055Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/202927992/master/202927992.m3u8"}
+[2026-02-06T02:28:54.062Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/202927992/202927992.m3u8"}
+[2026-02-06T02:28:56.326Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/202927992/202927992.m3u8"}
+[2026-02-06T02:28:58.584Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/202927992/202927992.m3u8"}
+[2026-02-06T02:29:00.841Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/202927992/202927992.m3u8"}
+[2026-02-06T02:29:03.263Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/202927992/202927992.m3u8"}
+[2026-02-06T02:29:05.534Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/202927992/202927992.m3u8"}
+[2026-02-06T02:29:07.791Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/202927992/202927992.m3u8"}
+[2026-02-06T02:29:10.060Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/202927992/202927992.m3u8"}
+[2026-02-06T02:29:12.320Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/202927992/202927992.m3u8"}
+[2026-02-06T02:29:14.326Z] [INFO] Video detail scraped:  {"id":"dldss-460"}
+[2026-02-06T02:29:14.327Z] [INFO] Saved 1 videos to disk 
+[2026-02-06T02:29:14.328Z] [INFO] Saved 0 categories to disk 
+[2026-02-06T02:29:14.356Z] [INFO] Browser closed 
