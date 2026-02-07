@@ -71,7 +71,7 @@ git push -u origin main
    └─────────────────────────────────────────┘
    ```
 
-4. **配置构建设置**
+4. **配置构建设置**（已修复 Root directory 问题）
 
    ```
    Project setup
