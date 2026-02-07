@@ -3,15 +3,12 @@
  */
 
 // 检测是否为开发环境
-const isDevelopment = process.env.NODE_ENV === 'development' || 
+const isDevelopment = process.env.NODE_ENV === 'development' ||
                       process.env.VERCEL_ENV === 'development' ||
                       !process.env.VERCEL_ENV;
 
 // Worker 代理地址 - 已部署到 Cloudflare Workers
 // 注意：中国大陆可能无法访问 workers.dev，需要使用自定义域名
-const isDevelopment = process.env.NODE_ENV === 'development' || 
-                      process.env.VERCEL_ENV === 'development' ||
-                      !process.env.VERCEL_ENV;
 
 // 使用自定义域名（如果已配置），否则回退到 workers.dev
 export const WORKER_URL = isDevelopment 
