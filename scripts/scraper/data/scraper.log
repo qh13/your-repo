@@ -124,3 +124,87 @@
 [2026-02-07T12:41:44.612Z] [INFO] Saved 1 videos to disk 
 [2026-02-07T12:41:44.612Z] [INFO] Saved 0 categories to disk 
 [2026-02-07T12:41:44.642Z] [INFO] Browser closed 
+[2026-02-08T02:31:28.460Z] [INFO] Loaded 1 videos from disk 
+[2026-02-08T02:31:28.461Z] [INFO] Loaded 0 categories from disk 
+[2026-02-08T02:31:28.461Z] [INFO] Initializing browser... 
+[2026-02-08T02:31:29.011Z] [INFO] Browser initialized 
+[2026-02-08T02:31:29.011Z] [INFO] Scraping video detail: dldss-460 
+[2026-02-08T02:31:32.723Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/32OuP6RBhsNe4byWPnbtsw/1770528112/56000/56644/56644.m3u8"}
+[2026-02-08T02:31:38.456Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/68330290/master/68330290_240p.m3u8"}
+[2026-02-08T02:31:39.968Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:31:40.703Z] [DEBUG] Found m3u8 URL {"url":"https://edge7-lax.live.mmcdn.com/live-hls/amlst:jseductiveart-sd-e2e90ae7ccca5adb611d989615359f2a04f263d2ffc1377d24c43550f23ce07e_trns_h264/playlist.m3u8"}
+[2026-02-08T02:31:40.958Z] [DEBUG] Found m3u8 URL {"url":"https://edge7-lax.live.mmcdn.com/live-hls/amlst:jseductiveart-sd-e2e90ae7ccca5adb611d989615359f2a04f263d2ffc1377d24c43550f23ce07e_trns_h264/chunklist_w1526287534_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-08T02:31:42.397Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:31:44.656Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:31:46.918Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:31:49.296Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:31:51.550Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:31:53.807Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:31:56.245Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:31:59.013Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://jable.tv/videos/dldss-460/\", waiting until \"networkidle\"\u001b[22m\n"}
+[2026-02-08T02:32:00.498Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:32:02.753Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:32:05.815Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/32OuP6RBhsNe4byWPnbtsw/1770528112/56000/56644/56644.m3u8"}
+[2026-02-08T02:32:11.353Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/68330290/master/68330290_240p.m3u8"}
+[2026-02-08T02:32:12.301Z] [DEBUG] Found m3u8 URL {"url":"https://edge17-phx.live.mmcdn.com/live-hls/amlst:nicdani_1-sd-61226e9007e737c55f7479d61f49f65cd43befcad95cd39e1817acd1a912552b_trns_h264/playlist.m3u8"}
+[2026-02-08T02:32:12.310Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:32:12.772Z] [DEBUG] Found m3u8 URL {"url":"https://edge17-phx.live.mmcdn.com/live-hls/amlst:nicdani_1-sd-61226e9007e737c55f7479d61f49f65cd43befcad95cd39e1817acd1a912552b_trns_h264/chunklist_w658744318_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-08T02:32:14.547Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:32:16.784Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:32:19.038Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:32:21.433Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:32:23.715Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:32:25.984Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:32:28.332Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:32:30.336Z] [INFO] Video detail scraped: DLDSS-460 発射しても勃起し続ける甥っ子の絶倫チ〇ポに汗だくで跨り続けた欲求不満の人妻 角奈保 {"id":"dldss-460"}
+[2026-02-08T02:32:30.338Z] [INFO] Saved 1 videos to disk 
+[2026-02-08T02:32:30.338Z] [INFO] Saved 0 categories to disk 
+[2026-02-08T02:32:30.374Z] [INFO] Browser closed 
+[2026-02-08T02:39:08.371Z] [INFO] Loaded 1 videos from disk 
+[2026-02-08T02:39:08.372Z] [INFO] Loaded 0 categories from disk 
+[2026-02-08T02:39:08.372Z] [INFO] Initializing browser... 
+[2026-02-08T02:39:08.926Z] [INFO] Browser initialized 
+[2026-02-08T02:39:08.926Z] [INFO] Scraping video detail: ipzz-001 
+[2026-02-08T02:39:12.623Z] [DEBUG] Found m3u8 URL {"url":"https://fuaf-uying.mushroomtrack.com/hls/U9q8IqHNY83ew1768zczDA/1770528807/31000/31505/31505.m3u8"}
+[2026-02-08T02:39:18.845Z] [DEBUG] Found m3u8 URL {"url":"https://edge34-phx.live.mmcdn.com/live-hls/amlst:effylowell_-sd-77c7e695c074acac0340e4e76c756349739bfd4b98daf2de7ad7bba2613cd18d_trns_h264/playlist.m3u8"}
+[2026-02-08T02:39:19.026Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/68330290/master/68330290_240p.m3u8"}
+[2026-02-08T02:39:19.094Z] [DEBUG] Found m3u8 URL {"url":"https://edge34-phx.live.mmcdn.com/live-hls/amlst:effylowell_-sd-77c7e695c074acac0340e4e76c756349739bfd4b98daf2de7ad7bba2613cd18d_trns_h264/chunklist_w1469536797_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-08T02:39:19.946Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:22.247Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:26.490Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:30.734Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:32.972Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:35.227Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:37.465Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:38.930Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n  - navigating to \"https://jable.tv/videos/ipzz-001/\", waiting until \"networkidle\"\n"}
+[2026-02-08T02:39:39.732Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:42.043Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:44.922Z] [DEBUG] Found m3u8 URL {"url":"https://fuaf-uying.mushroomtrack.com/hls/U9q8IqHNY83ew1768zczDA/1770528807/31000/31505/31505.m3u8"}
+[2026-02-08T02:39:51.696Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/68330290/master/68330290_240p.m3u8"}
+[2026-02-08T02:39:52.616Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:54.851Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:57.218Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:39:59.457Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:40:01.715Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:40:04.953Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:40:08.348Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:40:10.585Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:40:12.831Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:40:15.226Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:40:17.523Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:40:19.851Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:40:22.227Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:40:24.462Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/68330290/68330290_240p.m3u8"}
+[2026-02-08T02:40:26.467Z] [INFO] Video detail scraped: IPZZ-001 接受因無性生活而慾求不滿的超商打工人妻翼的誘惑的短時幽會 天海翼 {"id":"ipzz-001"}
+[2026-02-08T02:40:26.469Z] [INFO] Saved 2 videos to disk 
+[2026-02-08T02:40:26.469Z] [INFO] Saved 0 categories to disk 
+[2026-02-08T02:40:26.515Z] [INFO] Browser closed 
+[2026-02-08T02:43:29.105Z] [INFO] Loaded 2 videos from disk 
+[2026-02-08T02:43:29.106Z] [INFO] Loaded 0 categories from disk 
+[2026-02-08T02:43:29.106Z] [INFO] Initializing browser... 
+[2026-02-08T02:43:29.615Z] [INFO] Browser initialized 
+[2026-02-08T02:43:29.616Z] [INFO] Starting to scrape category: /recent/ 
+[2026-02-08T02:43:29.616Z] [INFO] Scraping video list: https://jable.tv/recent/page/1/ 
+[2026-02-08T02:43:41.384Z] [INFO] Found 0 videos on page 1 
+[2026-02-08T02:43:41.384Z] [INFO] Finished scraping category: /recent/, found 0 videos 
+[2026-02-08T02:43:41.415Z] [INFO] Browser closed 

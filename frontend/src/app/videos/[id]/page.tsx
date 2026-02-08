@@ -40,8 +40,8 @@ async function getVideoDetail(id: string): Promise<VideoDetailResponse | null> {
 
 // 为静态导出生成视频页面参数
 export async function generateStaticParams() {
-  // 预生成一些测试视频页面
-  const testIds = ['test-001', 'test-002', 'test-003', 'test-004', 'dldss-460'];
+  // 预生成测试视频页面（包括新的真实视频）
+  const testIds = ['test-001', 'test-002', 'ipzz-777', 'ipzz-778', 'ipzz-776', 'fns-055', 'ipzz-782', 'demo-001'];
   return testIds.map((id) => ({ id }));
 }
 

@@ -200,7 +200,16 @@ async function getVideoDetail(env, videoId) {
       UPDATE videos SET view_count = view_count + 1 WHERE id = ?
     `).bind(videoId).run();
     
-    const streamUrl = `${WORKER_URL}/${videoId}.m3u8`;
+    // 使用数据库中的原始 stream_url，如果存在且是外部 URL
+    let streamUrl;
+    if (result.stream_primary_url && result.stream_primary_url.startsWith('http')) {
+      // 外部 URL，直接使用
+      streamUrl = result.stream_primary_url;
+    } else {
+      // 代理 URL
+      streamUrl = `${WORKER_URL}/${videoId}.m3u8`;
+    }
+    
     const tags = result.tags ? JSON.parse(result.tags) : [];
     const streamBackupUrls = result.stream_backup_urls 
       ? JSON.parse(result.stream_backup_urls) 
