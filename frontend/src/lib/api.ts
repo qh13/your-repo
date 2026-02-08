@@ -2,22 +2,13 @@
  * API 配置
  */
 
-const isDevelopment = process.env.NODE_ENV === 'development' ||
-                      process.env.VERCEL_ENV === 'development' ||
-                      !process.env.VERCEL_ENV;
-
-// Worker 代理地址
-export const WORKER_URL = isDevelopment 
-  ? process.env.NEXT_PUBLIC_WORKER_URL || 'http://localhost:3000'
-  : (process.env.NEXT_PUBLIC_WORKER_URL || 'https://api.sexxyvideo.dpdns.org');
+// Worker 代理地址 - 优先使用环境变量，否则使用部署的 worker
+export const WORKER_URL = process.env.NEXT_PUBLIC_WORKER_URL || 'https://jable-video-proxy.qh13.workers.dev';
 
 export const API_BASE_URL = `${WORKER_URL}/api`;
 
 // 构建视频 m3u8 URL
 export function getVideoM3u8Url(videoId: string): string {
-  if (isDevelopment && !process.env.NEXT_PUBLIC_USE_WORKER) {
-    return `${WORKER_URL}/api/videos/${videoId}/stream`;
-  }
   return `${WORKER_URL}/${videoId}.m3u8`;
 }
 

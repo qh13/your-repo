@@ -14,6 +14,12 @@ const categoryNames: Record<string, string> = {
   'uncategorized': '📁 未分类'
 };
 
+export async function generateStaticParams() {
+  // 为所有已知分类生成静态页面
+  const categories = ['recent', 'top', 'models', 'uncategorized'];
+  return categories.map((slug) => ({ slug }));
+}
+
 export async function generateMetadata({ params }: CategoryPageProps) {
   const resolvedParams = await params;
   const title = categoryNames[resolvedParams.slug] || resolvedParams.slug;

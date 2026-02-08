@@ -1,8 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // 使用完全静态导出以兼容 Cloudflare Pages
+  output: 'export',
+  trailingSlash: true,
   images: {
-    unoptimized: true,  // Cloudflare Pages 支持图片优化
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -15,6 +18,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'via.placeholder.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
       },
     ],
   },

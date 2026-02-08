@@ -38,6 +38,13 @@ async function getVideoDetail(id: string): Promise<VideoDetailResponse | null> {
   }
 }
 
+// 为静态导出生成视频页面参数
+export async function generateStaticParams() {
+  // 预生成一些测试视频页面
+  const testIds = ['test-001', 'test-002', 'test-003', 'test-004', 'dldss-460'];
+  return testIds.map((id) => ({ id }));
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;
   const response = await getVideoDetail(id);
