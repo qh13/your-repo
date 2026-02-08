@@ -63,10 +63,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 export default async function VideoPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const response = await getVideoDetail(id);
-  const video = response?.data;
 
-  // 视频不存在时返回 null，让 not-found.tsx 处理
-  if (!response?.success) {
+  // 视频不存在时返回友好的错误页面
+  if (!response || !response.success || !response.data) {
     return (
       <div style={{ 
         display: 'flex', 
@@ -96,6 +95,8 @@ export default async function VideoPage({ params }: { params: Promise<{ id: stri
       </div>
     );
   }
+
+  const video = response.data;
 
   return (
     <div>
