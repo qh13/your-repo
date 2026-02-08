@@ -65,23 +65,37 @@ export default async function VideoPage({ params }: { params: Promise<{ id: stri
   const response = await getVideoDetail(id);
   const video = response?.data;
 
-  // 备用数据
-  const fallbackVideo = {
-    id,
-    title: `视频详情 - ${id}`,
-    description: '视频描述加载中...',
-    duration: '--:--',
-    views: '0',
-    publishDate: new Date().toISOString().split('T')[0],
-    coverUrl: `https://picsum.photos/seed/${id}/1280/720`,
-    category: 'unknown',
-    categoryName: '未知分类',
-    authorName: '未知作者',
-    tags: [],
-    streamUrl: '',
-  };
-
-  const v = video || fallbackVideo;
+  // 视频不存在时返回 null，让 not-found.tsx 处理
+  if (!response?.success) {
+    return (
+      <div style={{ 
+        display: 'flex', 
+        flexDirection: 'column', 
+        alignItems: 'center', 
+        justifyContent: 'center',
+        minHeight: '60vh',
+        textAlign: 'center',
+        padding: '20px'
+      }}>
+        <h1 style={{ fontSize: '2rem', marginBottom: '16px' }}>视频未找到</h1>
+        <p style={{ color: 'var(--text-secondary)', marginBottom: '24px' }}>
+          抱歉，视频 {id} 不存在或已被移除。
+        </p>
+        <Link 
+          href="/" 
+          style={{
+            padding: '10px 24px',
+            background: 'var(--primary-color)',
+            color: '#fff',
+            borderRadius: '8px',
+            textDecoration: 'none'
+          }}
+        >
+          返回首页
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div>
@@ -89,8 +103,8 @@ export default async function VideoPage({ params }: { params: Promise<{ id: stri
 
       {/* 播放器 */}
       <div className="player-wrapper">
-        {v.streamUrl ? (
-          <DirectVideoPlayer videoId={id} streamUrl={v.streamUrl} poster={v.coverUrl} />
+        {video.streamUrl ? (
+          <DirectVideoPlayer videoId={id} streamUrl={video.streamUrl} poster={video.coverUrl} />
         ) : (
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: '#fff' }}>
             <span>视频加载中... (ID: {id})</span>
@@ -100,31 +114,31 @@ export default async function VideoPage({ params }: { params: Promise<{ id: stri
 
       {/* 视频信息 */}
       <div className="video-detail-info">
-        <h1>{v.title}</h1>
+        <h1>{video.title}</h1>
         
         <div className="video-stats">
-          <span>{v.views} 次观看</span>
-          <span>{v.duration}</span>
-          <span>{v.publishDate}</span>
+          <span>{video.views} 次观看</span>
+          <span>{video.duration}</span>
+          <span>{video.publishDate}</span>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
           <div style={{ width: 40, height: 40, borderRadius: '50%', background: 'var(--bg-hover)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.2rem' }}>
-            {v.authorName?.charAt(0) || 'U'}
+            {video.authorName?.charAt(0) || 'U'}
           </div>
           <div>
-            <div style={{ fontWeight: 500 }}>{v.authorName || '未知作者'}</div>
+            <div style={{ fontWeight: 500 }}>{video.authorName || '未知作者'}</div>
             <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>上传者</div>
           </div>
         </div>
 
-        {v.description && (
-          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8 }}>{v.description}</p>
+        {video.description && (
+          <p style={{ color: 'var(--text-secondary)', lineHeight: 1.8 }}>{video.description}</p>
         )}
 
-        {v.tags && v.tags.length > 0 && (
+        {video.tags && video.tags.length > 0 && (
           <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginTop: '16px' }}>
-            {v.tags.map((tag, i) => (
+            {video.tags.map((tag, i) => (
               <Link key={i} href={`/search?q=${encodeURIComponent(tag)}`} style={{ padding: '4px 12px', background: 'var(--bg-hover)', borderRadius: '20px', fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                 {tag}
               </Link>

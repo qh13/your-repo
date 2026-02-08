@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // 使用完全静态导出以兼容 Cloudflare Pages
-  output: 'export',
+  // 移除完全静态导出配置，支持 Cloudflare Pages SSR
+  // output: 'export',  // 注释掉以支持动态路由
   trailingSlash: true,
   images: {
     unoptimized: true,
