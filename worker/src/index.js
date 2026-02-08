@@ -1,12 +1,14 @@
 /**
- * Cloudflare Worker - jable.tv 视频代理 + D1 数据库 API v4
+ * Cloudflare Worker - jable.tv 视频代理 + D1 数据库 API v5
  *
  * 功能：
- * 1. 代理 m3u8 播放列表（短期缓存）
- * 2. 代理视频分片（长期缓存）
- * 3. Range 请求支持（视频拖拽）
- * 4. 完整的防盗链处理
- * 5. D1 数据库 API（视频 CRUD）
+ * 1. KV 缓存热点视频 URL 映射
+ * 2. 代理 m3u8 播放列表（短期缓存）
+ * 3. 代理视频分片（长期缓存）
+ * 4. Range 请求支持（视频拖拽）
+ * 5. 完整的防盗链处理
+ * 6. D1 数据库 API（视频 CRUD）
+ * 7. Workers Cron 定时任务支持
  */
 
 // 配置
@@ -29,7 +31,103 @@ const CACHE_CONFIG = {
   }
 };
 
-// ============= 缓存操作 =============
+// ============= KV 缓存操作 =============
+
+/**
+ * KV 缓存配置
+ */
+const KV_CACHE_TTL = 3600; // 1小时 - KV 缓存 TTL
+
+/**
+ * 从 KV 缓存获取视频详情
+ * @param {Object} env - 环境变量
+ * @param {string} videoId - 视频 ID
+ */
+async function getVideoFromKV(env, videoId) {
+  try {
+    const cached = await env.VIDEO_CACHE.get(`video:${videoId}`);
+    if (cached) {
+      console.log(`[KV HIT] video:${videoId}`);
+      return JSON.parse(cached);
+    }
+    console.log(`[KV MISS] video:${videoId}`);
+    return null;
+  } catch (error) {
+    console.error('[KV ERROR]', error.message);
+    return null;
+  }
+}
+
+/**
+ * 将视频详情保存到 KV 缓存
+ * @param {Object} env - 环境变量
+ * @param {string} videoId - 视频 ID
+ * @param {Object} videoData - 视频数据
+ */
+async function setVideoToKV(env, videoId, videoData) {
+  try {
+    // 只缓存热点数据的关键字段
+    const cacheData = {
+      id: videoData.id,
+      title: videoData.title,
+      coverUrl: videoData.coverUrl,
+      streamUrl: videoData.streamUrl,
+      streamPrimaryUrl: videoData.streamPrimaryUrl,
+      duration: videoData.duration,
+      authorName: videoData.authorName,
+      cachedAt: new Date().toISOString()
+    };
+    
+    await env.VIDEO_CACHE.put(
+      `video:${videoId}`,
+      JSON.stringify(cacheData),
+      { expirationTtl: KV_CACHE_TTL }
+    );
+    console.log(`[KV SET] video:${videoId}, TTL:${KV_CACHE_TTL}s`);
+  } catch (error) {
+    console.error('[KV SET ERROR]', error.message);
+  }
+}
+
+/**
+ * 批量预热 KV 缓存（从 D1 读取热门视频）
+ * @param {Object} env - 环境变量
+ */
+async function warmUpKVCache(env) {
+  try {
+    console.log('[CRON] 开始 KV 缓存预热...');
+    
+    // 获取热门视频
+    const hotVideos = await env.DB.prepare(`
+      SELECT id, title, cover_url, stream_primary_url, duration, author_name
+      FROM videos
+      ORDER BY view_count DESC
+      LIMIT 100
+    `).all();
+    
+    let cached = 0;
+    for (const video of hotVideos.results) {
+      await setVideoToKV(env, video.id, {
+        id: video.id,
+        title: video.title,
+        coverUrl: video.cover_url,
+        streamUrl: video.stream_primary_url,
+        streamPrimaryUrl: video.stream_primary_url,
+        duration: video.duration,
+        authorName: video.author_name
+      });
+      cached++;
+    }
+    
+    console.log(`[CRON] KV 缓存预热完成: ${cached} 个视频`);
+    return { success: true, cached };
+  } catch (error) {
+    console.error('[CRON] KV 缓存预热失败:', error.message);
+    return { success: false, error: error.message };
+  }
+}
+
+// ============= 数据库操作 =============
 
 /**
  * 从缓存获取响应
@@ -1119,6 +1217,9 @@ function escapeHTML(str) {
 /**
  * 处理请求路由
  */
+// 导入页面渲染模块
+const { renderHomePage, renderSearchPage, renderVideoPage } = require('./pages');
+
 async function handleRequest(request, env) {
   const url = new URL(request.url);
   const pathname = url.pathname;
@@ -1128,11 +1229,100 @@ async function handleRequest(request, env) {
     return handleApiRequest(request, env);
   }
   
-  // 视频详情页面路由
+  // 首页路由 - SSR 渲染
+  if (pathname === '/' || pathname === '/index.html') {
+    try {
+      const [videosRes, statsRes] = await Promise.all([
+        fetch(`${WORKER_URL}/api/videos?page=1&limit=24`, {
+          headers: { 'Accept': 'application/json' }
+        }),
+        fetch(`${WORKER_URL}/api/stats`, {
+          headers: { 'Accept': 'application/json' }
+        })
+      ]);
+      
+      const videosData = await videosRes.json();
+      const statsData = await statsRes.json();
+      
+      const videos = videosData.success ? videosData.data.videos : [];
+      const stats = statsData.success ? statsData.data : {};
+      
+      const html = renderHomePage(videos, stats);
+      
+      return new Response(html, {
+        status: 200,
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
+      });
+    } catch (error) {
+      console.error('Home page error:', error);
+      const html = renderHomePage([], {});
+      return new Response(html, {
+        status: 200,
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
+      });
+    }
+  }
+  
+  // 搜索页路由 - SSR 渲染
+  if (pathname === '/search') {
+    const keyword = url.searchParams.get('q') || url.searchParams.get('keyword') || '';
+    
+    try {
+      let videos = [];
+      let stats = {};
+      
+      if (keyword) {
+        const [searchRes, statsRes] = await Promise.all([
+          fetch(`${WORKER_URL}/api/search?q=${encodeURIComponent(keyword)}&limit=50`, {
+            headers: { 'Accept': 'application/json' }
+          }),
+          fetch(`${WORKER_URL}/api/stats`, {
+            headers: { 'Accept': 'application/json' }
+          })
+        ]);
+        
+        const searchData = await searchRes.json();
+        const statsData = await statsRes.json();
+        
+        videos = searchData.success ? searchData.data.videos : [];
+        stats = statsData.success ? statsData.data : {};
+      }
+      
+      const html = renderSearchPage(keyword, videos, stats);
+      
+      return new Response(html, {
+        status: 200,
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
+      });
+    } catch (error) {
+      console.error('Search page error:', error);
+      const html = renderSearchPage(keyword, [], {});
+      return new Response(html, {
+        status: 200,
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
+      });
+    }
+  }
+  
+  // 视频详情页面路由 - SSR 渲染
   const videoPageMatch = pathname.match(/^\/videos\/([^\/]+)$/);
   if (videoPageMatch) {
     const videoId = videoPageMatch[1];
-    return handleVideoPageRequest(request, videoId, env);
+    const result = await getVideoDetail(env, videoId);
+    
+    if (!result.success) {
+      const html = renderVideoPage(null, videoId, result.errorCode || 'NOT_FOUND');
+      return new Response(html, {
+        status: result.errorCode === 'NOT_FOUND' ? 404 : 500,
+        headers: { 'Content-Type': 'text/html; charset=utf-8' }
+      });
+    }
+    
+    const html = renderVideoPage(result.data, videoId);
+    return new Response(html, {
+      status: 200,
+      headers: { 'Content-Type': 'text/html; charset=utf-8' }
+    });
   }
   
   // 提取视频 ID

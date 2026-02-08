@@ -12,5 +12,17 @@
       "database_name": "jable-videos",
       "database_id": "640ca570-785d-438d-b649-619e4c15266d"
     }
-  ]
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "VIDEO_CACHE",
+      "id": "f3c1e9dfd2f0458caa33dd6556932655"
+    }
+  ],
+  "triggers": {
+    "crons": [
+      "0 * * * *",
+      "0 4 * * *"
+    ]
+  }
 }

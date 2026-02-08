@@ -5,31 +5,13 @@ compatibility_date = "2025-01-01"
 command = "npm run build"
 cwd = "frontend"
 
-pages_build_output_dir = ".next/server/app"
-functions_directory = "functions"
+# 使用纯 Worker 模式（不部署静态文件）
+pages_build_output_dir = ".worker"
 
-# Pages Functions 配置
-[[functions]]
-route = "/videos/*"
-script = "videos/[id].js"
+# 主 Worker 入口
+main = "_worker/index.js"
 
-# Headers 配置
-[[headers]]
-for = "/_next/static/**"
-[headers.values]
-Cache-Control = "public, max-age=31536000"
-X-Content-Type-Options = "nosniff"
-
-[[headers]]
-for = "/*.js"
-[headers.values]
-Cache-Control = "public, max-age=31536000"
-Content-Type = "application/javascript"
-X-Content-Type-Options = "nosniff"
-
-[[headers]]
-for = "/*.css"
-[headers.values]
-Cache-Control = "public, max-age=31536000"
-Content-Type = "text/css"
-X-Content-Type-Options = "nosniff"
+# 路由配置 - 所有请求通过 Worker 处理
+[[routes]]
+pattern = "/*"
+script = "_worker/index"

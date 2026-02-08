@@ -3,24 +3,55 @@
 ## 项目概述
 
 本项目是一个完整的视频聚合平台解决方案，包含：
-- **Cloudflare Worker** - 视频代理 + D1 数据库 API
-- **Next.js 前端** - 响应式用户界面
+- **Cloudflare Worker** - 视频代理 + D1 数据库 API + KV 缓存
+- **Next.js 前端** - 响应式用户界面 + Pages Functions SSR
 - **Playwright 抓取系统** - 自动从 jable.tv 抓取视频元数据
 - **Cloudflare D1** - 无服务器 SQL 数据库
+- **Cloudflare KV** - 热点数据高速缓存
 
 ## 技术架构
 
 ```
-┌─────────────┐     ┌──────────────┐     ┌─────────────────────────┐     ┌─────────────┐
-│   用户浏览器  │ ──> │  Next.js     │ ──> │ Cloudflare Worker       │ ──> │  jable.tv   │
-│              │     │  前端托管     │     │ (代理 + D1 API + 缓存)  │     │   原始站     │
-└─────────────┘     └──────────────┘     └─────────────────────────┘     └─────────────┘
-                            │                       │
-                            │                       ▼
-                            │              ┌─────────────────────────┐
-                            └────────────▶ │ Cloudflare D1 数据库   │
-                                           │ (视频元数据存储)        │
-                                           └─────────────────────────┘
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                           Cloudflare 全球网络                                      │
+│                                                                                 │
+│  ┌──────────────────────────┐         ┌──────────────────────────┐            │
+│  │    Cloudflare Pages      │         │    Cloudflare Workers    │            │
+│  │  ┌────────────────────┐  │         │  ┌────────────────────┐  │            │
+│  │  │   SSR 渲染         │  │         │  │   /api/*          │  │            │
+│  │  │   • 首页           │  │         │  │   • CRUD API       │  │            │
+│  │  │   • 搜索页         │  │         │  │   • 搜索          │  │            │
+│  │  │   • 视频详情页     │  │         │  │   • 统计          │  │            │
+│  │  └────────────────────┘  │         │  └────────────────────┘  │            │
+│  │                          │         │                          │            │
+│  │  ┌────────────────────┐  │         │  ┌────────────────────┐  │            │
+│  │  │   静态资源         │  │         │  │   视频代理         │  │            │
+│  │  │   • CSS/JS/图片   │  │         │  │  • m3u8 代理       │  │            │
+│  │  └────────────────────┘  │         │  │  • .ts 代理        │  │            │
+│  └──────────────────────────┘         │  │  • Range 请求      │  │            │
+│                                        │  └────────────────────┘  │            │
+│                                        │                          │            │
+│                                        │         ┌────────────┐   │            │
+│                                        │         │   KV       │   │            │
+│                                        │         │   Cache    │   │            │
+│                                        │         └─────┬──────┘   │            │
+│                                        │               │ 热点缓存 │            │
+│                                        │               ▼          │            │
+│                                        │  ┌────────────────────┐  │            │
+│                                        │  │   D1 数据库        │  │            │
+│                                        │  │   • videos 表      │  │            │
+│                                        │  │   • categories 表 │  │            │
+│                                        │  │   • scrape_logs  │  │            │
+│                                        │  └────────────────────┘  │            │
+│                                        └──────────────────────────┘            │
+└─────────────────────────────────────────────────────────────────────────────────┘
+                            │
+                            │ 代理请求
+                            ▼
+                   ┌────────────────┐
+                   │   jable.tv     │
+                   │   原始视频网站  │
+                   └────────────────┘
 ```
 
 ## 目录结构
@@ -28,15 +59,15 @@
 ```
 otherweb2/
 ├── worker/                    # Cloudflare Worker
-│   ├── src/index.js          # Worker 主代码（代理 + API）
-│   ├── wrangler.jsonc        # Worker 配置
+│   ├── src/index.js          # Worker 主代码（代理 + API + KV 缓存）
+│   ├── wrangler.jsonc        # Worker 配置（包含 D1 + KV + Cron）
 │   ├── schema.sql            # D1 数据库 schema
 │   └── package.json
 │
 ├── frontend/                 # Next.js 前端
 │   ├── src/
 │   │   ├── app/
-│   │   │   ├── page.tsx           # 首页
+│   │   │   ├── page.tsx           # 首页（CSR 备用）
 │   │   │   ├── layout.tsx         # 布局
 │   │   │   ├── search/            # 搜索页面
 │   │   │   ├── category/          # 分类页面
@@ -51,6 +82,14 @@ otherweb2/
 │   │   └── lib/
 │   │       ├── api.ts             # API 配置
 │   │       └── video-data.ts      # 数据获取
+│   │
+│   ├── functions/            # Pages Functions (SSR)
+│   │   ├── index.js           # 首页 SSR
+│   │   ├── search.js          # 搜索页 SSR
+│   │   └── videos/
+│   │       └── [id].js       # 视频详情页 SSR
+│   │
+│   ├── wrangler.toml         # Pages 配置
 │   └── package.json
 │
 ├── scripts/
@@ -62,6 +101,15 @@ otherweb2/
 │
 └── README_D1.md            # 本文档
 ```
+
+## 渲染模式
+
+| 页面 | 渲染模式 | 说明 |
+|-----|---------|------|
+| 首页 `/` | SSR (Pages Functions) | 服务端渲染，SEO 友好，首屏快速 |
+| 视频详情页 `/videos/{id}` | SSR (Pages Functions) | 服务端渲染，嵌入播放器 |
+| 搜索页 `/search` | SSR (Pages Functions) | 服务端渲染，实时搜索 |
+| 分类页 `/category/*` | CSR (Next.js) | 客户端渲染，可改 SSR |
 
 ## 快速开始
 
@@ -79,7 +127,18 @@ npx wrangler d1 create jable-videos
 npx wrangler d1 execute jable-videos --file=schema.sql --remote
 ```
 
-### 2. 部署 Worker
+### 2. 创建 KV 命名空间（新增）
+
+```bash
+cd worker
+
+# 创建 KV 命名空间
+npx wrangler kv namespace create "VIDEO_CACHE"
+
+# 更新 wrangler.jsonc（自动完成）
+```
+
+### 3. 部署 Worker
 
 ```bash
 cd worker
@@ -91,7 +150,7 @@ npx wrangler dev
 npx wrangler deploy
 ```
 
-### 3. 运行前端
+### 4. 部署前端
 
 ```bash
 cd frontend
@@ -104,9 +163,12 @@ npm run dev
 
 # 构建
 npm run build
+
+# 部署到 Cloudflare Pages
+npx wrangler pages deploy .next/server/app --project-name=jable-frontend
 ```
 
-### 4. 运行抓取脚本
+### 5. 运行抓取脚本
 
 ```bash
 cd scripts/scraper
@@ -132,57 +194,9 @@ node index.js --mode=incremental
 GET /api/videos?page=1&limit=20&category=all&search=关键词
 ```
 
-**响应示例：**
-```json
-{
-  "success": true,
-  "data": {
-    "videos": [
-      {
-        "id": "dldss-460",
-        "title": "视频标题",
-        "description": "视频描述",
-        "duration": "12:34",
-        "views": "1.2M",
-        "coverUrl": "https://...",
-        "category": "models",
-        "categoryName": "模特",
-        "authorName": "作者名",
-        "tags": ["标签1", "标签2"],
-        "scrapedAt": "2024-01-15T12:00:00.000Z",
-        "viewCount": 1234
-      }
-    ],
-    "pagination": {
-      "page": 1,
-      "limit": 20,
-      "total": 100,
-      "totalPages": 5
-    }
-  }
-}
-```
-
 ### 视频详情
 ```
 GET /api/videos/{videoId}
-```
-
-**响应示例：**
-```json
-{
-  "success": true,
-  "data": {
-    "id": "dldss-460",
-    "title": "视频标题",
-    "streamUrl": "https://jable-video-proxy.qh13.workers.dev/dldss-460.m3u8",
-    "streamQualities": {
-      "240p": "...",
-      "480p": "..."
-    },
-    ...
-  }
-}
 ```
 
 ### 搜索视频
@@ -205,27 +219,46 @@ GET /api/categories
 GET /api/stats
 ```
 
-### 保存视频（管理员）
+### KV 缓存预热
 ```
-POST /api/admin/save-video
-Content-Type: application/json
-
-{
-  "id": "dldss-460",
-  "title": "视频标题",
-  "coverUrl": "https://...",
-  "category": "models",
-  ...
-}
+POST /api/admin/warmup
 ```
 
 ## 缓存策略
 
-| 资源类型 | 缓存时间 | 说明 |
-|---------|---------|------|
-| m3u8 列表 | 3 秒 | 短期缓存，允许快速更新 |
-| .ts 分片 | 1 年 | 长期缓存，减少回源 |
-| API 响应 | 60 秒 | 中等缓存，平衡性能 |
+| 资源类型 | 存储位置 | 缓存时间 | 说明 |
+|---------|---------|---------|------|
+| 热点视频元数据 | Cloudflare KV | 1 小时 | 快速查询热门视频 |
+| m3u8 列表 | Cache API | 3 秒 | 短期缓存，允许快速更新 |
+| .ts 分片 | Cache API | 1 年 | 长期缓存，减少回源 |
+| API 响应 | Cache API | 60 秒 | 中等缓存，平衡性能 |
+| SSR 页面 | CDN | 60 秒 | 首页/搜索页缓存 |
+
+## Workers Cron 定时任务
+
+在 `wrangler.jsonc` 中配置：
+
+```json
+{
+  "triggers": {
+    "crons": [
+      "0 * * * *",        // 每小时执行（增量更新）
+      "0 4 * * *",        // 每天凌晨4点（完整抓取 + KV 预热）
+      "0 6 * * 0"         // 每周日凌晨6点（大型更新）
+    ]
+  }
+}
+```
+
+### 手动触发缓存预热
+
+```bash
+# 通过 API
+curl -X POST https://jable-video-proxy.qh13.workers.dev/api/admin/warmup
+
+# 通过 Cron
+npx wrangler deploy --triggers
+```
 
 ## 成本估算
 
@@ -233,6 +266,7 @@ Content-Type: application/json
 |------|---------|----------|----------|
 | Cloudflare Worker | 100万请求/天 | $5/百万请求 | 免费 |
 | Cloudflare D1 | 5GB 存储 | $0.015/GB/月 | 免费（<5GB） |
+| Cloudflare KV | 10GB 读/写/月 | $0.01/百万读 | 免费（<10GB） |
 | Cloudflare Pages | 500MB 带宽/月 | $0.02/GB | $0-5/月 |
 | 视频流量 | 用户直接访问 | 免费 | 免费 |
 
@@ -258,6 +292,11 @@ Content-Type: application/json
 - [x] 增量更新
 - [x] 响应式前端
 - [x] Worker 监控脚本
+- [x] Cloudflare KV 缓存
+- [x] Workers Cron 定时任务
+- [x] 首页 SSR 渲染
+- [x] 搜索页 SSR 渲染
+- [x] 视频详情页 SSR 渲染
 
 ### 待开发 ⏳
 
@@ -266,6 +305,7 @@ Content-Type: application/json
 - [ ] 评论功能
 - [ ] 收藏功能
 - [ ] 历史记录
+- [ ] Cloudflare Images 图片优化
 
 ## 监控和维护
 
@@ -297,6 +337,19 @@ npx wrangler d1 execute jable-videos --remote --command="SELECT COUNT(*) FROM vi
 npx wrangler d1 execute jable-videos --remote --command=".dump" > backup.sql
 ```
 
+### KV 缓存操作
+
+```bash
+# 查看 KV 命名空间
+npx wrangler kv namespace list
+
+# 手动设置值（测试用）
+npx wrangler kv key put --binding=VIDEO_CACHE "video:test" '{"title":"测试"}'
+
+# 查看值
+npx wrangler kv key list --binding=VIDEO_CACHE
+```
+
 ## 常见问题
 
 ### Q: 视频无法播放？
@@ -309,7 +362,7 @@ A:
 A: D1 有查询限制（单次查询最多 100ms CPU 时间）
 - 避免复杂的 JOIN 操作
 - 使用索引优化查询
-- 考虑使用 Cloudflare KV 缓存热点数据
+- 使用 KV 缓存热点数据
 
 ### Q: 抓取脚本被封 IP？
 A: 
@@ -317,24 +370,26 @@ A:
 - 使用代理池（如果有）
 - 分散抓取时间
 
-### Q: 如何添加新分类？
-A: 
-1. 在 D1 数据库中插入分类：`INSERT INTO categories (slug, name, ...) VALUES (...)`
-2. 更新前端分类列表
+### Q: KV 缓存未命中？
+A:
+- 确认 KV 绑定正确（`env.VIDEO_CACHE`）
+- 确认已执行缓存预热
+- 检查 Worker 日志中的 `[KV HIT/MISS]` 标记
 
-### Q: 广告不显示？
-A: 
-1. 注册广告平台账户（Monetag、AdSense 等）
-2. 获取广告代码
-3. 更新 `AdBanner.tsx` 组件
+### Q: SSR 页面未生效？
+A:
+- 确认 `functions/` 目录下的函数已部署
+- 检查 `wrangler.toml` 中的路由配置
+- 清除浏览器缓存
 
 ## 最佳实践
 
-1. **使用透明代理**：明确标注内容来源，提高广告平台审核通过率
+1. **使用 KV 缓存**：热点视频数据存储在 KV 中，提升查询速度
 2. **合理设置缓存**：减少回源次数，降低成本
 3. **增量更新**：定期更新视频元数据，避免重复抓取
 4. **监控告警**：设置监控告警，及时发现问题
 5. **定期备份**：定期导出数据库备份
+6. **SSR 首屏**：首页和视频详情页使用 SSR，提升 SEO 和首屏速度
 
 ## 法律声明
 
