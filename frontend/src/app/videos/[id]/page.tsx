@@ -38,12 +38,7 @@ async function getVideoDetail(id: string): Promise<VideoDetailResponse | null> {
   }
 }
 
-// 为静态导出生成视频页面参数
-export async function generateStaticParams() {
-  // 预生成测试视频页面（包括新的真实视频）
-  const testIds = ['test-001', 'test-002', 'ipzz-777', 'ipzz-778', 'ipzz-776', 'fns-055', 'ipzz-782', 'demo-001'];
-  return testIds.map((id) => ({ id }));
-}
+// 视频详情页面 - 支持动态路由（Cloudflare Pages SSR）
 
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
   const { id } = await params;

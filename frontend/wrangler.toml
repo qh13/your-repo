@@ -5,7 +5,13 @@ compatibility_date = "2025-01-01"
 command = "npm run build"
 cwd = "frontend"
 
-pages_build_output_dir = "."
+pages_build_output_dir = ".next/server/app"
+functions_directory = "functions"
+
+# Pages Functions 配置
+[[functions]]
+route = "/videos/*"
+script = "videos/[id].js"
 
 # Headers 配置
 [[headers]]

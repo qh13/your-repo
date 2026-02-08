@@ -9,8 +9,11 @@ const AdBanner = dynamic(() => import('@/components/AdBanner'), { ssr: false });
 
 // 视频卡片组件
 function VideoCard({ video, priority = false }: { video: Video; priority?: boolean }) {
+  // 视频详情页使用 Worker URL
+  const WORKER_URL = 'https://jable-video-proxy.qh13.workers.dev';
+  
   return (
-    <a href={`/videos/${video.id}`} className="video-item">
+    <a href={`${WORKER_URL}/videos/${video.id}`} target="_blank" rel="noopener noreferrer" className="video-item">
       <div className="video-thumb">
         {video.coverUrl ? (
           <Image
