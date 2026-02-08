@@ -11,7 +11,6 @@ interface VideoPlayerProps {
   onLoaded?: () => void;
 }
 
-// Dynamic import for hls.js to reduce main bundle size
 let Hls: any;
 
 export default function VideoPlayer({
@@ -26,7 +25,6 @@ export default function VideoPlayer({
   const [hlsLoaded, setHlsLoaded] = useState(false);
 
   useEffect(() => {
-    // Dynamic import hls.js
     import('hls.js').then((module) => {
       Hls = module.default;
       setHlsLoaded(true);
@@ -39,17 +37,13 @@ export default function VideoPlayer({
     const video = videoRef.current;
     const videoSrc = getVideoM3u8Url(videoId);
 
-    // 检查浏览器是否原生支持 HLS
+    // Safari 原生支持 HLS
     if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      // Safari 原生支持 HLS
       video.src = videoSrc;
-      if (onLoaded) {
-        video.addEventListener('loadedmetadata', onLoaded);
-      }
+      onLoaded?.();
       return;
     }
 
-    // 使用 hls.js
     if (Hls && Hls.isSupported()) {
       const hls = new Hls({
         enableWorker: true,
@@ -73,11 +67,9 @@ export default function VideoPlayer({
           onError?.(new Error(data.details));
           switch (data.type) {
             case Hls.ErrorTypes.NETWORK_ERROR:
-              console.error('Network error, trying to recover...');
               hls.startLoad();
               break;
             case Hls.ErrorTypes.MEDIA_ERROR:
-              console.error('Media error, trying to recover...');
               hls.recoverMediaError();
               break;
             default:
@@ -97,7 +89,6 @@ export default function VideoPlayer({
       };
     }
 
-    // 不支持 HLS 的降级处理
     onError?.(new Error('Browser does not support HLS'));
   }, [videoId, autoplay, onError, onLoaded, hlsLoaded]);
 

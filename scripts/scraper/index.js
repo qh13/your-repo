@@ -364,49 +364,121 @@ class JableScraper {
         },
         scrapedAt: new Date().toISOString(),
       };
-      
+
       // 提取视频 ID
       const urlMatch = window.location.href.match(/jable\.tv\/videos\/([^\/]+)/);
       if (urlMatch) {
         data.id = urlMatch[1];
       }
-      
-      // 提取标题
-      const titleEl = document.querySelector('h1.video-title, h1.title, .video-info h1');
-      data.title = titleEl?.textContent?.trim() || '';
-      
-      // 提取封面图
-      const coverEl = document.querySelector('.cover-img, .video-cover img, .player-poster');
-      data.coverUrl = coverEl?.src || coverEl?.dataset?.src || '';
-      
-      // 提取时长
-      const durationEl = document.querySelector('.duration, .video-duration');
-      data.duration = durationEl?.textContent?.trim() || '';
-      
-      // 提取观看次数
-      const viewsEl = document.querySelector('.views, .view-count, .video-views');
-      data.views = viewsEl?.textContent?.trim() || '';
-      
-      // 提取发布日期
-      const dateEl = document.querySelector('.publish-date, .upload-date, .date');
-      data.publishDate = dateEl?.textContent?.trim() || '';
-      
-      // 提取分类
-      const categoryEl = document.querySelector('.category a, .video-category a, .breadcrumbs a:last-child');
-      data.category = categoryEl?.textContent?.trim() || '';
-      
-      // 提取作者信息
-      const authorEl = document.querySelector('.author-info, .uploader-info, .channel-name');
-      if (authorEl) {
-        data.author.name = authorEl.textContent.trim();
-        const avatarEl = document.querySelector('.author-avatar, .uploader-avatar, .channel-avatar img');
-        data.author.avatarUrl = avatarEl?.src || '';
+
+      // 提取标题 - jable.tv 新结构适配
+      const titleEl = document.querySelector(
+        'h1.video-title, h1.title, .video-info h1, .video-header h1, ' +
+        '.title-wrap h1, h1[class*="title"], .video-detail-header h1'
+      );
+      if (!titleEl) {
+        // 尝试从 meta 标签获取
+        const metaTitle = document.querySelector('meta[property="og:title"]');
+        if (metaTitle) {
+          data.title = metaTitle.getAttribute('content')?.trim() || '';
+        }
+      } else {
+        data.title = titleEl.textContent?.trim() || '';
       }
-      
+
+      // 提取描述 - jable.tv 新结构适配
+      const descEl = document.querySelector(
+        '.video-description, .description, .video-desc, ' +
+        '.video-info .info-text, .video-detail .detail-info, ' +
+        'meta[property="og:description"]'
+      );
+      if (descEl) {
+        if (descEl.tagName === 'META') {
+          data.description = descEl.getAttribute('content')?.trim() || '';
+        } else {
+          data.description = descEl.textContent?.trim() || '';
+        }
+      }
+
+      // 提取封面图 - 多种选择器适配
+      const coverEl = document.querySelector(
+        '.cover-img, .video-cover img, .player-poster, ' +
+        '.video-thumbnail img, .thumbnail img, ' +
+        'meta[property="og:image"]'
+      );
+      if (coverEl) {
+        if (coverEl.tagName === 'META') {
+          data.coverUrl = coverEl.getAttribute('content') || '';
+        } else {
+          data.coverUrl = coverEl.src || coverEl.dataset?.src || '';
+        }
+      }
+
+      // 提取时长 - jable.tv 新结构适配
+      const durationEl = document.querySelector(
+        '.duration, .video-duration, .video-length, ' +
+        '.time-tag, [class*="duration"] span, ' +
+        '.player-controls .duration, .video-info .duration'
+      );
+      if (durationEl) {
+        data.duration = durationEl.textContent?.trim() ||
+                        durationEl.dataset?.content?.trim() || '';
+      }
+
+      // 提取观看次数
+      const viewsEl = document.querySelector(
+        '.views, .view-count, .video-views, ' +
+        '[class*="views"] span, .video-info .views, ' +
+        '.play-count, .video-stats .views'
+      );
+      if (viewsEl) {
+        data.views = viewsEl.textContent?.trim() || '';
+      }
+
+      // 提取发布日期
+      const dateEl = document.querySelector(
+        '.publish-date, .upload-date, .date, ' +
+        '.video-date, .video-info .date, ' +
+        '[class*="date"] span, .video-stats .date'
+      );
+      if (dateEl) {
+        data.publishDate = dateEl.textContent?.trim() || '';
+      }
+
+      // 提取分类
+      const categoryEl = document.querySelector(
+        '.category a, .video-category a, .breadcrumbs a:last-child, ' +
+        '.video-info .category a, .video-tags .category a, ' +
+        '[class*="category"] a, .breadcrumbs .crumb:last-child a'
+      );
+      if (categoryEl) {
+        data.category = categoryEl.textContent?.trim() || '';
+      }
+
+      // 提取作者信息
+      const authorEl = document.querySelector(
+        '.author-info, .uploader-info, .channel-name, ' +
+        '.video-uploader, .video-author, ' +
+        '.video-info .uploader, [class*="author"]'
+      );
+      if (authorEl) {
+        data.author.name = authorEl.textContent?.trim();
+        const avatarEl = document.querySelector(
+          '.author-avatar, .uploader-avatar, .channel-avatar img, ' +
+          '.author-img, [class*="avatar"] img'
+        );
+        if (avatarEl) {
+          data.author.avatarUrl = avatarEl.src || avatarEl.dataset?.src || '';
+        }
+      }
+
       // 提取标签
-      const tagEls = document.querySelectorAll('.tag, .video-tag, .keywords a');
-      data.tags = Array.from(tagEls).map(tag => tag.textContent.trim());
-      
+      const tagEls = document.querySelectorAll(
+        '.tag, .video-tag, .keywords a, .video-tags a, ' +
+        '[class*="tag"] a, .tag-list a, .tags-section a'
+      );
+      data.tags = Array.from(tagEls).map(tag => tag.textContent?.trim()).filter(Boolean);
+
       return data;
     });
     

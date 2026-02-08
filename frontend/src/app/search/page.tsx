@@ -1,57 +1,88 @@
-import { Metadata } from 'next';
+'use client';
+
+import { useState, useEffect, Suspense } from 'react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import dynamic from 'next/dynamic';
 
-const AdBanner = dynamic(() => import('@/components/AdBanner'), {
-  loading: () => <div style={{ height: '100px', margin: '20px 0' }} />,
-});
+const VideoGrid = dynamic(() => import('@/components/VideoGrid'), { ssr: false });
 
-const VideoGrid = dynamic(() => import('@/components/VideoGrid'), {
-  loading: () => <div className="video-grid-skeleton" style={{ display: 'grid', gap: '20px' }}><div className="skeleton" style={{ aspectRatio: '16/9' }} /><div className="skeleton" style={{ aspectRatio: '16/9' }} /><div className="skeleton" style={{ aspectRatio: '16/9' }} /></div>,
-});
+// 搜索表单组件
+function SearchForm({ initialKeyword }: { initialKeyword: string }) {
+  const [keyword, setKeyword] = useState(initialKeyword);
+  const router = useRouter();
 
-const SearchForm = dynamic(() => import('@/components/SearchForm'), {
-  loading: () => <div className="search-form-skeleton" style={{ maxWidth: '900px', margin: '0 auto' }}><div className="skeleton" style={{ height: '56px', borderRadius: '28px' }} /></div>,
-});
-
-interface SearchPageProps {
-  searchParams: Promise<{ q?: string }>;
-}
-
-export const metadata: Metadata = {
-  title: '🔍 搜索视频 - 发现精彩',
-  description: '搜索精彩视频内容',
-};
-
-export default async function SearchPage({ searchParams }: SearchPageProps) {
-  const params = await searchParams;
-  const keyword = params.q || '';
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (keyword.trim()) {
+      router.push(`/search?q=${encodeURIComponent(keyword.trim())}`);
+    }
+  };
 
   return (
-    <div className="search-page">
-      {/* 搜索英雄区域 */}
-      <section className="hero-section" style={{ flexDirection: 'column', textAlign: 'center' }}>
-        <div className="hero-content">
-          <h1 className="hero-title">
-            <span className="hero-gradient">
-              {keyword ? `🔍 搜索: "${keyword}"` : '🔍 搜索视频'}
-            </span>
-          </h1>
-          <p className="hero-subtitle">
-            探索海量视频内容，找到属于你的精彩
-          </p>
-        </div>
-        <div style={{ width: '100%', maxWidth: '900px' }}>
-          <SearchForm initialKeyword={keyword} />
-        </div>
-      </section>
-      
-      <AdBanner slotId="search-top" format="banner" />
+    <form onSubmit={handleSearch} className="search-box">
+      <input
+        type="text"
+        value={keyword}
+        onChange={(e) => setKeyword(e.target.value)}
+        placeholder="搜索视频..."
+        className="search-input"
+      />
+      <button type="submit" className="search-btn">
+        搜索
+      </button>
+    </form>
+  );
+}
 
-      {keyword && (
-        <VideoGrid
-          showPagination={true}
-        />
-      )}
+// 搜索内容组件
+function SearchContent() {
+  const searchParams = useSearchParams();
+  const q = searchParams.get('q') || '';
+
+  if (!q) {
+    return (
+      <div className="empty">
+        <p>输入关键词搜索视频</p>
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <p style={{ marginBottom: '16px', color: 'var(--text-muted)' }}>
+        搜索: "{q}"
+      </p>
+      <VideoGrid category={`search:${q}`} showPagination={true} />
+    </>
+  );
+}
+
+export default function SearchPage() {
+  return (
+    <div>
+      <Suspense fallback={
+        <form className="search-box">
+          <input
+            type="text"
+            placeholder="搜索视频..."
+            className="search-input"
+            disabled
+          />
+          <button type="submit" className="search-btn" disabled>
+            搜索
+          </button>
+        </form>
+      }>
+        <SearchForm initialKeyword="" />
+      </Suspense>
+      
+      <Suspense fallback={
+        <div className="empty">
+          <p>加载中...</p>
+        </div>
+      }>
+        <SearchContent />
+      </Suspense>
     </div>
   );
 }

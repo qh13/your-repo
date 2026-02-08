@@ -1,17 +1,8 @@
 /**
  * 视频数据获取模块
- * 直接从 Cloudflare Worker API 获取数据
  */
 
-import {
-  getVideoListUrl,
-  getVideoDetailUrl,
-  getSearchUrl,
-  getHotVideosUrl,
-  getCategoriesUrl,
-  getStatsUrl,
-  WORKER_URL
-} from './api';
+import { buildApiUrl } from './api';
 
 // 类型定义
 export interface Video {
@@ -22,19 +13,15 @@ export interface Video {
   views: string;
   publishDate: string;
   coverUrl: string;
-  // 封面图别名
   thumbnail?: string;
   category: string;
   categoryName: string;
   authorName: string;
-  // 作者别名
   author?: string;
   tags: string[];
   scrapedAt: string;
   viewCount: number;
-  // 来源标识
   source?: string;
-  // 视频详情额外字段
   streamUrl?: string;
   streamBackupUrls?: string[];
   streamQualities?: Record<string, string>;
@@ -70,9 +57,7 @@ export interface Category {
 
 export interface CategoriesResponse {
   success: boolean;
-  data: {
-    categories: Category[];
-  };
+  data: { categories: Category[] };
   error?: string;
 }
 
@@ -88,80 +73,57 @@ export interface StatsResponse {
   error?: string;
 }
 
-/**
- * API 响应处理
- */
+// API 响应处理
 async function fetchApi<T>(url: string): Promise<T> {
   const response = await fetch(url);
-  
   if (!response.ok) {
     throw new Error(`API request failed: ${response.status} ${response.statusText}`);
   }
-  
   return response.json();
 }
 
-/**
- * 获取视频列表
- */
+// 获取视频列表
 export async function getVideoList(params?: {
   page?: number;
   limit?: number;
   category?: string;
   search?: string;
 }): Promise<VideoListResponse> {
-  const url = getVideoListUrl(params);
+  const url = buildApiUrl('/videos', {
+    page: params?.page?.toString() || '1',
+    limit: params?.limit?.toString() || '24',
+    category: params?.category || '',
+    search: params?.search || '',
+  });
   return fetchApi<VideoListResponse>(url);
 }
 
-/**
- * 获取视频详情
- */
+// 获取视频详情
 export async function getVideoDetail(videoId: string): Promise<VideoDetailResponse> {
-  const url = getVideoDetailUrl(videoId);
+  const url = buildApiUrl(`/videos/${videoId}`);
   return fetchApi<VideoDetailResponse>(url);
 }
 
-/**
- * 搜索视频
- */
+// 搜索视频
 export async function searchVideos(keyword: string): Promise<VideoListResponse> {
-  const url = getSearchUrl(keyword);
+  const url = buildApiUrl('/search', { q: keyword });
   return fetchApi<VideoListResponse>(url);
 }
 
-/**
- * 获取热门视频
- */
-export async function getHotVideos(limit: number = 10): Promise<VideoListResponse> {
-  const url = getHotVideosUrl(limit);
+// 获取热门视频
+export async function getHotVideos(limit: number = 24): Promise<VideoListResponse> {
+  const url = buildApiUrl('/hot', { limit: limit.toString() });
   return fetchApi<VideoListResponse>(url);
 }
 
-/**
- * 获取分类列表
- */
+// 获取分类列表
 export async function getCategories(): Promise<CategoriesResponse> {
-  const url = getCategoriesUrl();
+  const url = buildApiUrl('/categories');
   return fetchApi<CategoriesResponse>(url);
 }
 
-/**
- * 获取网站统计
- */
+// 获取网站统计
 export async function getStats(): Promise<StatsResponse> {
-  const url = getStatsUrl();
+  const url = buildApiUrl('/stats');
   return fetchApi<StatsResponse>(url);
-}
-
-/**
- * 获取 Worker 健康状态
- */
-export async function checkWorkerStatus(): Promise<boolean> {
-  try {
-    const response = await fetch(`${WORKER_URL}/api/stats`);
-    return response.ok;
-  } catch {
-    return false;
-  }
 }

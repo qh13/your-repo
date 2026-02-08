@@ -12,7 +12,6 @@ interface VideoStreamInfo {
   onLoaded?: () => void;
 }
 
-// Dynamic import for hls.js to reduce main bundle size
 let Hls: any;
 
 export default function DirectVideoPlayer({
@@ -51,13 +50,10 @@ export default function DirectVideoPlayer({
       hlsRef.current = null;
     }
 
-    // 检查浏览器是否原生支持 HLS
+    // Safari 原生支持 HLS
     if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      // Safari 原生支持 HLS
       video.src = url;
-      if (onLoaded) {
-        video.addEventListener('loadedmetadata', onLoaded);
-      }
+      onLoaded?.();
       return;
     }
 
@@ -88,31 +84,16 @@ export default function DirectVideoPlayer({
 
           // 尝试切换到备用 URL
           if (currentUrlIndexRef.current < allUrls.length - 1) {
-            console.log(`Trying backup URL ${currentUrlIndexRef.current + 2}/${allUrls.length}`);
             const nextIndex = currentUrlIndexRef.current + 1;
             currentUrlIndexRef.current = nextIndex;
             setCurrentUrlIndex(nextIndex);
             loadVideo(allUrls[nextIndex]);
-          } else {
-            // 所有 URL 都尝试过了
-            switch (data.type) {
-              case Hls.ErrorTypes.NETWORK_ERROR:
-                console.error('Network error, all URLs failed');
-                break;
-              case Hls.ErrorTypes.MEDIA_ERROR:
-                console.error('Media error, all URLs failed');
-                break;
-              default:
-                hls.destroy();
-                break;
-            }
           }
         }
       });
 
       hlsRef.current = hls;
     } else {
-      // 不支持 HLS 的降级处理
       const err = new Error('Browser does not support HLS');
       onError?.(err);
       setError(err.message);
@@ -135,7 +116,6 @@ export default function DirectVideoPlayer({
     };
   }, [streamUrl, autoplay, onError, onLoaded, hlsLoaded, loadVideo]);
 
-  // 手动切换 URL（当播放失败时用户可以手动尝试）
   const handleRetry = useCallback(() => {
     if (currentUrlIndexRef.current < allUrls.length - 1) {
       const nextIndex = currentUrlIndexRef.current + 1;
@@ -144,7 +124,6 @@ export default function DirectVideoPlayer({
       loadVideo(allUrls[nextIndex]);
       setError(null);
     } else {
-      // 重新尝试第一个 URL
       currentUrlIndexRef.current = 0;
       setCurrentUrlIndex(0);
       loadVideo(streamUrl);
@@ -154,50 +133,32 @@ export default function DirectVideoPlayer({
 
   if (error) {
     return (
-      <div className="video-container video-error">
-        <div className="error-overlay">
-          <div className="error-content">
-            <svg className="error-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="12" y1="8" x2="12" y2="12" />
-              <line x1="12" y1="16" x2="12.01" y2="16" />
-            </svg>
-            <p className="error-message">{error}</p>
-            <button className="retry-btn" onClick={handleRetry}>
-              尝试其他播放源 ({currentUrlIndex + 1}/{allUrls.length})
-            </button>
-          </div>
-        </div>
+      <div className="player-wrapper" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', flexDirection: 'column', gap: '16px' }}>
+        <p style={{ color: '#ff6b6b' }}>{error}</p>
+        <button onClick={handleRetry} className="search-btn">
+          切换播放源 ({currentUrlIndex + 1}/{allUrls.length})
+        </button>
         <video
           ref={videoRef}
           controls
           poster={poster}
           playsInline
           preload="metadata"
-          style={{
-            width: '100%',
-            maxWidth: '100%',
-            backgroundColor: '#000',
-            display: 'none',
-          }}
+          style={{ width: '100%', display: 'none' }}
         />
       </div>
     );
   }
 
   return (
-    <div className="video-container">
+    <div className="player-wrapper">
       <video
         ref={videoRef}
         controls
         poster={poster}
         playsInline
         preload="metadata"
-        style={{
-          width: '100%',
-          maxWidth: '100%',
-          backgroundColor: '#000',
-        }}
+        style={{ width: '100%', height: '100%' }}
       />
     </div>
   );
