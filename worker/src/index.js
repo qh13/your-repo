@@ -1229,26 +1229,20 @@ async function handleRequest(request, env) {
     return handleApiRequest(request, env);
   }
   
-  // 首页路由 - SSR 渲染
+  // 首页路由 - SSR 渲染（直接查询 D1，不调用自身 API）
   if (pathname === '/' || pathname === '/index.html') {
     try {
-      const [videosRes, statsRes] = await Promise.all([
-        fetch(`${WORKER_URL}/api/videos?page=1&limit=24`, {
-          headers: { 'Accept': 'application/json' }
-        }),
-        fetch(`${WORKER_URL}/api/stats`, {
-          headers: { 'Accept': 'application/json' }
-        })
+      // 直接从 D1 获取数据，避免 HTTP 循环调用
+      const [videosResult, statsResult] = await Promise.all([
+        getVideoList(env, { page: 1, limit: 24 }),
+        getStats(env)
       ]);
-      
-      const videosData = await videosRes.json();
-      const statsData = await statsRes.json();
-      
-      const videos = videosData.success ? videosData.data.videos : [];
-      const stats = statsData.success ? statsData.data : {};
-      
+
+      const videos = videosResult.success ? videosResult.data.videos : [];
+      const stats = statsResult.success ? statsResult.data : {};
+
       const html = renderHomePage(videos, stats);
-      
+
       return new Response(html, {
         status: 200,
         headers: { 'Content-Type': 'text/html; charset=utf-8' }
