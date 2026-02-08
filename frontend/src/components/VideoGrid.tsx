@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import { getVideoList, getHotVideos, Video } from '@/lib/video-data';
 
@@ -10,10 +9,10 @@ interface VideoGridProps {
   showPagination?: boolean;
 }
 
-// 视频卡片组件 - 内联定义减少文件数量
+// 视频卡片组件 - 使用普通 <a> 标签以兼容 Cloudflare Pages
 function VideoCard({ video }: { video: Video }) {
   return (
-    <Link href={`/videos/${video.id}`} className="video-item">
+    <a href={`/videos/${video.id}`} className="video-item">
       <div className="video-thumb">
         {video.coverUrl ? (
           <Image
@@ -37,7 +36,7 @@ function VideoCard({ video }: { video: Video }) {
           <span>{video.views || '0'} 次观看</span>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
 

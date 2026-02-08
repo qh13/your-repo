@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 export default function NotFound() {
   return (
     <div className="error-page">
@@ -8,9 +6,9 @@ export default function NotFound() {
       <p className="error-message">
        抱歉，您访问的页面不存在或已被移除。
       </p>
-      <Link href="/" className="home-link">
+      <a href="/" className="home-link">
         返回首页
-      </Link>
+      </a>
     </div>
   );
 }

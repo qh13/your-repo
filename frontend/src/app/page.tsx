@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import { getVideoList, getStats, Video, Stats } from '@/lib/video-data';
@@ -11,7 +10,7 @@ const AdBanner = dynamic(() => import('@/components/AdBanner'), { ssr: false });
 // 视频卡片组件
 function VideoCard({ video, priority = false }: { video: Video; priority?: boolean }) {
   return (
-    <Link href={`/videos/${video.id}`} className="video-item">
+    <a href={`/videos/${video.id}`} className="video-item">
       <div className="video-thumb">
         {video.coverUrl ? (
           <Image
@@ -35,7 +34,7 @@ function VideoCard({ video, priority = false }: { video: Video; priority?: boole
           <span>{video.views || '0'} 次观看</span>
         </div>
       </div>
-    </Link>
+    </a>
   );
 }
 
@@ -67,13 +66,13 @@ function CategoryNav() {
   return (
     <div className="category-nav">
       {categories.map((cat) => (
-        <Link
+        <a
           key={cat.slug}
           href={cat.slug === 'all' ? '/' : `/${cat.slug === 'top' ? 'hot' : cat.slug}`}
           className={`category-item ${cat.slug === 'all' ? 'active' : ''}`}
         >
           {cat.name}
-        </Link>
+        </a>
       ))}
     </div>
   );
