@@ -273,3 +273,12 @@
 [2026-02-08T08:21:37.854Z] [INFO] Found 0 videos on page 1 
 [2026-02-08T08:21:37.854Z] [INFO] Finished scraping category: /recent/, found 0 videos 
 [2026-02-08T08:21:37.893Z] [INFO] Browser closed 
+[2026-02-08T12:53:37.136Z] [INFO] Loaded 3 videos from disk 
+[2026-02-08T12:53:37.137Z] [INFO] Loaded 0 categories from disk 
+[2026-02-08T12:53:37.137Z] [INFO] Initializing browser... 
+[2026-02-08T12:53:37.401Z] [INFO] Browser initialized 
+[2026-02-08T12:53:37.402Z] [INFO] Starting to scrape category: /recent/ 
+[2026-02-08T12:53:37.402Z] [INFO] Scraping video list: https://jable.tv/recent/page/1/ 
+[2026-02-08T12:53:49.185Z] [INFO] Found 0 videos on page 1 
+[2026-02-08T12:53:49.185Z] [INFO] Finished scraping category: /recent/, found 0 videos 
+[2026-02-08T12:53:49.208Z] [INFO] Browser closed 
