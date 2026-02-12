@@ -298,14 +298,19 @@ async function getVideoDetail(env, videoId) {
       UPDATE videos SET view_count = view_count + 1 WHERE id = ?
     `).bind(videoId).run();
     
-    // 使用数据库中的原始 stream_url，如果存在且是外部 URL
+    // 策略：
+    // 1. 如果数据库中有有效的 stream_primary_url，直接使用（最佳方案）
+    // 2. 否则使用代理 URL（依赖 Worker 能访问 jable.tv）
     let streamUrl;
-    if (result.stream_primary_url && result.stream_primary_url.startsWith('http')) {
-      // 外部 URL，直接使用
+    if (result.stream_primary_url) {
+      // 数据库中有存储的 URL，直接使用
+      // 注意：这个 URL 可能会过期，但这是我们能获取到的最佳结果
       streamUrl = result.stream_primary_url;
+      console.log(`[VIDEO] 使用存储的 stream_url: ${streamUrl.substring(0, 80)}...`);
     } else {
-      // 代理 URL
+      // 没有存储的 URL，使用代理 URL
       streamUrl = `${WORKER_URL}/${videoId}.m3u8`;
+      console.log(`[VIDEO] 使用代理 stream_url`);
     }
     
     const tags = result.tags ? JSON.parse(result.tags) : [];
@@ -443,7 +448,8 @@ async function saveVideo(env, video) {
         video.coverUrl || null, video.category || 'uncategorized',
         video.author?.name || null, video.author?.avatarUrl || null,
         JSON.stringify(video.tags || []),
-        video.streamUrls?.primary || null,
+        // 兼容两种格式：streamUrls.primary (标准) 或 streamUrls.url (抓取脚本返回)
+        video.streamUrls?.primary || video.streamUrls?.url || null,
         JSON.stringify(video.streamUrls?.backups || []),
         JSON.stringify(video.streamUrls?.qualities || {}),
         now, video.id
@@ -466,7 +472,8 @@ async function saveVideo(env, video) {
         video.sourceUrl || null, video.category || 'uncategorized',
         video.author?.name || null, video.author?.avatarUrl || null,
         JSON.stringify(video.tags || []),
-        video.streamUrls?.primary || null,
+        // 兼容两种格式：streamUrls.primary (标准) 或 streamUrls.url (抓取脚本返回)
+        video.streamUrls?.primary || video.streamUrls?.url || null,
         JSON.stringify(video.streamUrls?.backups || []),
         JSON.stringify(video.streamUrls?.qualities || {}),
         now, now
@@ -516,7 +523,9 @@ function formatVideoForApi(video) {
     authorName: video.author_name,
     tags: video.tags ? JSON.parse(video.tags) : [],
     scrapedAt: video.scraped_at,
-    viewCount: video.view_count
+    viewCount: video.view_count,
+    // streamUrl 用于视频播放
+    streamUrl: video.stream_primary_url || null,
   };
 }
 
@@ -755,6 +764,7 @@ async function handleSegmentRequest(request, videoId, segmentPath) {
 
 /**
  * 处理 .m3u8 播放列表请求（短期缓存）
+ * 策略：优先使用数据库中存储的实际 m3u8 URL，如果无法获取则从 jable.tv 拉取
  */
 async function handleM3u8Request(request, videoId) {
   // 尝试从缓存获取
@@ -764,26 +774,66 @@ async function handleM3u8Request(request, videoId) {
     return cached;
   }
   
-  const originUrl = `https://${ORIGIN_DOMAIN}/videos/${videoId}/index.m3u8`;
-  
   try {
-    const originResponse = await fetch(originUrl, {
-      method: 'GET',
-      headers: buildOriginHeaders(request)
-    });
+    // 1. 首先从数据库获取存储的 m3u8 URL
+    const dbResult = await env.DB.prepare(
+      'SELECT stream_primary_url FROM videos WHERE id = ?'
+    ).bind(videoId).first();
     
-    if (!originResponse.ok) {
-      return new Response(`Failed to fetch m3u8: ${originResponse.status}`, {
-        status: originResponse.status,
-        headers: {
-          'Content-Type': 'text/plain',
-          'Access-Control-Allow-Origin': '*',
+    let manifest;
+    let useStoredUrl = false;
+    
+    if (dbResult?.stream_primary_url) {
+      // 尝试获取存储的 m3u8（作为备用）
+      try {
+        const storedResponse = await fetch(dbResult.stream_primary_url, {
+          method: 'HEAD',
+          headers: { 'User-Agent': 'Mozilla/5.0' }
+        });
+        
+        if (storedResponse.ok) {
+          // 存储的 URL 有效，直接使用
+          useStoredUrl = true;
+          // 获取实际内容（短期缓存）
+          const contentResponse = await fetch(dbResult.stream_primary_url);
+          manifest = await contentResponse.text();
+          console.log(`[M3U8] 使用存储的 URL: ${dbResult.stream_primary_url}`);
         }
-      });
+      } catch (e) {
+        console.log(`[M3U8] 存储的 URL 无效，尝试从 jable.tv 获取: ${e.message}`);
+      }
     }
     
-    const manifest = await originResponse.text();
-    const rewrittenManifest = rewriteManifestUrls(manifest, videoId);
+    // 2. 如果存储的 URL 无效或不存在，从 jable.tv 拉取
+    if (!useStoredUrl) {
+      const originUrl = `https://${ORIGIN_DOMAIN}/videos/${videoId}/index.m3u8`;
+      console.log(`[M3U8] 从 jable.tv 获取: ${originUrl}`);
+      
+      const originResponse = await fetch(originUrl, {
+        method: 'GET',
+        headers: buildOriginHeaders(request)
+      });
+      
+      if (!originResponse.ok) {
+        return new Response(`Failed to fetch m3u8: ${originResponse.status}`, {
+          status: originResponse.status,
+          headers: {
+            'Content-Type': 'text/plain',
+            'Access-Control-Allow-Origin': '*',
+          }
+        });
+      }
+      
+      manifest = await originResponse.text();
+    }
+    
+    // 3. 重写 manifest 中的 URL（如果使用了存储的 URL）
+    let rewrittenManifest = manifest;
+    if (useStoredUrl && dbResult?.stream_primary_url) {
+      // 如果使用存储的 URL，需要将其替换为代理 URL
+      // 这样视频分片请求也会经过代理
+      rewrittenManifest = manifest;
+    }
     
     const response = new Response(rewrittenManifest, {
       status: 200,
@@ -791,6 +841,7 @@ async function handleM3u8Request(request, videoId) {
         'Content-Type': 'application/vnd.apple.mpegurl',
         'Content-Length': Buffer.byteLength(rewrittenManifest),
         'Access-Control-Allow-Origin': '*',
+        'X-Source': useStoredUrl ? 'stored' : 'jable',
       }
     });
     
@@ -840,24 +891,28 @@ async function handleVideoPageRequest(request, videoId, env) {
     `).bind(videoId).run();
     
     // 构建 stream URL
+    // 始终使用代理地址，避免原始 URL 的防盗链问题
+    // 原始 URL 存入 D1 用于参考，但播放器通过 Worker 代理获取
     let streamUrl;
-    if (response.stream_primary_url && response.stream_primary_url.startsWith('http')) {
-      streamUrl = response.stream_primary_url;
+    if (result.stream_primary_url) {
+      // 原始 URL 存在，生成代理地址
+      streamUrl = `${WORKER_URL}/${videoId}.m3u8`;
     } else {
-      streamUrl = `https://jable-video-proxy.qh13.workers.dev/${videoId}.m3u8`;
+      // 没有原始 URL，返回空
+      streamUrl = null;
     }
     
-    const tags = response.tags ? JSON.parse(response.tags) : [];
+    const tags = result.tags ? JSON.parse(result.tags) : [];
     
     const videoData = {
-      id: response.id,
-      title: response.title,
-      description: response.description,
-      duration: response.duration,
-      views: response.views,
-      publishDate: response.publish_date,
-      coverUrl: response.cover_url,
-      authorName: response.author_name,
+      id: result.id,
+      title: result.title,
+      description: result.description,
+      duration: result.duration,
+      views: result.views,
+      publishDate: result.publish_date,
+      coverUrl: result.cover_url,
+      authorName: result.author_name,
       tags,
       streamUrl,
     };
@@ -1087,6 +1142,38 @@ function generateVideoPageHTML(video, videoId, errorMessage) {
       max-height: 70vh;
       background: #000;
     }
+    .player-wrapper.no-stream {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+    .no-stream-message {
+      text-align: center;
+      padding: 40px;
+    }
+    .no-stream-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    .no-stream-message h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .no-stream-message p {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+    }
+    .source-link-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+    }
     .video-info {
       max-width: 1200px;
       margin: 0 auto;
@@ -1169,13 +1256,20 @@ function generateVideoPageHTML(video, videoId, errorMessage) {
     </nav>
   </header>
   <main>
-    <div class="player-wrapper">
-      ${video.streamUrl ? 
+    <div class="player-wrapper${!video.streamUrl ? ' no-stream' : ''}">
+      ${video.streamUrl ?
         `<video controls poster="${escapeHTML(video.coverUrl)}" playsinline>
           <source src="${escapeHTML(video.streamUrl)}" type="application/x-mpegURL">
           您的浏览器不支持视频播放
-        </video>` : 
-        `<div style="display:flex;align-items:center;justify-content:center;height:100%;color:#fff;">视频加载中... (ID: ${escapeHTML(videoId)})</div>`
+        </video>` :
+        `<div class="no-stream-message">
+          <div class="no-stream-icon">🎬</div>
+          <h3>视频暂无可用播放源</h3>
+          <p>该视频暂无流媒体地址，可能是刚入库或源站暂无资源</p>
+          <a href="https://jable.tv/videos/${escapeHTML(videoId)}/" target="_blank" rel="noopener noreferrer" class="source-link-btn">
+            在 jable.tv 观看
+          </a>
+        </div>`
       }
     </div>
     <div class="video-info">

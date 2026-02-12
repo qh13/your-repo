@@ -67,3 +67,13 @@
 [2026-02-08T10:59:31.092Z] [DEBUG] History saved 
 [2026-02-08T10:59:31.092Z] [SUCCESS] Video updated: mmkz-161 {"changes":"","hasStreamChange":false}
 [2026-02-08T10:59:31.116Z] [INFO] Browser closed 
+[2026-02-08T23:42:41.997Z] [INFO] Loaded history for 3 videos 
+[2026-02-08T23:42:41.998Z] [INFO] Initializing browser... 
+[2026-02-08T23:42:42.240Z] [INFO] Browser initialized 
+[2026-02-08T23:42:42.240Z] [INFO] Generating update frequency report... 
+[2026-02-08T23:42:42.241Z] [SUCCESS] Reports generated: data/update-monitor/reports/update-report-2026-02-08T23-42-42-241Z.json, data/update-monitor/reports/update-report-2026-02-08T23-42-42-241Z.md 
+[2026-02-08T23:42:42.260Z] [INFO] Browser closed 
+[2026-02-08T23:42:54.438Z] [INFO] Loaded history for 3 videos 
+[2026-02-08T23:42:54.439Z] [INFO] Initializing browser... 
+[2026-02-08T23:42:54.557Z] [INFO] Browser initialized 
+[2026-02-08T23:42:54.568Z] [INFO] Browser closed 

@@ -282,3 +282,91 @@
 [2026-02-08T12:53:49.185Z] [INFO] Found 0 videos on page 1 
 [2026-02-08T12:53:49.185Z] [INFO] Finished scraping category: /recent/, found 0 videos 
 [2026-02-08T12:53:49.208Z] [INFO] Browser closed 
+[2026-02-08T23:46:44.339Z] [INFO] Loaded 3 videos from disk 
+[2026-02-08T23:46:44.340Z] [INFO] Loaded 0 categories from disk 
+[2026-02-08T23:46:44.340Z] [INFO] Initializing browser... 
+[2026-02-08T23:46:44.580Z] [INFO] Browser initialized 
+[2026-02-08T23:46:44.580Z] [INFO] Starting to scrape category: /recent/ 
+[2026-02-08T23:46:44.580Z] [INFO] Scraping video list: https://jable.tv/recent/page/1/ 
+[2026-02-08T23:46:56.299Z] [INFO] Found 0 videos on page 1 
+[2026-02-08T23:46:56.299Z] [INFO] Finished scraping category: /recent/, found 0 videos 
+[2026-02-08T23:46:56.339Z] [INFO] Browser closed 
+[2026-02-08T23:48:43.783Z] [INFO] Loaded 3 videos from disk 
+[2026-02-08T23:48:43.784Z] [INFO] Loaded 0 categories from disk 
+[2026-02-08T23:48:43.784Z] [INFO] Initializing browser... 
+[2026-02-08T23:48:44.016Z] [INFO] Browser initialized 
+[2026-02-08T23:48:44.016Z] [INFO] Scraping video list: https://jable.tv/recent/page/1/ 
+[2026-02-08T23:48:55.700Z] [INFO] Found 0 videos on page 1 
+[2026-02-08T23:48:55.729Z] [INFO] Browser closed 
+[2026-02-08T23:52:30.643Z] [INFO] Loaded 3 videos from disk 
+[2026-02-08T23:52:30.644Z] [INFO] Loaded 0 categories from disk 
+[2026-02-08T23:52:30.644Z] [INFO] Initializing browser... 
+[2026-02-08T23:52:30.882Z] [INFO] Browser initialized 
+[2026-02-08T23:52:30.882Z] [INFO] Scraping video detail: same-215 
+[2026-02-08T23:52:34.997Z] [DEBUG] Found m3u8 URL {"url":"https://anono-cloneing.mushroomtrack.com/hls/7gbcw-mWZ2woa0MarA-bcg/1770605397/56000/56794/56794.m3u8"}
+[2026-02-08T23:52:41.297Z] [DEBUG] Found m3u8 URL {"url":"https://edge13-lax.live.mmcdn.com/live-hls/amlst:ellalowe-sd-2a0d03557bfa5587663e325104bed24a951c1cf043f62ee960099dcf41a0427d_trns_h264/playlist.m3u8"}
+[2026-02-08T23:52:41.302Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/166819548/master/166819548_240p.m3u8"}
+[2026-02-08T23:52:41.546Z] [DEBUG] Found m3u8 URL {"url":"https://edge13-lax.live.mmcdn.com/live-hls/amlst:ellalowe-sd-2a0d03557bfa5587663e325104bed24a951c1cf043f62ee960099dcf41a0427d_trns_h264/chunklist_w2118102987_b408000_t64RlBTOjI5Ljk3MDAyOTk3MDAyOTk3.m3u8"}
+[2026-02-08T23:52:42.476Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:52:44.754Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:52:47.261Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:52:49.698Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:52:52.136Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:52:54.557Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:52:56.991Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:52:59.421Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:53:00.884Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://jable.tv/videos/same-215/\", waiting until \"networkidle\"\u001b[22m\n"}
+[2026-02-08T23:53:01.877Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:53:04.322Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:53:07.788Z] [DEBUG] Found m3u8 URL {"url":"https://anono-cloneing.mushroomtrack.com/hls/7gbcw-mWZ2woa0MarA-bcg/1770605397/56000/56794/56794.m3u8"}
+[2026-02-08T23:53:13.142Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/166819548/master/166819548_240p.m3u8"}
+[2026-02-08T23:53:13.897Z] [DEBUG] Found m3u8 URL {"url":"https://edge18-phx.live.mmcdn.com/live-hls/amlst:evangel111-sd-96e349119dd4c2e6d1f494c6bf12d07fa428fab400b34f6515dbff13963633fa_trns_h264/playlist.m3u8"}
+[2026-02-08T23:53:14.068Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:53:14.138Z] [DEBUG] Found m3u8 URL {"url":"https://edge18-phx.live.mmcdn.com/live-hls/amlst:evangel111-sd-96e349119dd4c2e6d1f494c6bf12d07fa428fab400b34f6515dbff13963633fa_trns_h264/chunklist_w1471264052_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-08T23:53:16.477Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:53:18.881Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:53:21.314Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:53:23.768Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:53:26.193Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:53:28.600Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:53:30.843Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/166819548/166819548_240p.m3u8"}
+[2026-02-08T23:53:32.850Z] [INFO] Video detail scraped: SAME-215 剛失去最愛的雙親不久，巨乳妹子就被無差別強●了 小鈴蜜柑 {"id":"same-215"}
+[2026-02-08T23:53:32.851Z] [INFO] Saved 4 videos to disk 
+[2026-02-08T23:53:32.851Z] [INFO] Saved 0 categories to disk 
+[2026-02-08T23:53:32.904Z] [INFO] Browser closed 
+[2026-02-11T12:17:32.630Z] [INFO] Loaded 0 categories from disk 
+[2026-02-11T12:17:32.631Z] [INFO] Initializing browser... 
+[2026-02-11T12:17:32.945Z] [INFO] Browser initialized 
+[2026-02-11T12:17:32.945Z] [INFO] Scraping video detail: same-215 
+[2026-02-11T12:17:36.645Z] [DEBUG] Found m3u8 URL {"url":"https://asutin-billion.mushroomtrack.com/hls/_Wrhzhy3ZzEIx2n1v_YBnA/1770822426/56000/56794/56794.m3u8"}
+[2026-02-11T12:17:42.593Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/31856951/master/31856951_240p.m3u8"}
+[2026-02-11T12:17:43.705Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-21/31856951/31856951_240p.m3u8"}
+[2026-02-11T12:17:46.119Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-21/31856951/31856951_240p.m3u8"}
+[2026-02-11T12:17:48.378Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-21/31856951/31856951_240p.m3u8"}
+[2026-02-11T12:17:50.633Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-21/31856951/31856951_240p.m3u8"}
+[2026-02-11T12:17:52.895Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-21/31856951/31856951_240p.m3u8"}
+[2026-02-11T12:17:55.302Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-21/31856951/31856951_240p.m3u8"}
+[2026-02-11T12:17:57.560Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-21/31856951/31856951_240p.m3u8"}
+[2026-02-11T12:17:59.806Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-21/31856951/31856951_240p.m3u8"}
+[2026-02-11T12:18:01.813Z] [INFO] Video detail scraped: SAME-215 剛失去最愛的雙親不久，巨乳妹子就被無差別強●了 小鈴蜜柑 {"id":"same-215"}
+[2026-02-11T12:18:01.814Z] [INFO] Saved 1 videos to disk 
+[2026-02-11T12:18:01.815Z] [INFO] Saved 0 categories to disk 
+[2026-02-11T12:18:01.853Z] [INFO] Browser closed 
+[2026-02-12T11:52:10.397Z] [INFO] Loaded 1 videos from disk 
+[2026-02-12T11:52:10.399Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T11:52:10.399Z] [INFO] Initializing browser... 
+[2026-02-12T11:52:10.928Z] [INFO] Browser initialized 
+[2026-02-12T11:52:10.928Z] [INFO] Scraping video detail: start-513 
+[2026-02-12T11:52:16.194Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/zKJS1-0ozk1bYNKeb5Kcpg/1770907241/56000/56862/56862.m3u8"}
+[2026-02-12T11:52:21.204Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/47352267/master/47352267_240p.m3u8"}
+[2026-02-12T11:52:22.275Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-25/47352267/47352267_240p.m3u8"}
+[2026-02-12T11:52:24.512Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-25/47352267/47352267_240p.m3u8"}
+[2026-02-12T11:52:26.746Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-25/47352267/47352267_240p.m3u8"}
+[2026-02-12T11:52:28.987Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-25/47352267/47352267_240p.m3u8"}
+[2026-02-12T11:52:31.391Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-25/47352267/47352267_240p.m3u8"}
+[2026-02-12T11:52:33.793Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-25/47352267/47352267_240p.m3u8"}
+[2026-02-12T11:52:36.036Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-25/47352267/47352267_240p.m3u8"}
+[2026-02-12T11:52:40.043Z] [INFO] Video detail scraped: START-513 最高の囁き小悪魔痴女による悶絶オナサポ射精スローコントロールで暴発したら叱られまくりSPECIAL！！！！ 小倉由菜 {"id":"start-513"}
+[2026-02-12T11:52:40.045Z] [INFO] Saved 2 videos to disk 
+[2026-02-12T11:52:40.046Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T11:52:40.085Z] [INFO] Browser closed 

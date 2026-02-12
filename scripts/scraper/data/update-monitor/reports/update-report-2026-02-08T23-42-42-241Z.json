@@ -1,0 +1,135 @@
+{
+  "generatedAt": "2026-02-08T23:42:42.240Z",
+  "summary": {
+    "totalVideosMonitored": 3,
+    "totalHistoryEntries": 3
+  },
+  "videoReports": [
+    {
+      "videoId": "mmkz-161",
+      "url": "https://jable.tv/videos/mmkz-161/",
+      "latestData": {
+        "fetchedAt": "2026-02-08T23:38:54.926Z"
+      },
+      "updateFrequency": {
+        "totalUpdates": 69,
+        "averageUpdateInterval": "11.25 minutes",
+        "lastUpdateTime": "2026-02-08T23:38:54.926Z",
+        "fieldUpdateCounts": {},
+        "updatePattern": "active",
+        "streamUpdateCount": 0,
+        "changeDetails": [
+          {
+            "timestamp": "2026-02-08T22:37:54.946Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T22:54:22.889Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T23:10:08.848Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T23:26:38.435Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T23:38:54.926Z",
+            "hasStreamChange": false
+          }
+        ]
+      },
+      "monitoringHistory": {
+        "totalChecks": 70,
+        "firstCheck": "2026-02-08T10:53:34.730Z",
+        "lastCheck": "2026-02-08T23:38:54.926Z"
+      }
+    },
+    {
+      "videoId": "mmkz-159",
+      "url": "https://jable.tv/videos/mmkz-159/",
+      "latestData": {
+        "fetchedAt": "2026-02-08T23:39:00.019Z"
+      },
+      "updateFrequency": {
+        "totalUpdates": 67,
+        "averageUpdateInterval": "11.44 minutes",
+        "lastUpdateTime": "2026-02-08T23:39:00.019Z",
+        "fieldUpdateCounts": {},
+        "updatePattern": "active",
+        "streamUpdateCount": 0,
+        "changeDetails": [
+          {
+            "timestamp": "2026-02-08T22:38:09.324Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T23:10:18.977Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T23:10:23.357Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T23:26:46.404Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T23:39:00.019Z",
+            "hasStreamChange": false
+          }
+        ]
+      },
+      "monitoringHistory": {
+        "totalChecks": 68,
+        "firstCheck": "2026-02-08T10:55:14.716Z",
+        "lastCheck": "2026-02-08T23:39:00.019Z"
+      }
+    },
+    {
+      "videoId": "sssr-208",
+      "url": "https://jable.tv/videos/sssr-208/",
+      "latestData": {
+        "fetchedAt": "2026-02-08T23:39:15.539Z"
+      },
+      "updateFrequency": {
+        "totalUpdates": 66,
+        "averageUpdateInterval": "11.53 minutes",
+        "lastUpdateTime": "2026-02-08T23:39:15.539Z",
+        "fieldUpdateCounts": {},
+        "updatePattern": "active",
+        "streamUpdateCount": 0,
+        "changeDetails": [
+          {
+            "timestamp": "2026-02-08T22:53:41.842Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T23:10:33.679Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T23:10:38.082Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T23:27:02.054Z",
+            "hasStreamChange": false
+          },
+          {
+            "timestamp": "2026-02-08T23:39:15.539Z",
+            "hasStreamChange": false
+          }
+        ]
+      },
+      "monitoringHistory": {
+        "totalChecks": 67,
+        "firstCheck": "2026-02-08T11:04:08.536Z",
+        "lastCheck": "2026-02-08T23:39:15.539Z"
+      }
+    }
+  ]
+}

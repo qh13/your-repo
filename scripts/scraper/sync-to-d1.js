@@ -46,7 +46,7 @@ function generateVideoSql(video) {
     '${authorName}',
     '${video.author?.avatarUrl || ''}',
     '${tags}',
-    '${video.streamUrls?.url || ''}',
+    '${video.streamUrls?.primary || video.streamUrls?.url || ''}',
     '${JSON.stringify(video.streamUrls?.backups || [])}',
     '${JSON.stringify(video.streamUrls?.qualities || {})}',
     '${video.scrapedAt}',
@@ -60,7 +60,10 @@ function generateVideoSql(video) {
  */
 async function saveVideoViaApi(video) {
   try {
-    const response = await fetch(`${CONFIG.WORKER_URL}/api/admin/save-video`, {
+    const apiUrl = `${CONFIG.WORKER_URL}/api/admin/save-video`;
+    console.log(`  📡 正在调用 Worker API...`);
+
+    const response = await fetch(apiUrl, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -82,6 +85,12 @@ async function saveVideoViaApi(video) {
       }),
     });
 
+    if (!response.ok) {
+      const errorText = await response.text();
+      console.log(`  ❌ ${video.id}: HTTP 错误 ${response.status} - ${errorText.substring(0, 200)}`);
+      return { success: false, error: `HTTP ${response.status}: ${errorText.substring(0, 200)}` };
+    }
+
     const result = await response.json();
 
     if (result.success) {
@@ -93,6 +102,7 @@ async function saveVideoViaApi(video) {
     return result;
   } catch (error) {
     console.log(`  ❌ ${video.id}: 异常 - ${error.message}`);
+    console.log(`     💡 提示: 如果 API 不可用，可以尝试使用 --wrangler 参数`);
     return { success: false, error: error.message };
   }
 }

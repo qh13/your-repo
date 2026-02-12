@@ -484,11 +484,26 @@ class JableScraper {
     
     // 从网络请求中提取 m3u8 URL
     const streamData = await this.extractStreamFromNetwork();
-    if (streamData) {
-      videoData.streamUrls = streamData;
+    if (streamData && streamData.primary) {
+      videoData.streamUrls = {
+        primary: streamData.primary,
+        url: streamData.url,
+        backups: streamData.backups || [],
+        qualities: streamData.qualities || {}
+      };
+    } else {
+      videoData.streamUrls = {
+        primary: null,
+        url: null,
+        backups: [],
+        qualities: {}
+      };
     }
     
-    this.logger.info(`Video detail scraped: ${videoData.title}`, { id: videoData.id });
+    this.logger.info(`Video detail scraped: ${videoData.title}`, { 
+      id: videoData.id,
+      hasStream: !!videoData.streamUrls.primary 
+    });
     
     return videoData;
   }
@@ -498,6 +513,7 @@ class JableScraper {
    */
   async extractStreamFromNetwork() {
     try {
+      // 方法1：从网络请求中等待 m3u8 请求
       const m3u8Url = await this.page.waitForRequest(request => {
         return request.url().includes('.m3u8') && 
                (request.url().includes('akuma') || 
@@ -506,31 +522,138 @@ class JableScraper {
                 request.url().includes('jable'));
       }, { timeout: 15000 }).then(request => request.url()).catch(() => null);
       
-      if (!m3u8Url) {
-        this.logger.warn('No m3u8 URL found in network requests');
-        return { url: null };
+      if (m3u8Url) {
+        return parseM3u8Url(m3u8Url);
       }
       
-      // 解析 m3u8 URL 获取信息
-      const urlMatch = m3u8Url.match(/\/hls\/([^\/]+)\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.m3u8/);
-      if (urlMatch) {
-        return {
-          url: m3u8Url,
-          cdn: 'akuma-trstin.mushroomtrack.com',
-          token: urlMatch[1],
-          timestamp: urlMatch[2],
-          folder: urlMatch[3],
-          internalId: urlMatch[4],
-          filename: urlMatch[5],
-          format: 'master'
-        };
+      this.logger.warn('No m3u8 URL found in network requests, trying other methods');
+      
+      // 方法2：从页面 JavaScript 变量中提取
+      const jsM3u8Url = await this.page.evaluate(() => {
+        // 检查常见的 JavaScript 变量名
+        const patterns = [
+          'window.streamUrl',
+          'window.videoUrl',
+          'window.hlsUrl',
+          'window.playerSrc',
+          'window.__INITIAL_STATE__',
+          'window.__DATA__',
+          'window.videoConfig',
+          'window.playerConfig'
+        ];
+        
+        for (const pattern of patterns) {
+          try {
+            const value = eval(pattern);
+            if (value && typeof value === 'string' && value.includes('.m3u8')) {
+              return value;
+            }
+            // 如果是对象，尝试查找其中的 URL
+            if (value && typeof value === 'object') {
+              const json = JSON.stringify(value);
+              const urlMatch = json.match(/"([^"]*\.m3u8[^"]*)"/);
+              if (urlMatch) return urlMatch[1];
+            }
+          } catch (e) {
+            // 忽略
+          }
+        }
+        return null;
+      });
+      
+      if (jsM3u8Url) {
+        this.logger.info('Found m3u8 URL from JavaScript variables');
+        return parseM3u8Url(jsM3u8Url);
       }
       
-      return { url: m3u8Url, format: 'direct' };
+      // 方法3：从 video 标签或 source 标签提取
+      const videoM3u8Url = await this.page.evaluate(() => {
+        const video = document.querySelector('video source[type="application/x-mpegURL"]');
+        if (video) return video.src;
+        
+        const source = document.querySelector('video source[src*=".m3u8"]');
+        if (source) return source.src;
+        
+        // 检查 video 标签的 src
+        const videoEl = document.querySelector('video[src*=".m3u8"]');
+        if (videoEl) return videoEl.src;
+        
+        return null;
+      });
+      
+      if (videoM3u8Url) {
+        this.logger.info('Found m3u8 URL from video element');
+        return parseM3u8Url(videoM3u8Url);
+      }
+      
+      // 方法4：从页面 HTML 中查找
+      const htmlM3u8Url = await this.page.evaluate(() => {
+        const scripts = document.querySelectorAll('script');
+        for (const script of scripts) {
+          const content = script.textContent || '';
+          const urlMatch = content.match(/"([^"]*\.m3u8[^"]*)"/) || content.match(/'([^']*\.m3u8[^']*)'/);
+          if (urlMatch) {
+            const url = urlMatch[1];
+            if (url.includes('akuma') || url.includes('saawsedge') || url.includes('media-hls')) {
+              return url;
+            }
+          }
+        }
+        return null;
+      });
+      
+      if (htmlM3u8Url) {
+        this.logger.info('Found m3u8 URL from HTML script tags');
+        return parseM3u8Url(htmlM3u8Url);
+      }
+      
+      this.logger.warn('No m3u8 URL found in any source');
+      return { primary: null, url: null, backups: [], qualities: {} };
+      
     } catch (error) {
       this.logger.warn('Failed to extract stream URL', { error: error.message });
-      return { url: null };
+      return { primary: null, url: null, backups: [], qualities: {} };
     }
+  }
+  
+  /**
+   * 解析 m3u8 URL 并返回格式化数据
+   */
+  parseM3u8Url(m3u8Url) {
+    if (!m3u8Url) {
+      return { primary: null, url: null, backups: [], qualities: {} };
+    }
+    
+    // 尝试解析 URL 模式
+    const patterns = [
+      // 模式1: /hls/{token}/{timestamp}/{folder}/{id}/{filename}.m3u8
+      { regex: /\/hls\/([^\/]+)\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.m3u8/, cdn: 'hls-cdn' },
+      // 模式2: akuma-trnstin.mushroomtrack.com 格式
+      { regex: /\.akuma\.trnstin\.mushroomtrack\.com\/([^\/]+)\/(.+)\.m3u8/, cdn: 'akuma' },
+      // 模式3: saawsedge.com 格式
+      { regex: /media-hls\.saawsedge\.com\/([^\/]+)\/(.+)\.m3u8/, cdn: 'saawsedge' },
+    ];
+    
+    for (const { regex, cdn } of patterns) {
+      const match = m3u8Url.match(regex);
+      if (match) {
+        return {
+          primary: m3u8Url,
+          url: m3u8Url,
+          cdn: cdn,
+          format: 'hls',
+          details: match.slice(1)
+        };
+      }
+    }
+    
+    // 通用格式
+    return {
+      primary: m3u8Url,
+      url: m3u8Url,
+      cdn: 'unknown',
+      format: 'direct'
+    };
   }
   
   /**

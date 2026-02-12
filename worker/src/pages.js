@@ -519,6 +519,32 @@ function renderVideoPage(video, videoId, error = null) {
 
   const streamUrl = video.streamUrl || `${WORKER_URL}/${videoId}.m3u8`;
   const authorName = video.authorName || '未知作者';
+
+  // 检查是否有有效的 stream URL（非空字符串）
+  const hasValidStream = video.streamUrl && video.streamUrl.trim() !== '';
+
+  let playerHTML = '';
+  if (hasValidStream) {
+    playerHTML = `
+      <video controls poster="${escapeHTML(video.coverUrl || '')}" playsinline>
+        <source src="${escapeHTML(streamUrl)}" type="application/x-mpegURL">
+        您的浏览器不支持视频播放
+      </video>
+    `;
+  } else {
+    playerHTML = `
+      <div class="player-wrapper no-stream">
+        <div class="no-stream-message">
+          <div class="no-stream-icon">🎬</div>
+          <h3>视频暂无可用播放源</h3>
+          <p>该视频暂无流媒体地址，可能是刚入库或源站暂无资源</p>
+          <a href="https://jable.tv/videos/${escapeHTML(videoId)}/" target="_blank" rel="noopener noreferrer" class="source-link-btn">
+            在 jable.tv 观看
+          </a>
+        </div>
+      </div>
+    `;
+  }
   
   let tagsHTML = '';
   if (video.tags && video.tags.length > 0) {
@@ -571,6 +597,43 @@ function renderVideoPage(video, videoId, error = null) {
       aspect-ratio: 16/9;
       max-height: 70vh;
       background: #000;
+    }
+    .player-wrapper.no-stream {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    }
+    .no-stream-message {
+      text-align: center;
+      padding: 40px;
+    }
+    .no-stream-icon {
+      font-size: 4rem;
+      margin-bottom: 20px;
+    }
+    .no-stream-message h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: #fff;
+    }
+    .no-stream-message p {
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 24px;
+    }
+    .source-link-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 500;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .source-link-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(102, 126, 234, 0.4);
     }
     .video-info {
       max-width: 1200px;
@@ -652,12 +715,7 @@ function renderVideoPage(video, videoId, error = null) {
   </header>
 
   <main>
-    <div class="player-wrapper">
-      <video controls poster="${escapeHTML(video.coverUrl || '')}" playsinline>
-        <source src="${escapeHTML(streamUrl)}" type="application/x-mpegURL">
-        您的浏览器不支持视频播放
-      </video>
-    </div>
+    ${playerHTML}
     
     <div class="video-info">
       <h1>${escapeHTML(video.title)}</h1>
