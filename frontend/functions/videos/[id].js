@@ -145,6 +145,8 @@ function generateVideoHTML(video, videoId, apiBaseUrl) {
     .player-wrapper {
       aspect-ratio: 16/9;
       max-height: 70vh;
+      max-width: 1200px;
+      margin: 0 auto;
       background: #000;
       display: flex;
       align-items: center;
@@ -154,7 +156,8 @@ function generateVideoHTML(video, videoId, apiBaseUrl) {
     .player-wrapper iframe {
       width: 100%;
       height: 100%;
-      max-width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     .video-info {
       max-width: 1200px;
@@ -218,13 +221,6 @@ function generateVideoHTML(video, videoId, apiBaseUrl) {
     .tag:hover {
       background: rgba(255,255,255,0.2);
     }
-    .source-link {
-      color: rgba(255,255,255,0.5);
-      font-size: 0.9rem;
-    }
-    .source-link a {
-      color: #4da6ff;
-    }
     .back-link {
       display: inline-block;
       margin: 24px;
@@ -284,10 +280,6 @@ function generateVideoHTML(video, videoId, apiBaseUrl) {
       ${video.description ? `<p class="description">${escapeHTML(video.description)}</p>` : ''}
       
       ${tagsHTML}
-      
-      <div class="source-link">
-        来源：<a href="https://jable.tv/videos/${escapeHTML(videoId)}/" target="_blank" rel="noopener noreferrer">jable.tv</a>
-      </div>
     </div>
     
     <a href="/" class="back-link">返回首页</a>

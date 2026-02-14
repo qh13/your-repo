@@ -38,6 +38,13 @@ const CONFIG = {
   
   // 分类列表
   categories: [
+    // 热门分类
+    '/hot/',
+    // 最新更新
+    '/latest-updates/',
+    // 全新上市
+    '/new-release/',
+    // 原有分类
     '/models/',
     '/recent/',
     '/top/',
@@ -290,38 +297,93 @@ class JableScraper {
    * 抓取视频列表页
    */
   async scrapeVideoList(category = '/recent/', pageNum = 1) {
-    const url = `${this.config.BASE_URL}${category}page/${pageNum}/`;
+    // 第一页不需要 page 路径
+    const url = pageNum === 1 
+      ? `${this.config.BASE_URL}${category}`
+      : `${this.config.BASE_URL}${category}page/${pageNum}/`;
     this.logger.info(`Scraping video list: ${url}`);
     
     await this.navigateWithRetry(url);
     
-    // 等待视频列表加载
-    await this.page.waitForSelector('.video-item', { timeout: 10000 }).catch(() => null);
+    // 等待视频列表加载 - 新页面结构使用 h1 标题后紧跟的链接
+    await this.page.waitForSelector('main a[href*="/videos/"]', { timeout: 10000 }).catch(() => null);
     
     const videos = await this.page.evaluate(() => {
-      const items = document.querySelectorAll('.video-item');
+      const results = [];
       
-      return Array.from(items).map(item => {
-        const link = item.querySelector('a');
-        const img = item.querySelector('.img-cover img, .cover-img');
-        const title = item.querySelector('.video-title, .title');
-        const duration = item.querySelector('.duration, .video-duration');
-        const views = item.querySelector('.views, .view-count');
+      // 查找所有视频详情页链接
+      const allAnchors = document.querySelectorAll('a[href*="/videos/"]');
+      
+      let currentDuration = '';
+      let currentViews = '';
+      let currentLikes = '';
+      
+      // 处理每个链接
+      allAnchors.forEach((link, index) => {
+        const href = link.href;
+        const text = link.textContent?.trim() || '';
         
-        // 从 URL 中提取视频 ID
-        const href = link?.href || '';
-        const idMatch = href.match(/jable\.tv\/videos\/([^\/]+)/);
-        const videoId = idMatch ? idMatch[1] : null;
+        // 跳过分页链接和分类链接
+        if (href.includes('/hot/') || href.includes('/latest-updates/') || 
+            href.includes('/new-release/') || href.includes('/new-release/') ||
+            href.includes('/page/') || href.includes('/models/') || 
+            href.includes('/categories/') || href.includes('/tags/')) {
+          return;
+        }
         
-        return {
-          id: videoId,
-          url: href,
-          title: title?.textContent?.trim() || '',
-          coverUrl: img?.src || img?.dataset?.src || '',
-          duration: duration?.textContent?.trim() || '',
-          views: views?.textContent?.trim() || '',
-        };
+        // 检查是否是视频详情页链接
+        const videoIdMatch = href.match(/jable\.tv\/videos\/([^\/]+)/);
+        if (!videoIdMatch) return;
+        
+        const videoId = videoIdMatch[1];
+        
+        // 过滤掉已经是结果的链接（去重）
+        if (results.some(r => r.id === videoId)) return;
+        
+        // 检查是否是时长链接（纯空白或只有时间格式）
+        const durationMatch = text.match(/^(\d+:\d{2}(?::\d{2})?)$/);
+        
+        // 如果是标题链接（有实际内容）
+        if (text.length > 0 && !durationMatch) {
+          // 获取父级元素来查找统计信息
+          const parent = link.parentElement;
+          let views = '';
+          let likes = '';
+          
+          if (parent) {
+            // 查找所有相邻的链接文本
+            const parentLinks = parent.querySelectorAll('a');
+            parentLinks.forEach(pl => {
+              const plText = pl.textContent?.trim() || '';
+              // 观看次数通常是较大的数字（至少4位）
+              if (plText.match(/^\d{3,}/) && !plText.includes('/videos/')) {
+                if (!views) {
+                  views = plText;
+                } else if (!likes) {
+                  likes = plText;
+                }
+              }
+            });
+          }
+          
+          results.push({
+            id: videoId,
+            url: href,
+            title: text,
+            duration: currentDuration || '',
+            views: views || '',
+            likes: likes || '',
+          });
+          
+          // 重置临时变量
+          currentDuration = '';
+        } else if (durationMatch) {
+          // 这是时长链接
+          currentDuration = text;
+        }
       });
+      
+      return results;
     });
     
     this.logger.info(`Found ${videos.length} videos on page ${pageNum}`);
