@@ -370,3 +370,365 @@
 [2026-02-12T11:52:40.045Z] [INFO] Saved 2 videos to disk 
 [2026-02-12T11:52:40.046Z] [INFO] Saved 0 categories to disk 
 [2026-02-12T11:52:40.085Z] [INFO] Browser closed 
+[2026-02-12T12:05:36.329Z] [INFO] Loaded 2 videos from disk 
+[2026-02-12T12:05:36.330Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T12:05:36.330Z] [INFO] Initializing browser... 
+[2026-02-12T12:05:36.761Z] [INFO] Browser initialized 
+[2026-02-12T12:05:36.761Z] [INFO] Scraping video detail: start-493 
+[2026-02-12T12:05:46.110Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/MkZSopw11x_pfAmwSFkftQ/1770908321/56000/56861/56861.m3u8"}
+[2026-02-12T12:05:52.721Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/218639882/master/218639882_240p.m3u8"}
+[2026-02-12T12:05:53.741Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/218639882/218639882_240p.m3u8"}
+[2026-02-12T12:05:56.005Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/218639882/218639882_240p.m3u8"}
+[2026-02-12T12:05:58.322Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/218639882/218639882_240p.m3u8"}
+[2026-02-12T12:06:00.675Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/218639882/218639882_240p.m3u8"}
+[2026-02-12T12:06:02.919Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/218639882/218639882_240p.m3u8"}
+[2026-02-12T12:06:05.334Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/218639882/218639882_240p.m3u8"}
+[2026-02-12T12:06:06.764Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://jable.tv/videos/start-493/\", waiting until \"networkidle\"\u001b[22m\n"}
+[2026-02-12T12:06:07.582Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/218639882/218639882_240p.m3u8"}
+[2026-02-12T12:06:09.841Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/218639882/218639882_240p.m3u8"}
+[2026-02-12T12:06:14.896Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/MkZSopw11x_pfAmwSFkftQ/1770908321/56000/56861/56861.m3u8"}
+[2026-02-12T12:06:21.842Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/31856951/master/31856951_240p.m3u8"}
+[2026-02-12T12:06:23.024Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:06:25.512Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:06:27.947Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:06:30.381Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:06:32.822Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:06:35.357Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:06:37.797Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:06:40.234Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:06:42.243Z] [WARN] Failed to extract stream URL {"error":"parseM3u8Url is not defined"}
+[2026-02-12T12:06:42.243Z] [INFO] Video detail scraped: START-493 人生初のナマ中出し解禁 気持ち良すぎて痙攣が止まらない大絶頂セックス！ 一宮留衣 {"id":"start-493","hasStream":false}
+[2026-02-12T12:06:42.245Z] [INFO] Saved 3 videos to disk 
+[2026-02-12T12:06:42.246Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T12:06:42.280Z] [INFO] Browser closed 
+[2026-02-12T12:07:04.463Z] [INFO] Loaded 3 videos from disk 
+[2026-02-12T12:07:04.464Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T12:07:04.464Z] [INFO] Initializing browser... 
+[2026-02-12T12:07:04.659Z] [INFO] Browser initialized 
+[2026-02-12T12:07:04.659Z] [INFO] Starting to scrape category: /recent/ 
+[2026-02-12T12:07:04.659Z] [INFO] Scraping video list: https://jable.tv/recent/page/1/ 
+[2026-02-12T12:07:19.919Z] [INFO] Found 0 videos on page 1 
+[2026-02-12T12:07:19.919Z] [INFO] Finished scraping category: /recent/, found 0 videos 
+[2026-02-12T12:07:19.947Z] [INFO] Browser closed 
+[2026-02-12T12:11:50.863Z] [INFO] Loaded 3 videos from disk 
+[2026-02-12T12:11:50.864Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T12:11:50.864Z] [INFO] Initializing browser... 
+[2026-02-12T12:11:51.333Z] [INFO] Browser initialized 
+[2026-02-12T12:11:51.333Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T12:11:55.016Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/iqIpvFWMhRXrR4GBqoOyXA/1770908985/56000/56860/56860.m3u8"}
+[2026-02-12T12:12:02.950Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/31856951/master/31856951_240p.m3u8"}
+[2026-02-12T12:12:04.498Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:12:06.740Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:12:08.989Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:12:11.440Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:12:13.680Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:12:15.914Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:12:18.322Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:12:20.962Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:12:22.971Z] [WARN] Failed to extract stream URL {"error":"parseM3u8Url is not defined"}
+[2026-02-12T12:12:22.971Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":false}
+[2026-02-12T12:12:22.973Z] [INFO] Saved 4 videos to disk 
+[2026-02-12T12:12:22.974Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T12:12:23.005Z] [INFO] Browser closed 
+[2026-02-12T12:14:08.594Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T12:14:08.595Z] [INFO] Initializing browser... 
+[2026-02-12T12:14:08.801Z] [INFO] Browser initialized 
+[2026-02-12T12:14:08.801Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T12:14:12.315Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/iqIpvFWMhRXrR4GBqoOyXA/1770908985/56000/56860/56860.m3u8"}
+[2026-02-12T12:14:18.642Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/31856951/master/31856951_240p.m3u8"}
+[2026-02-12T12:14:19.731Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:14:22.214Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:14:24.609Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:14:27.022Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:14:29.419Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:14:31.827Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:14:34.226Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:14:36.631Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:14:38.636Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-12T12:14:38.637Z] [INFO] Saved 1 videos to disk 
+[2026-02-12T12:14:38.638Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T12:14:38.673Z] [INFO] Browser closed 
+[2026-02-12T12:15:52.678Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T12:15:52.679Z] [INFO] Initializing browser... 
+[2026-02-12T12:15:52.897Z] [INFO] Browser initialized 
+[2026-02-12T12:15:52.898Z] [INFO] Scraping video detail: start-493 
+[2026-02-12T12:15:56.749Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/scuElLDFZJpXVjnHuBrtVw/1770909220/56000/56861/56861.m3u8"}
+[2026-02-12T12:16:02.669Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/220304046/master/220304046_240p.m3u8"}
+[2026-02-12T12:16:03.723Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/220304046/220304046_240p.m3u8"}
+[2026-02-12T12:16:05.955Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/220304046/220304046_240p.m3u8"}
+[2026-02-12T12:16:08.395Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/220304046/220304046_240p.m3u8"}
+[2026-02-12T12:16:10.792Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/220304046/220304046_240p.m3u8"}
+[2026-02-12T12:16:13.198Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/220304046/220304046_240p.m3u8"}
+[2026-02-12T12:16:15.596Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/220304046/220304046_240p.m3u8"}
+[2026-02-12T12:16:17.834Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/220304046/220304046_240p.m3u8"}
+[2026-02-12T12:16:20.226Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/220304046/220304046_240p.m3u8"}
+[2026-02-12T12:16:22.233Z] [INFO] Video detail scraped: START-493 人生初のナマ中出し解禁 気持ち良すぎて痙攣が止まらない大絶頂セックス！ 一宮留衣 {"id":"start-493","hasStream":true}
+[2026-02-12T12:16:22.235Z] [INFO] Saved 1 videos to disk 
+[2026-02-12T12:16:22.235Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T12:16:22.267Z] [INFO] Browser closed 
+[2026-02-12T12:19:08.213Z] [INFO] Loaded 1 videos from disk 
+[2026-02-12T12:19:08.214Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T12:19:08.214Z] [INFO] Initializing browser... 
+[2026-02-12T12:19:08.643Z] [INFO] Browser initialized 
+[2026-02-12T12:19:08.643Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T12:19:12.418Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/iqIpvFWMhRXrR4GBqoOyXA/1770908985/56000/56860/56860.m3u8"}
+[2026-02-12T12:19:18.369Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/31856951/master/31856951_240p.m3u8"}
+[2026-02-12T12:19:19.331Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:19:21.580Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:19:23.757Z] [DEBUG] Found m3u8 URL {"url":"https://landers.cam4.com/assets/usernames/?stream=https://cam4-hls.xcdnpro.com/320/cam4-origin-live/_Betty_22-320-d8d1e560-d57e-4ca7-81a3-81313883f2b6_aac/playlist.m3u8&username=_Betty_22&format=mp4"}
+[2026-02-12T12:19:23.841Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:19:24.585Z] [DEBUG] Found m3u8 URL {"url":"https://landers.cam4.com/assets/usernames/?stream=https://cam4-hls.xcdnpro.com/322/cam4-origin-live/maru191-322-791a0c4e-cd28-49d5-a492-262e5e19f5d1_aac/playlist.m3u8&username=maru191&format=mp4"}
+[2026-02-12T12:19:24.869Z] [DEBUG] Found m3u8 URL {"url":"https://landers.cam4.com/assets/usernames/?stream=https://cam4-hls.xcdnpro.com/317/cam4-origin-live/GabieRuiz-317-be678947-fa35-4486-8f6c-54f73bef93d1_aac/playlist.m3u8&username=GabieRuiz&format=mp4"}
+[2026-02-12T12:19:25.412Z] [DEBUG] Found m3u8 URL {"url":"https://landers.cam4.com/assets/usernames/?stream=https://cam4-hls.xcdnpro.com/314/cam4-origin-live/TerpsichoreMuse-314-a711b0cd-acb7-45f6-b667-d450bd724705_aac/playlist.m3u8&username=TerpsichoreMuse&format=mp4"}
+[2026-02-12T12:19:26.116Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:19:28.484Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:19:30.733Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:19:33.129Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:19:35.389Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:19:37.635Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:19:39.928Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:19:42.204Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:19:44.215Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-12T12:19:44.218Z] [INFO] Saved 2 videos to disk 
+[2026-02-12T12:19:44.219Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T12:19:44.253Z] [INFO] Browser closed 
+[2026-02-12T12:40:26.176Z] [INFO] Loaded 2 videos from disk 
+[2026-02-12T12:40:26.177Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T12:40:26.177Z] [INFO] Initializing browser... 
+[2026-02-12T12:40:26.615Z] [INFO] Browser initialized 
+[2026-02-12T12:40:26.615Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T12:40:31.666Z] [DEBUG] Found m3u8 URL {"url":"https://honi-moly-yami.mushroomtrack.com/hls/rggEdOpxFDDEfGScENFe-A/1770910785/56000/56860/56860.m3u8"}
+[2026-02-12T12:40:38.397Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/31856951/master/31856951_240p.m3u8"}
+[2026-02-12T12:40:39.677Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:40:42.170Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:40:44.634Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:40:47.170Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:40:49.622Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:40:52.078Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:40:54.538Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:40:56.994Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/31856951/31856951_240p.m3u8"}
+[2026-02-12T12:40:59.003Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-12T12:40:59.005Z] [INFO] Saved 2 videos to disk 
+[2026-02-12T12:40:59.006Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T12:40:59.037Z] [INFO] Browser closed 
+[2026-02-12T12:44:53.561Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T12:44:53.562Z] [INFO] Initializing browser... 
+[2026-02-12T12:44:53.779Z] [INFO] Browser initialized 
+[2026-02-12T12:44:53.779Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T12:44:58.223Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/51BbepS1XpG1W8XInTx7gg/1770910959/56000/56860/56860.m3u8"}
+[2026-02-12T12:45:04.679Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8"}
+[2026-02-12T12:45:05.761Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:45:08.172Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:45:10.571Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:45:12.817Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:45:15.216Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:45:17.472Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:45:19.881Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:45:22.279Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:45:25.595Z] [DEBUG] Found 0 m3u8 URLs {"urls":[],"qualities":[]}
+[2026-02-12T12:45:25.596Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":false}
+[2026-02-12T12:45:25.597Z] [INFO] Saved 1 videos to disk 
+[2026-02-12T12:45:25.597Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T12:45:25.630Z] [INFO] Browser closed 
+[2026-02-12T12:46:53.736Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T12:46:53.737Z] [INFO] Initializing browser... 
+[2026-02-12T12:46:53.966Z] [INFO] Browser initialized 
+[2026-02-12T12:46:53.966Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T12:46:57.758Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/51BbepS1XpG1W8XInTx7gg/1770910959/56000/56860/56860.m3u8"}
+[2026-02-12T12:47:04.837Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8"}
+[2026-02-12T12:47:06.033Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:47:08.503Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:47:10.508Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8","quality":"unknown"}
+[2026-02-12T12:47:10.961Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:47:13.420Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:47:15.877Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:47:17.741Z] [DEBUG] Collected 1 m3u8 URLs {"qualities":[]}
+[2026-02-12T12:47:17.752Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-12T12:47:17.753Z] [INFO] Saved 1 videos to disk 
+[2026-02-12T12:47:17.754Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T12:47:17.782Z] [INFO] Browser closed 
+[2026-02-12T12:52:27.929Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T12:52:27.930Z] [INFO] Initializing browser... 
+[2026-02-12T12:52:28.358Z] [INFO] Browser initialized 
+[2026-02-12T12:52:28.358Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T12:52:31.821Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/51BbepS1XpG1W8XInTx7gg/1770910959/56000/56860/56860.m3u8"}
+[2026-02-12T12:52:37.332Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8","quality":"unknown"}
+[2026-02-12T12:52:38.222Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8"}
+[2026-02-12T12:52:38.228Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8","quality":"unknown"}
+[2026-02-12T12:52:39.445Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:52:42.301Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:52:44.561Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:52:46.116Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":[]}
+[2026-02-12T12:52:47.015Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:52:49.283Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T12:52:51.129Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-12T12:52:51.130Z] [INFO] Saved 1 videos to disk 
+[2026-02-12T12:52:51.130Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T12:52:51.159Z] [INFO] Browser closed 
+[2026-02-12T13:01:21.146Z] [INFO] Loaded 1 videos from disk 
+[2026-02-12T13:01:21.147Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T13:01:21.147Z] [INFO] Initializing browser... 
+[2026-02-12T13:01:21.602Z] [INFO] Browser initialized 
+[2026-02-12T13:01:21.602Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T13:01:25.618Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/NWI02vPs0DA-Uu2fb85TBQ/1770911860/56000/56860/56860.m3u8"}
+[2026-02-12T13:01:32.186Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8","quality":"unknown","videoId":"start-488"}
+[2026-02-12T13:01:33.682Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8"}
+[2026-02-12T13:01:33.693Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8","quality":"unknown","videoId":"start-488"}
+[2026-02-12T13:01:34.642Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T13:01:36.392Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8","allScores":[{"url":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8","score":800},{"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8","score":800}]}
+[2026-02-12T13:01:36.393Z] [INFO] Selected stream URL: https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8... {"hasBackups":true,"qualities":[]}
+[2026-02-12T13:01:36.393Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":[]}
+[2026-02-12T13:01:36.889Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T13:01:39.327Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T13:01:41.410Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-12T13:01:41.411Z] [INFO] Saved 1 videos to disk 
+[2026-02-12T13:01:41.411Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T13:01:41.441Z] [INFO] Browser closed 
+[2026-02-12T13:03:22.523Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T13:03:22.524Z] [INFO] Initializing browser... 
+[2026-02-12T13:03:22.735Z] [INFO] Browser initialized 
+[2026-02-12T13:03:22.736Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T13:03:26.382Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/NWI02vPs0DA-Uu2fb85TBQ/1770911860/56000/56860/56860.m3u8"}
+[2026-02-12T13:03:33.206Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8","quality":"unknown","videoId":"start-488"}
+[2026-02-12T13:03:34.571Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8"}
+[2026-02-12T13:03:34.582Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8","quality":"unknown","videoId":"start-488"}
+[2026-02-12T13:03:35.934Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T13:03:39.615Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T13:03:41.858Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T13:03:43.245Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8","allScores":[{"url":"https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8","score":800},{"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8","score":800}]}
+[2026-02-12T13:03:43.246Z] [INFO] Selected stream URL: https://edge-hls.saawsedge.com/hls/158906438/master/158906438.m3u8... {"hasBackups":true,"qualities":[]}
+[2026-02-12T13:03:43.246Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":[]}
+[2026-02-12T13:03:44.361Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T13:03:46.598Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-20/158906438/158906438.m3u8"}
+[2026-02-12T13:03:48.260Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-12T13:03:48.262Z] [INFO] Saved 1 videos to disk 
+[2026-02-12T13:03:48.262Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T13:03:48.288Z] [INFO] Browser closed 
+[2026-02-12T13:10:32.434Z] [INFO] Loaded 1 videos from disk 
+[2026-02-12T13:10:32.435Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T13:10:32.435Z] [INFO] Initializing browser... 
+[2026-02-12T13:10:32.859Z] [INFO] Browser initialized 
+[2026-02-12T13:10:32.859Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T13:10:36.571Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/NWI02vPs0DA-Uu2fb85TBQ/1770911860/56000/56860/56860.m3u8"}
+[2026-02-12T13:10:41.460Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/207759917/master/207759917_240p.m3u8 
+[2026-02-12T13:10:42.370Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/207759917/master/207759917_240p.m3u8"}
+[2026-02-12T13:10:42.379Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/207759917/207759917_240p.m3u8","quality":"240p","videoId":"start-488"}
+[2026-02-12T13:10:43.737Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/207759917/207759917_240p.m3u8"}
+[2026-02-12T13:10:45.212Z] [INFO] Selected stream URL: https://media-hls.saawsedge.com/b-hls-24/207759917/207759917_240p.m3u8... {"hasBackups":false,"qualities":["240p"]}
+[2026-02-12T13:10:45.213Z] [DEBUG] Collected 1 m3u8 URLs {"qualities":["240p"]}
+[2026-02-12T13:10:46.357Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/207759917/207759917_240p.m3u8"}
+[2026-02-12T13:10:48.808Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/207759917/207759917_240p.m3u8"}
+[2026-02-12T13:10:50.228Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-12T13:10:50.229Z] [INFO] Saved 1 videos to disk 
+[2026-02-12T13:10:50.229Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T13:10:50.247Z] [INFO] Browser closed 
+[2026-02-12T13:13:16.566Z] [INFO] Loaded 1 videos from disk 
+[2026-02-12T13:13:16.568Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T13:13:16.568Z] [INFO] Initializing browser... 
+[2026-02-12T13:13:16.783Z] [INFO] Browser initialized 
+[2026-02-12T13:13:16.783Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T13:13:20.732Z] [DEBUG] Found m3u8 URL {"url":"https://homi-doki-mani.mushroomtrack.com/hls/6yis5XA511K90vqf1StSEw/1770912760/56000/56860/56860.m3u8"}
+[2026-02-12T13:13:26.278Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/207759917/master/207759917_240p.m3u8 
+[2026-02-12T13:13:27.396Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/207759917/master/207759917_240p.m3u8"}
+[2026-02-12T13:13:27.405Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/207759917/207759917_240p.m3u8","quality":"240p","videoId":"start-488"}
+[2026-02-12T13:13:28.503Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/207759917/207759917_240p.m3u8"}
+[2026-02-12T13:13:30.920Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/207759917/207759917_240p.m3u8"}
+[2026-02-12T13:13:31.730Z] [INFO] Selected stream URL: https://media-hls.saawsedge.com/b-hls-24/207759917/207759917_240p.m3u8... {"hasBackups":false,"qualities":["240p"]}
+[2026-02-12T13:13:31.730Z] [DEBUG] Collected 1 m3u8 URLs {"qualities":["240p"]}
+[2026-02-12T13:13:33.320Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/207759917/207759917_240p.m3u8"}
+[2026-02-12T13:13:35.719Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-24/207759917/207759917_240p.m3u8"}
+[2026-02-12T13:13:36.743Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-12T13:13:36.744Z] [INFO] Saved 1 videos to disk 
+[2026-02-12T13:13:36.744Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T13:13:36.771Z] [INFO] Browser closed 
+[2026-02-12T13:23:03.771Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T13:23:03.772Z] [INFO] Initializing browser... 
+[2026-02-12T13:23:04.076Z] [INFO] Browser initialized 
+[2026-02-12T13:23:04.076Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T13:23:07.762Z] [DEBUG] Found m3u8 URL {"url":"https://homi-doki-mani.mushroomtrack.com/hls/6yis5XA511K90vqf1StSEw/1770912760/56000/56860/56860.m3u8"}
+[2026-02-12T13:23:14.523Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/41991456/master/41991456_240p.m3u8"}
+[2026-02-12T13:23:15.470Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8"}
+[2026-02-12T13:23:17.952Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8"}
+[2026-02-12T13:23:20.428Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8"}
+[2026-02-12T13:23:23.247Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8"}
+[2026-02-12T13:23:25.488Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8"}
+[2026-02-12T13:23:26.409Z] [INFO] Extracted internal video ID: null 
+[2026-02-12T13:23:27.494Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8","quality":"240p","videoId":"start-488"}
+[2026-02-12T13:23:29.022Z] [DEBUG] Found m3u8 URL {"url":"https://homi-doki-mani.mushroomtrack.com/hls/6yis5XA511K90vqf1StSEw/1770912760/56000/56860/56860.m3u8","quality":"unknown","videoId":"start-488"}
+[2026-02-12T13:23:29.309Z] [DEBUG] Found m3u8 URL {"url":"https://homi-doki-mani.mushroomtrack.com/hls/6yis5XA511K90vqf1StSEw/1770912760/56000/56860/56860.m3u8"}
+[2026-02-12T13:23:35.493Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/41991456/master/41991456_240p.m3u8 
+[2026-02-12T13:23:36.823Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/41991456/master/41991456_240p.m3u8"}
+[2026-02-12T13:23:37.735Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8"}
+[2026-02-12T13:23:39.249Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://homi-doki-mani.mushroomtrack.com/hls/6yis5XA511K90vqf1StSEw/1770912760/56000/56860/56860.m3u8","allScores":[{"url":"https://homi-doki-mani.mushroomtrack.com/hls/6yis5XA511K90vqf1StSEw/1770912760/5","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8","score":1090}]}
+[2026-02-12T13:23:39.249Z] [INFO] Selected stream URL: https://homi-doki-mani.mushroomtrack.com/hls/6yis5XA511K90vqf1StSEw/1770912760/56000/56860/56860.m3u... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-12T13:23:39.249Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-12T13:23:39.258Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-12T13:23:39.259Z] [INFO] Saved 1 videos to disk 
+[2026-02-12T13:23:39.260Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T13:23:39.290Z] [INFO] Browser closed 
+[2026-02-12T13:27:25.897Z] [INFO] Loaded 1 videos from disk 
+[2026-02-12T13:27:25.898Z] [INFO] Loaded 0 categories from disk 
+[2026-02-12T13:27:25.898Z] [INFO] Initializing browser... 
+[2026-02-12T13:27:26.109Z] [INFO] Browser initialized 
+[2026-02-12T13:27:26.109Z] [INFO] Scraping video detail: start-488 
+[2026-02-12T13:27:30.279Z] [DEBUG] Found m3u8 URL {"url":"https://homi-doki-mani.mushroomtrack.com/hls/6yis5XA511K90vqf1StSEw/1770912760/56000/56860/56860.m3u8"}
+[2026-02-12T13:27:39.117Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/41991456/master/41991456_240p.m3u8"}
+[2026-02-12T13:27:40.274Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8"}
+[2026-02-12T13:27:42.780Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8"}
+[2026-02-12T13:27:43.805Z] [INFO] Extracted internal video ID: null 
+[2026-02-12T13:27:44.784Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8","quality":"240p","videoId":"start-488"}
+[2026-02-12T13:27:46.627Z] [DEBUG] Found m3u8 URL {"url":"https://home-clone-clear.mushroomtrack.com/hls/dtfX5EQMJksNFGkocNKV3A/1770913660/56000/56860/56860.m3u8","quality":"unknown","videoId":"start-488"}
+[2026-02-12T13:27:47.878Z] [DEBUG] Found m3u8 URL {"url":"https://home-clone-clear.mushroomtrack.com/hls/dtfX5EQMJksNFGkocNKV3A/1770913660/56000/56860/56860.m3u8"}
+[2026-02-12T13:27:52.798Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/41991456/master/41991456_240p.m3u8 
+[2026-02-12T13:27:53.856Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/41991456/master/41991456_240p.m3u8"}
+[2026-02-12T13:27:54.807Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8"}
+[2026-02-12T13:27:56.325Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://home-clone-clear.mushroomtrack.com/hls/dtfX5EQMJksNFGkocNKV3A/1770913660/56000/56860/56860.m3u8","allScores":[{"url":"https://home-clone-clear.mushroomtrack.com/hls/dtfX5EQMJksNFGkocNKV3A/1770913660","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-30/41991456/41991456_240p.m3u8","score":1090}]}
+[2026-02-12T13:27:56.325Z] [INFO] Selected stream URL: https://home-clone-clear.mushroomtrack.com/hls/dtfX5EQMJksNFGkocNKV3A/1770913660/56000/56860/56860.m... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-12T13:27:56.325Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-12T13:27:56.340Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-12T13:27:56.341Z] [INFO] Saved 1 videos to disk 
+[2026-02-12T13:27:56.341Z] [INFO] Saved 0 categories to disk 
+[2026-02-12T13:27:56.369Z] [INFO] Browser closed 
+[2026-02-14T00:41:20.593Z] [INFO] Loaded 1 videos from disk 
+[2026-02-14T00:41:20.594Z] [INFO] Loaded 0 categories from disk 
+[2026-02-14T00:41:20.594Z] [INFO] Initializing browser... 
+[2026-02-14T00:41:21.046Z] [INFO] Browser initialized 
+[2026-02-14T00:41:21.046Z] [INFO] Scraping video detail: start-488 
+[2026-02-14T00:41:24.746Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/bKeyQ7qHY0VFLpBw8UIX2w/1771040323/56000/56860/56860.m3u8"}
+[2026-02-14T00:41:30.773Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/41991456/master/41991456_240p.m3u8"}
+[2026-02-14T00:41:31.873Z] [DEBUG] Found m3u8 URL {"url":"https://edge14-lax.live.mmcdn.com/live-hls/amlst:cumplaycouple-sd-b47ccfb42442903671e195115b3b94f4aa47cf080fdd91c46d372771af39cfe2_trns_h264/playlist.m3u8"}
+[2026-02-14T00:41:32.106Z] [DEBUG] Found m3u8 URL {"url":"https://edge14-lax.live.mmcdn.com/live-hls/amlst:cumplaycouple-sd-b47ccfb42442903671e195115b3b94f4aa47cf080fdd91c46d372771af39cfe2_trns_h264/chunklist_w1040656689_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T00:41:32.701Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:41:34.946Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:41:37.255Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:41:39.498Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:41:43.272Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:41:45.509Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:41:47.749Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:41:49.989Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:41:51.048Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://jable.tv/videos/start-488/\", waiting until \"networkidle\"\u001b[22m\n"}
+[2026-02-14T00:41:52.376Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:41:54.618Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:41:57.673Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/bKeyQ7qHY0VFLpBw8UIX2w/1771040323/56000/56860/56860.m3u8"}
+[2026-02-14T00:42:03.478Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/41991456/master/41991456_240p.m3u8"}
+[2026-02-14T00:42:04.613Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:42:04.966Z] [DEBUG] Found m3u8 URL {"url":"https://edge29-sea.live.mmcdn.com/live-hls/amlst:libbyshepard-sd-dd25426144cf4375b0ce4abd134923420477752e4362abe1c706d933ad45d51e_trns_h264/playlist.m3u8"}
+[2026-02-14T00:42:05.341Z] [DEBUG] Found m3u8 URL {"url":"https://edge29-sea.live.mmcdn.com/live-hls/amlst:libbyshepard-sd-dd25426144cf4375b0ce4abd134923420477752e4362abe1c706d933ad45d51e_trns_h264/chunklist_w1060610709_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T00:42:06.857Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:42:09.253Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:42:11.491Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:42:12.726Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T00:42:13.497Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8","quality":"240p","videoId":"start-488"}
+[2026-02-14T00:42:13.740Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:42:15.323Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/bKeyQ7qHY0VFLpBw8UIX2w/1771040323/56000/56860/56860.m3u8","quality":"unknown","videoId":"start-488"}
+[2026-02-14T00:42:15.622Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/bKeyQ7qHY0VFLpBw8UIX2w/1771040323/56000/56860/56860.m3u8"}
+[2026-02-14T00:42:21.575Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/41991456/master/41991456_240p.m3u8 
+[2026-02-14T00:42:22.470Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/41991456/master/41991456_240p.m3u8"}
+[2026-02-14T00:42:23.371Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8"}
+[2026-02-14T00:42:24.885Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://hot-box-gen.mushroomtrack.com/hls/bKeyQ7qHY0VFLpBw8UIX2w/1771040323/56000/56860/56860.m3u8","allScores":[{"url":"https://hot-box-gen.mushroomtrack.com/hls/bKeyQ7qHY0VFLpBw8UIX2w/1771040323/5600","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-27/41991456/41991456_240p.m3u8","score":1090}]}
+[2026-02-14T00:42:24.886Z] [INFO] Selected stream URL: https://hot-box-gen.mushroomtrack.com/hls/bKeyQ7qHY0VFLpBw8UIX2w/1771040323/56000/56860/56860.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T00:42:24.886Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T00:42:24.899Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-14T00:42:24.904Z] [INFO] Saved 1 videos to disk 
+[2026-02-14T00:42:24.905Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T00:42:24.947Z] [INFO] Browser closed 

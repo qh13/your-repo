@@ -335,16 +335,92 @@ class JableScraper {
   async scrapeVideoDetail(videoId) {
     const url = `${this.config.BASE_URL}/videos/${videoId}/`;
     this.logger.info(`Scraping video detail: ${videoId}`);
-    
+
+    // 先导航到页面
     await this.navigateWithRetry(url);
-    
-    // 等待页面主要元素加载
-    await this.page.waitForSelector('.video-container, .player-wrapper', { timeout: 15000 }).catch(() => null);
-    
-    // 提取视频信息
+    await this.page.waitForLoadState('networkidle').catch(() => {});
+    await new Promise(resolve => setTimeout(resolve, 2000));
+
+    // 从页面提取内部视频 ID
+    const internalVideoId = await this.page.evaluate(() => {
+      let internalId = null;
+
+      // 从 script 标签中查找视频配置
+      const scripts = document.querySelectorAll('script');
+      for (const script of scripts) {
+        const content = script.textContent || '';
+        const videoIdMatch = content.match(/video_id\s*[:=]\s*["']?(\d+)["']?/);
+        if (videoIdMatch) {
+          internalId = videoIdMatch[1];
+          break;
+        }
+        const contentIdMatch = content.match(/contentId\s*[:=]\s*["']?(\d+)["']?/);
+        if (contentIdMatch) {
+          internalId = contentIdMatch[1];
+          break;
+        }
+        const internalIdMatch = content.match(/internal_id\s*[:=]\s*["']?(\d+)["']?/);
+        if (internalIdMatch) {
+          internalId = internalIdMatch[1];
+          break;
+        }
+      }
+
+      return internalId;
+    });
+
+    this.logger.info(`Extracted internal video ID: ${internalVideoId}`);
+
+    // 然后收集 m3u8 URL
+    const streamData = await this.collectStreamUrlsDuringNavigation(url, internalVideoId);
+
+    // 重新评分选择（如果只有一个 URL，不需要重新选择）
+    if (streamData.backups && streamData.backups.length > 0 && internalVideoId) {
+      const allUrls = [streamData.primary, ...streamData.backups];
+
+      // 使用内部视频 ID 重新评分
+      const scoredUrls = allUrls.map(u => {
+        let score = 0;
+
+        // 域名优先级
+        score += getDomainPriority(u) * 100;
+
+        // 清晰度分数
+        const qualityMatch = u.match(/_(\d+)p/);
+        if (qualityMatch) {
+          score += parseInt(qualityMatch[1]);
+        }
+
+        // 最关键：包含内部视频 ID 的 URL 优先（最高加分）
+        if (internalVideoId && u.includes(internalVideoId)) {
+          score += 200;
+          this.logger.debug(`URL contains internal video ID ${internalVideoId}: ${u.substring(0, 80)}`);
+        }
+
+        // URL 路径包含 /56000/ 模式（jable 视频 ID 模式）
+        if (u.match(/\/56000\/\d+/)) {
+          score += 50;
+        }
+
+        return { url: u, score };
+      });
+
+      scoredUrls.sort((a, b) => b.score - a.score);
+      const bestUrl = scoredUrls[0].url;
+
+      if (bestUrl !== streamData.primary) {
+        this.logger.info(`Re-selected stream URL using internal video ID: ${bestUrl.substring(0, 80)}...`);
+        streamData.primary = bestUrl;
+        streamData.url = bestUrl;
+        streamData.backups = scoredUrls.filter(u => u.url !== bestUrl).map(u => u.url);
+      }
+    }
+
+    // 然后提取其他元数据
     const videoData = await this.page.evaluate(() => {
       const data = {
         id: null,
+        internalVideoId: null,
         title: '',
         description: '',
         coverUrl: '',
@@ -370,6 +446,25 @@ class JableScraper {
       if (urlMatch) {
         data.id = urlMatch[1];
       }
+
+      // 尝试提取内部视频 ID
+      let internalVideoId = null;
+
+      const scripts = document.querySelectorAll('script');
+      for (const script of scripts) {
+        const content = script.textContent || '';
+        const videoIdMatch = content.match(/video_id\s*[:=]\s*["']?(\d+)["']?/);
+        if (videoIdMatch) {
+          internalVideoId = videoIdMatch[1];
+          break;
+        }
+        const contentIdMatch = content.match(/contentId\s*[:=]\s*["']?(\d+)["']?/);
+        if (contentIdMatch) {
+          internalVideoId = contentIdMatch[1];
+          break;
+        }
+      }
+      data.internalVideoId = internalVideoId;
 
       // 提取标题 - jable.tv 新结构适配
       const titleEl = document.querySelector(
@@ -482,8 +577,7 @@ class JableScraper {
       return data;
     });
     
-    // 从网络请求中提取 m3u8 URL
-    const streamData = await this.extractStreamFromNetwork();
+    // 使用已收集的 streamData
     if (streamData && streamData.primary) {
       videoData.streamUrls = {
         primary: streamData.primary,
@@ -509,151 +603,311 @@ class JableScraper {
   }
   
   /**
-   * 从网络请求中提取 m3u8 URL
+   * 收集页面中的 m3u8 URL（在导航期间）
+   * 改进版：智能区分主视频和广告，选择正确的播放地址
+   * @param {string} navigateUrl - 导航的 URL
+   * @param {string} internalVideoId - 从页面提取的内部视频 ID
+   */
+  async collectStreamUrlsDuringNavigation(navigateUrl, internalVideoId = null) {
+    return new Promise(async (resolve) => {
+      const allM3u8Urls = [];
+      const qualityUrls = {};
+
+      // 从当前导航 URL 中提取视频 ID
+      const videoIdMatch = navigateUrl.match(/jable\.tv\/videos\/([^\/]+)/);
+      const targetVideoId = videoIdMatch ? videoIdMatch[1] : null;
+
+      // 排除已知广告/非视频模式
+      const adPatterns = [
+        /ad[s]?\//i,
+        /promo/i,
+        /click-?track/i,
+        /tracking/i,
+        /vast/i,
+        /ima[d]\./i,
+        /doubleclick/i,
+        /googlesyndication/i,
+        /adz\//i,
+        /pre-?roll/i,
+        /mid-?roll/i,
+        /post-?roll/i,
+        /companion/i,
+        /overlay/i,
+        /vast/i,
+        /vpaid/i,
+        /outstream/i,
+      ];
+
+      // 视频域名优先级（越高越可能是主视频）
+      // mushroomtrack.com 优先级最高，因为包含正确的内部视频 ID
+      const videoDomainPriority = {
+        'mushroomtrack.com': 15,
+        'akamaized.net': 10,
+        'akamaized.live': 10,
+        'akuma.tv': 9,
+        'saawsedge.com': 8,
+        'media-hls.com': 7,
+        'cloudfront.net': 6,
+        'fastly.net': 5,
+      };
+
+      const isAdUrl = (url) => {
+        return adPatterns.some(pattern => pattern.test(url));
+      };
+
+      const getDomainPriority = (url) => {
+        try {
+          const urlObj = new URL(url);
+          const hostname = urlObj.hostname.toLowerCase();
+          // 检查完整主机名
+          if (videoDomainPriority[hostname]) {
+            return videoDomainPriority[hostname];
+          }
+          // 检查部分匹配
+          for (const [domain, priority] of Object.entries(videoDomainPriority)) {
+            if (hostname.includes(domain)) {
+              return priority;
+            }
+          }
+          return 1; // 默认优先级
+        } catch {
+          return 1;
+        }
+      };
+
+      const requestListener = (request) => {
+        const url = request.url();
+
+        // 1. 必须是 m3u8 文件
+        if (!url.includes('.m3u8')) return;
+
+        // 2. 排除广告 URL
+        if (isAdUrl(url)) {
+          this.logger.debug(`Skipping ad URL: ${url}`);
+          return;
+        }
+
+        // 3. 必须包含目标视频域名模式之一
+        if (!(
+          url.includes('mushroomtrack') ||
+          url.includes('akuma') ||
+          url.includes('saawsedge') ||
+          url.includes('media-hls') ||
+          url.includes('akamaized') ||
+          url.includes('fastly') ||
+          url.includes('cloudfront')
+        )) {
+          return;
+        }
+
+        // 4. 排除 master/索引文件，只选择实际视频流文件
+        // master.m3u8 只是索引，需要二次请求才能获取实际片段
+        if (url.includes('/master/') || url.includes('/master.m3u8')) {
+          this.logger.debug(`Skipping master playlist: ${url}`);
+          return;
+        }
+
+        const qualityMatch = url.match(/_(\d+)p/);
+        const quality = qualityMatch ? `${qualityMatch[1]}p` : 'unknown';
+
+        if (!allM3u8Urls.includes(url)) {
+          allM3u8Urls.push(url);
+
+          if (quality !== 'unknown') {
+            if (!qualityUrls[quality]) {
+              qualityUrls[quality] = [];
+            }
+            if (!qualityUrls[quality].includes(url)) {
+              qualityUrls[quality].push(url);
+            }
+          }
+
+          this.logger.debug(`Found m3u8 URL`, { url, quality, videoId: targetVideoId });
+        }
+      };
+
+      // 先添加监听器
+      this.page.on('request', requestListener);
+
+      // 然后导航
+      await this.navigateWithRetry(navigateUrl);
+
+      // 等待页面加载
+      await this.page.waitForLoadState('domcontentloaded').catch(() => {});
+
+      // 移除监听器
+      this.page.removeListener('request', requestListener);
+
+      let result = { primary: null, url: null, backups: [], qualities: {} };
+
+      if (allM3u8Urls.length > 0) {
+        // 智能选择主视频 URL
+        let primaryUrl = null;
+
+        if (allM3u8Urls.length === 1) {
+          // 只有一个 URL，直接使用
+          primaryUrl = allM3u8Urls[0];
+        } else {
+          // 多个 URL，使用评分系统选择最佳主视频
+          const scoredUrls = allM3u8Urls.map(url => {
+            let score = 0;
+
+            // 基础分数：域名优先级
+            score += getDomainPriority(url) * 100;
+
+            // 清晰度分数（越高越好）
+            const qualityMatch = url.match(/_(\d+)p/);
+            if (qualityMatch) {
+              score += parseInt(qualityMatch[1]);
+            }
+
+            // 额外加分：优先使用包含视频 ID 的 URL
+            if (targetVideoId && url.toLowerCase().includes(targetVideoId.toLowerCase())) {
+              score += 50;
+            }
+
+            // 额外加分：优先使用 b-hls-* 路径（实际视频流）
+            if (url.includes('/b-hls-')) {
+              score += 30;
+            }
+
+            // 额外加分：包含具体清晰度标识
+            if (url.match(/\/\d+\//)) {
+              score += 20;
+            }
+
+            return { url, score };
+          });
+
+          // 按分数降序排序
+          scoredUrls.sort((a, b) => b.score - a.score);
+
+          // 选择最高分的 URL 作为主地址
+          primaryUrl = scoredUrls[0].url;
+
+          this.logger.debug(`Selected primary URL from ${allM3u8Urls.length} candidates`, {
+            selected: primaryUrl,
+            allScores: scoredUrls.map(u => ({ url: u.url.substring(0, 80), score: u.score }))
+          });
+        }
+
+        const backups = allM3u8Urls.filter(u => u !== primaryUrl);
+
+        result = {
+          primary: primaryUrl,
+          url: primaryUrl,
+          backups: backups,
+          qualities: qualityUrls
+        };
+
+        this.logger.info(`Selected stream URL: ${primaryUrl.substring(0, 100)}...`, {
+          hasBackups: backups.length > 0,
+          qualities: Object.keys(qualityUrls)
+        });
+      }
+
+      this.logger.debug(`Collected ${allM3u8Urls.length} m3u8 URLs`,
+        allM3u8Urls.length > 0 ? { qualities: Object.keys(qualityUrls) } : {}
+      );
+
+      resolve(result);
+    });
+  }
+  
+  /**
+   * 从网络请求中提取 m3u8 URL（旧方法，已废弃）
    */
   async extractStreamFromNetwork() {
     try {
-      // 方法1：从网络请求中等待 m3u8 请求
-      const m3u8Url = await this.page.waitForRequest(request => {
-        return request.url().includes('.m3u8') && 
-               (request.url().includes('akuma') || 
-                request.url().includes('saawsedge') || 
-                request.url().includes('media-hls') ||
-                request.url().includes('jable'));
-      }, { timeout: 15000 }).then(request => request.url()).catch(() => null);
+      // 收集所有 m3u8 URL
+      const allM3u8Urls = [];
+      const qualityUrls = {};
       
-      if (m3u8Url) {
-        return parseM3u8Url(m3u8Url);
-      }
-      
-      this.logger.warn('No m3u8 URL found in network requests, trying other methods');
-      
-      // 方法2：从页面 JavaScript 变量中提取
-      const jsM3u8Url = await this.page.evaluate(() => {
-        // 检查常见的 JavaScript 变量名
-        const patterns = [
-          'window.streamUrl',
-          'window.videoUrl',
-          'window.hlsUrl',
-          'window.playerSrc',
-          'window.__INITIAL_STATE__',
-          'window.__DATA__',
-          'window.videoConfig',
-          'window.playerConfig'
-        ];
-        
-        for (const pattern of patterns) {
-          try {
-            const value = eval(pattern);
-            if (value && typeof value === 'string' && value.includes('.m3u8')) {
-              return value;
-            }
-            // 如果是对象，尝试查找其中的 URL
-            if (value && typeof value === 'object') {
-              const json = JSON.stringify(value);
-              const urlMatch = json.match(/"([^"]*\.m3u8[^"]*)"/);
-              if (urlMatch) return urlMatch[1];
-            }
-          } catch (e) {
-            // 忽略
-          }
-        }
-        return null;
-      });
-      
-      if (jsM3u8Url) {
-        this.logger.info('Found m3u8 URL from JavaScript variables');
-        return parseM3u8Url(jsM3u8Url);
-      }
-      
-      // 方法3：从 video 标签或 source 标签提取
-      const videoM3u8Url = await this.page.evaluate(() => {
-        const video = document.querySelector('video source[type="application/x-mpegURL"]');
-        if (video) return video.src;
-        
-        const source = document.querySelector('video source[src*=".m3u8"]');
-        if (source) return source.src;
-        
-        // 检查 video 标签的 src
-        const videoEl = document.querySelector('video[src*=".m3u8"]');
-        if (videoEl) return videoEl.src;
-        
-        return null;
-      });
-      
-      if (videoM3u8Url) {
-        this.logger.info('Found m3u8 URL from video element');
-        return parseM3u8Url(videoM3u8Url);
-      }
-      
-      // 方法4：从页面 HTML 中查找
-      const htmlM3u8Url = await this.page.evaluate(() => {
-        const scripts = document.querySelectorAll('script');
-        for (const script of scripts) {
-          const content = script.textContent || '';
-          const urlMatch = content.match(/"([^"]*\.m3u8[^"]*)"/) || content.match(/'([^']*\.m3u8[^']*)'/);
-          if (urlMatch) {
-            const url = urlMatch[1];
-            if (url.includes('akuma') || url.includes('saawsedge') || url.includes('media-hls')) {
-              return url;
+      // 创建 Promise 来等待收集完成
+      const collectPromise = new Promise((resolve) => {
+        // 监听所有网络请求，收集 m3u8 URL
+        const requestListener = (request) => {
+          const url = request.url();
+          if (url.includes('.m3u8') && 
+              (url.includes('akuma') || 
+               url.includes('saawsedge') || 
+               url.includes('media-hls'))) {
+            // 从 URL 中识别清晰度
+            const qualityMatch = url.match(/_(\d+)p/);
+            const quality = qualityMatch ? `${qualityMatch[1]}p` : 'unknown';
+            
+            // 避免重复
+            if (!allM3u8Urls.includes(url)) {
+              allM3u8Urls.push(url);
+              
+              // 按清晰度分类
+              if (quality !== 'unknown') {
+                if (!qualityUrls[quality]) {
+                  qualityUrls[quality] = [];
+                }
+                if (!qualityUrls[quality].includes(url)) {
+                  qualityUrls[quality].push(url);
+                }
+              }
+              
+              this.logger.debug(`Found m3u8 URL`, { url, quality });
             }
           }
-        }
-        return null;
+        };
+        
+        this.page.on('request', requestListener);
+        
+        // 等待一段时间收集请求
+        setTimeout(() => {
+          this.page.removeListener('request', requestListener);
+          resolve();
+        }, 10000); // 等待 10 秒
       });
       
-      if (htmlM3u8Url) {
-        this.logger.info('Found m3u8 URL from HTML script tags');
-        return parseM3u8Url(htmlM3u8Url);
+      // 等待页面加载完成
+      await this.page.waitForLoadState('networkidle').catch(() => {});
+      
+      // 额外等待以捕获异步请求
+      await this.page.waitForTimeout(2000);
+      
+      // 等待收集完成
+      await collectPromise;
+      
+      this.logger.debug(`Collected ${allM3u8Urls.length} m3u8 URLs`, { 
+        qualities: Object.keys(qualityUrls)
+      });
+      
+      if (allM3u8Urls.length === 0) {
+        return { primary: null, url: null, backups: [], qualities: {} };
       }
       
-      this.logger.warn('No m3u8 URL found in any source');
-      return { primary: null, url: null, backups: [], qualities: {} };
+      // 选择最佳质量（最高清晰度）的 URL 作为主地址
+      const sortedQualities = Object.keys(qualityUrls).sort((a, b) => {
+        return parseInt(b) - parseInt(a); // 从高到低排序
+      });
+      
+      let primaryUrl = allM3u8Urls[0];
+      
+      if (sortedQualities.length > 0) {
+        // 选择最高清晰度
+        const bestQuality = sortedQualities[0];
+        primaryUrl = qualityUrls[bestQuality][0];
+      }
+      
+      // 收集备用 URL（排除主地址）
+      const backups = allM3u8Urls.filter(url => url !== primaryUrl);
+      
+      return {
+        primary: primaryUrl,
+        url: primaryUrl,
+        backups: backups,
+        qualities: qualityUrls
+      };
       
     } catch (error) {
       this.logger.warn('Failed to extract stream URL', { error: error.message });
       return { primary: null, url: null, backups: [], qualities: {} };
     }
-  }
-  
-  /**
-   * 解析 m3u8 URL 并返回格式化数据
-   */
-  parseM3u8Url(m3u8Url) {
-    if (!m3u8Url) {
-      return { primary: null, url: null, backups: [], qualities: {} };
-    }
-    
-    // 尝试解析 URL 模式
-    const patterns = [
-      // 模式1: /hls/{token}/{timestamp}/{folder}/{id}/{filename}.m3u8
-      { regex: /\/hls\/([^\/]+)\/(\d+)\/(\d+)\/(\d+)\/(\d+)\.m3u8/, cdn: 'hls-cdn' },
-      // 模式2: akuma-trnstin.mushroomtrack.com 格式
-      { regex: /\.akuma\.trnstin\.mushroomtrack\.com\/([^\/]+)\/(.+)\.m3u8/, cdn: 'akuma' },
-      // 模式3: saawsedge.com 格式
-      { regex: /media-hls\.saawsedge\.com\/([^\/]+)\/(.+)\.m3u8/, cdn: 'saawsedge' },
-    ];
-    
-    for (const { regex, cdn } of patterns) {
-      const match = m3u8Url.match(regex);
-      if (match) {
-        return {
-          primary: m3u8Url,
-          url: m3u8Url,
-          cdn: cdn,
-          format: 'hls',
-          details: match.slice(1)
-        };
-      }
-    }
-    
-    // 通用格式
-    return {
-      primary: m3u8Url,
-      url: m3u8Url,
-      cdn: 'unknown',
-      format: 'direct'
-    };
   }
   
   /**
