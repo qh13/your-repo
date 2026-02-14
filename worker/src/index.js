@@ -231,6 +231,7 @@ async function getVideoList(env, params = {}) {
   const videosQuery = `
     SELECT v.id, v.title, v.description, v.duration, v.views, v.publish_date,
            v.cover_url, v.category, v.author_name, v.tags, v.scraped_at, v.view_count,
+           v.stream_primary_url, v.stream_backup_urls,
            c.name as category_name
     FROM videos v
     LEFT JOIN categories c ON v.category = c.slug
