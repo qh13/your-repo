@@ -36,6 +36,40 @@ const CONFIG = {
   // 并发配置
   CONCURRENT_BROWSERS: 1,
   
+  // 反爬虫配置
+  ANTI_BOT: {
+    // 随机延迟配置 (毫秒)
+    MIN_DELAY: 2000,      // 最小延迟
+    MAX_DELAY: 8000,      // 最大延迟
+    PAGE_DELAY_MIN: 1000, // 页面间最小延迟
+    PAGE_DELAY_MAX: 3000, // 页面间最大延迟
+    
+    // User-Agent 轮换
+    USER_AGENTS: [
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Safari/537.36',
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:121.0) Gecko/20100101 Firefox/121.0',
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:120.0) Gecko/20100101 Firefox/120.0',
+      'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.2 Safari/605.1.15',
+      'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 Edg/120.0.0.0',
+    ],
+    
+    // 随机滚动行为
+    ENABLE_RANDOM_SCROLL: true,
+    SCROLL_CHANCE: 0.3,  // 30% 概率在页面加载后随机滚动
+    
+    // 鼠标移动模拟
+    ENABLE_MOUSE_MOVES: true,
+    
+    // 访问来源伪装
+    ENABLE_REFERRER_SPOOFING: true,
+    
+    // 渐进式请求（先访问首页再访问目标页面）
+    ENABLE_PROGRESSIVE_LOAD: true,
+  },
+  
   // 分类列表
   categories: [
     // 热门分类
@@ -211,10 +245,131 @@ class JableScraper {
     
     this.browser = null;
     this.page = null;
+    this.currentUserAgent = '';
+    this.requestCount = 0;
+    this.lastRequestTime = 0;
+  }
+  
+  // 随机延迟工具方法
+  randomDelay(min, max) {
+    const delay = Math.floor(Math.random() * (max - min + 1)) + min;
+    return delay;
+  }
+  
+  // 获取随机 User-Agent
+  getRandomUserAgent() {
+    const userAgents = this.config.ANTI_BOT.USER_AGENTS;
+    return userAgents[Math.floor(Math.random() * userAgents.length)];
+  }
+  
+  // 模拟人类鼠标移动
+  async simulateHumanMouse() {
+    if (!this.page || !this.config.ANTI_BOT.ENABLE_MOUSE_MOVES) return;
+    
+    try {
+      const box = await this.page.boundingBox();
+      if (!box) return;
+      
+      // 随机生成起点和终点
+      const startX = Math.random() * box.width;
+      const startY = Math.random() * box.height;
+      const endX = Math.random() * box.width;
+      const endY = Math.random() * box.height;
+      
+      // 移动鼠标（分几步移动，更像人类）
+      await this.page.mouse.move(startX, startY);
+      await this.page.mouse.move(
+        startX + (endX - startX) * 0.3,
+        startY + (endY - startY) * 0.3,
+        { steps: Math.floor(Math.random() * 5) + 2 }
+      );
+      await this.page.mouse.move(endX, endY, { steps: Math.floor(Math.random() * 5) + 2 });
+    } catch (error) {
+      // 忽略鼠标移动错误
+    }
+  }
+  
+  // 模拟随机滚动
+  async simulateRandomScroll() {
+    if (!this.page || !this.config.ANTI_BOT.ENABLE_RANDOM_SCROLL) return;
+    
+    try {
+      // 随机滚动一段距离
+      const scrollHeight = await this.page.evaluate(() => document.body.scrollHeight);
+      const viewportHeight = await this.page.evaluate(() => window.innerHeight);
+      
+      if (scrollHeight > viewportHeight) {
+        const randomPosition = Math.random() * (scrollHeight - viewportHeight);
+        await this.page.evaluate((pos) => {
+          window.scrollTo(0, pos);
+        }, randomPosition);
+        
+        // 随机等待一下
+        await new Promise(resolve => setTimeout(resolve, this.randomDelay(500, 1500)));
+        
+        // 滚动回顶部
+        await this.page.evaluate(() => window.scrollTo(0, 0));
+      }
+    } catch (error) {
+      // 忽略滚动错误
+    }
+  }
+  
+  // 请求间隔控制（避免请求过快）
+  async throttleRequests() {
+    const now = Date.now();
+    const timeSinceLastRequest = now - this.lastRequestTime;
+    
+    // 根据配置计算最小间隔
+    const minInterval = this.config.ANTI_BOT.MIN_DELAY;
+    
+    if (timeSinceLastRequest < minInterval) {
+      const waitTime = minInterval - timeSinceLastRequest + this.randomDelay(0, 1000);
+      await new Promise(resolve => setTimeout(resolve, waitTime));
+    }
+    
+    this.lastRequestTime = Date.now();
+    this.requestCount++;
+  }
+  
+  // 检测是否被反爬
+  async detectAntiBot() {
+    try {
+      // 检查页面是否出现验证码或限制提示
+      const pageContent = await this.page.content();
+      
+      // 检测常见的反爬提示
+      const antiBotPatterns = [
+        /captcha/i,
+        /verify/i,
+        /blocked/i,
+        /access denied/i,
+        /forbidden/i,
+        /too many requests/i,
+        /rate limit/i,
+        /请验证/i,
+        /访问受限/i,
+      ];
+      
+      for (const pattern of antiBotPatterns) {
+        if (pattern.test(pageContent)) {
+          this.logger.warn('Potential anti-bot detection detected');
+          return true;
+        }
+      }
+      
+      return false;
+    } catch (error) {
+      return false;
+    }
   }
   
   async init() {
-    this.logger.info('Initializing browser...');
+    this.logger.info('Initializing browser with anti-bot measures...');
+    
+    // 选择随机 User-Agent
+    this.currentUserAgent = this.getRandomUserAgent();
+    
     this.browser = await chromium.launch({
       headless: true,
       args: [
@@ -224,15 +379,34 @@ class JableScraper {
         '--disable-accelerated-2d-canvas',
         '--disable-gpu',
         '--window-size=1920,1080',
+        '--disable-blink-features=AutomationControlled',  // 隐藏自动化特征
       ],
     });
     
     this.page = await this.browser.newPage();
     
+    // 设置自定义 User-Agent
+    await this.page.setExtraHTTPHeaders({
+      'User-Agent': this.currentUserAgent,
+    });
+    
+    // 设置 viewport
+    await this.page.setViewportSize({
+      width: 1920,
+      height: 1080,
+    });
+    
+    // 注入脚本来隐藏 webdriver 属性
+    await this.page.addInitScript(() => {
+      Object.defineProperty(navigator, 'webdriver', {
+        get: () => undefined,
+      });
+    });
+    
     // 设置请求拦截
     await this.setupRequestInterception();
     
-    this.logger.info('Browser initialized');
+    this.logger.info('Browser initialized with anti-bot measures');
   }
   
   async setupRequestInterception() {
@@ -285,11 +459,64 @@ class JableScraper {
   
   async navigateWithRetry(url, options = {}) {
     return this.withRetry(async () => {
+      // 请求间隔控制
+      await this.throttleRequests();
+      
+      // 渐进式加载：如果启用，先访问首页作为 referrer
+      if (this.config.ANTI_BOT.ENABLE_PROGRESSIVE_LOAD && this.requestCount > 1) {
+        try {
+          // 随机小概率执行渐进式加载
+          if (Math.random() < 0.3) {
+            await this.page.goto(this.config.BASE_URL, { 
+              waitUntil: 'domcontentloaded',
+              timeout: 5000 
+            }).catch(() => {});
+            
+            // 随机等待
+            await new Promise(resolve => setTimeout(resolve, this.randomDelay(500, 1500)));
+          }
+        } catch (e) {
+          // 忽略渐进式加载错误
+        }
+      }
+      
+      // 设置 Referer 头（如果启用）
+      const extraHTTPHeaders = {
+        ...(this.config.ANTI_BOT.ENABLE_REFERRER_SPOOFING ? {
+          'Referer': this.config.BASE_URL + '/',
+        } : {}),
+      };
+      
       await this.page.goto(url, {
         waitUntil: 'networkidle',
         timeout: this.config.PAGE_TIMEOUT,
         ...options,
       });
+      
+      // 随机滚动（以一定概率）
+      if (Math.random() < this.config.ANTI_BOT.SCROLL_CHANCE) {
+        await this.simulateRandomScroll();
+      }
+      
+      // 随机鼠标移动
+      await this.simulateHumanMouse();
+      
+      // 检测是否被反爬
+      const isBlocked = await this.detectAntiBot();
+      if (isBlocked) {
+        this.logger.warn('Detected potential anti-bot blocking, rotating User-Agent');
+        
+        // 更换 User-Agent
+        this.currentUserAgent = this.getRandomUserAgent();
+        await this.page.setExtraHTTPHeaders({
+          'User-Agent': this.currentUserAgent,
+        });
+        
+        // 等待更长时间
+        await new Promise(resolve => setTimeout(resolve, this.randomDelay(5000, 10000)));
+        
+        throw new Error('Anti-bot detection triggered');
+      }
     });
   }
   
@@ -345,10 +572,11 @@ class JableScraper {
         
         // 如果是标题链接（有实际内容）
         if (text.length > 0 && !durationMatch) {
-          // 获取父级元素来查找统计信息
+          // 获取父级元素来查找统计信息和封面图
           const parent = link.parentElement;
           let views = '';
           let likes = '';
+          let coverUrl = '';
           
           if (parent) {
             // 查找所有相邻的链接文本
@@ -364,12 +592,65 @@ class JableScraper {
                 }
               }
             });
+            
+            // 查找封面图 - 多种选择器适配
+            const coverSelectors = [
+              // 常见的缩略图选择器
+              '.thumb-img img',
+              '.video-thumb img',
+              '.thumb img',
+              'img.thumb',
+              '.cover-img img',
+              '.thumbnail img',
+              '[class*="thumb"] img',
+              '[class*="cover"] img',
+              '[class*="poster"] img',
+              // 在链接内的图片
+              'a img',
+              // 父级的图片
+              parent.querySelector('img'),
+              // 向前查找兄弟元素中的图片
+              ...Array.from(parent.previousElementSibling?.querySelectorAll('img') || []),
+            ];
+            
+            for (const selector of coverSelectors) {
+              try {
+                let imgEl = null;
+                if (typeof selector === 'string') {
+                  imgEl = parent.querySelector(selector);
+                } else {
+                  imgEl = selector;
+                }
+                
+                if (imgEl && imgEl.src) {
+                  // 排除 placeholder 或空图片
+                  if (imgEl.src && !imgEl.src.includes('data:') && imgEl.src.length > 0) {
+                    coverUrl = imgEl.src || imgEl.dataset?.src || imgEl.dataset?.lazy || '';
+                    break;
+                  }
+                }
+              } catch (e) {
+                // 忽略选择器错误
+              }
+            }
+            
+            // 备用方法：从链接本身查找背景图
+            if (!coverUrl) {
+              const linkStyle = link.style?.backgroundImage || link.parentElement?.style?.backgroundImage;
+              if (linkStyle && linkStyle !== 'none') {
+                const match = linkStyle.match(/url\(["']?([^"')]+)["']?\)/);
+                if (match) {
+                  coverUrl = match[1];
+                }
+              }
+            }
           }
           
           results.push({
             id: videoId,
             url: href,
             title: text,
+            coverUrl: coverUrl || '',
             duration: currentDuration || '',
             views: views || '',
             likes: likes || '',
@@ -1000,11 +1281,14 @@ class JableScraper {
             const existing = this.storage.getVideo(video.id);
             
             // 更新元数据（如果视频信息有变化）
-            if (existing.title !== video.title || existing.coverUrl !== video.coverUrl) {
+            // 如果列表页没有 coverUrl，但详情页有，保留原有的
+            const newCoverUrl = video.coverUrl || existing.coverUrl;
+            
+            if (existing.title !== video.title || existing.coverUrl !== newCoverUrl) {
               existing.title = video.title;
-              existing.coverUrl = video.coverUrl;
-              existing.duration = video.duration;
-              existing.views = video.views;
+              existing.coverUrl = newCoverUrl;
+              existing.duration = video.duration || existing.duration;
+              existing.views = video.views || existing.views;
               existing.scrapedAt = new Date().toISOString();
               this.storage.setVideo(existing);
             }
@@ -1022,8 +1306,12 @@ class JableScraper {
         
         pageNum++;
         
-        // 避免请求过快
-        await new Promise(resolve => setTimeout(resolve, 1000));
+        // 避免请求过快 - 使用随机延迟
+        const pageDelay = this.randomDelay(
+          this.config.ANTI_BOT.PAGE_DELAY_MIN,
+          this.config.ANTI_BOT.PAGE_DELAY_MAX
+        );
+        await new Promise(resolve => setTimeout(resolve, pageDelay));
         
       } catch (error) {
         this.logger.error(`Failed to scrape page ${pageNum}`, { error: error.message });
@@ -1058,8 +1346,12 @@ class JableScraper {
           updated++;
         }
         
-        // 避免请求过快
-        await new Promise(resolve => setTimeout(resolve, 500));
+        // 避免请求过快 - 使用随机延迟
+        const delay = this.randomDelay(
+          this.config.ANTI_BOT.MIN_DELAY,
+          this.config.ANTI_BOT.MAX_DELAY
+        );
+        await new Promise(resolve => setTimeout(resolve, delay));
         
       } catch (error) {
         this.logger.error(`Failed to update video: ${videoId}`, { error: error.message });

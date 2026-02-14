@@ -1271,3 +1271,711 @@
 [2026-02-14T03:26:46.416Z] [INFO] Saved 0 categories to disk 
 [2026-02-14T03:26:47.418Z] [INFO] Finished scraping category: /hot/, found 32 videos 
 [2026-02-14T03:26:47.501Z] [INFO] Browser closed 
+[2026-02-14T05:47:01.213Z] [INFO] Loaded 26 videos from disk 
+[2026-02-14T05:47:01.214Z] [INFO] Loaded 0 categories from disk 
+[2026-02-14T05:47:01.214Z] [INFO] Initializing browser... 
+[2026-02-14T05:47:01.825Z] [INFO] Browser initialized 
+[2026-02-14T05:47:01.825Z] [INFO] Starting to scrape category: /hot/ 
+[2026-02-14T05:47:01.825Z] [INFO] Scraping video list: https://jable.tv/hot/ 
+[2026-02-14T05:47:16.223Z] [INFO] Found 24 videos on page 1 
+[2026-02-14T05:47:16.227Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T05:47:16.227Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T05:47:17.229Z] [INFO] Scraping video list: https://jable.tv/hot/page/2/ 
+[2026-02-14T05:47:30.223Z] [INFO] Found 4 videos on page 2 
+[2026-02-14T05:47:30.225Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T05:47:30.226Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T05:47:31.226Z] [INFO] Scraping video list: https://jable.tv/hot/page/3/ 
+[2026-02-14T05:47:43.784Z] [INFO] Found 4 videos on page 3 
+[2026-02-14T05:47:43.787Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T05:47:43.788Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T05:47:44.789Z] [INFO] Scraping video list: https://jable.tv/hot/page/4/ 
+[2026-02-14T05:47:57.039Z] [INFO] Found 4 videos on page 4 
+[2026-02-14T05:47:57.042Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T05:47:57.043Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T05:47:58.043Z] [INFO] Scraping video list: https://jable.tv/hot/page/5/ 
+[2026-02-14T05:48:10.363Z] [INFO] Found 4 videos on page 5 
+[2026-02-14T05:48:10.367Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T05:48:10.367Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T05:48:11.368Z] [INFO] Scraping video list: https://jable.tv/hot/page/6/ 
+[2026-02-14T05:48:23.722Z] [INFO] Found 4 videos on page 6 
+[2026-02-14T05:48:23.724Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T05:48:23.725Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T05:48:24.725Z] [INFO] Scraping video list: https://jable.tv/hot/page/7/ 
+[2026-02-14T05:48:37.338Z] [INFO] Found 4 videos on page 7 
+[2026-02-14T05:48:37.342Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T05:48:37.343Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T05:48:38.343Z] [INFO] Scraping video list: https://jable.tv/hot/page/8/ 
+[2026-02-14T05:48:50.708Z] [INFO] Found 4 videos on page 8 
+[2026-02-14T05:48:50.711Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T05:48:50.711Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T05:48:51.713Z] [INFO] Scraping video list: https://jable.tv/hot/page/9/ 
+[2026-02-14T05:49:04.049Z] [INFO] Found 4 videos on page 9 
+[2026-02-14T05:49:04.053Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T05:49:04.054Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T05:49:05.054Z] [INFO] Scraping video list: https://jable.tv/hot/page/10/ 
+[2026-02-14T05:49:17.238Z] [INFO] Found 4 videos on page 10 
+[2026-02-14T05:49:17.241Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T05:49:17.242Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T05:49:18.243Z] [INFO] Finished scraping category: /hot/, found 60 videos 
+[2026-02-14T05:49:18.283Z] [INFO] Browser closed 
+[2026-02-14T06:02:44.772Z] [INFO] Loaded 0 categories from disk 
+[2026-02-14T06:02:44.773Z] [INFO] Initializing browser... 
+[2026-02-14T06:02:44.975Z] [INFO] Browser initialized 
+[2026-02-14T06:02:44.975Z] [INFO] Scraping video detail: start-488 
+[2026-02-14T06:02:49.122Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/wxdYo9uePsQj5ynvEEKLhg/1771059251/56000/56860/56860.m3u8"}
+[2026-02-14T06:02:54.706Z] [DEBUG] Found m3u8 URL {"url":"https://edge28-sea.live.mmcdn.com/live-hls/amlst:unbelievable__-sd-d83fa6ad5c182a5b652e83af1d11f8e02e50f15857496bb9d071bd078f757f07_trns_h264/playlist.m3u8"}
+[2026-02-14T06:02:55.670Z] [DEBUG] Found m3u8 URL {"url":"https://edge28-sea.live.mmcdn.com/live-hls/amlst:unbelievable__-sd-d83fa6ad5c182a5b652e83af1d11f8e02e50f15857496bb9d071bd078f757f07_trns_h264/chunklist_w1651276315_b448000_t64RlBTOjI1LjA=.m3u8"}
+[2026-02-14T06:02:55.672Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/206470559/master/206470559_240p.m3u8"}
+[2026-02-14T06:02:56.756Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/222890520/master/222890520_240p.m3u8"}
+[2026-02-14T06:02:57.693Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:02:59.947Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:03:02.313Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:03:04.557Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:03:06.802Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:03:09.046Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:03:11.292Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:03:13.534Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:03:14.978Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://jable.tv/videos/start-488/\", waiting until \"networkidle\"\u001b[22m\n"}
+[2026-02-14T06:03:15.773Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:03:18.021Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:03:21.057Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/wxdYo9uePsQj5ynvEEKLhg/1771059251/56000/56860/56860.m3u8"}
+[2026-02-14T06:03:27.479Z] [DEBUG] Found m3u8 URL {"url":"https://edge7-lax.live.mmcdn.com/live-hls/amlst:emiilycampbell-sd-1dee528f63b84a6d5351d21b0555666e78b0ea630baf861fcb7d7b4543350e2b_trns_h264/playlist.m3u8"}
+[2026-02-14T06:03:27.666Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/72151024/master/72151024_240p.m3u8"}
+[2026-02-14T06:03:27.721Z] [DEBUG] Found m3u8 URL {"url":"https://edge7-lax.live.mmcdn.com/live-hls/amlst:emiilycampbell-sd-1dee528f63b84a6d5351d21b0555666e78b0ea630baf861fcb7d7b4543350e2b_trns_h264/chunklist_w1365645045_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:03:28.769Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/72151024/72151024_240p.m3u8"}
+[2026-02-14T06:03:31.270Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/72151024/72151024_240p.m3u8"}
+[2026-02-14T06:03:32.731Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:03:33.277Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/72151024/72151024_240p.m3u8","quality":"240p","videoId":"start-488"}
+[2026-02-14T06:03:33.734Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-02/72151024/72151024_240p.m3u8"}
+[2026-02-14T06:03:35.515Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/wxdYo9uePsQj5ynvEEKLhg/1771059251/56000/56860/56860.m3u8","quality":"unknown","videoId":"start-488"}
+[2026-02-14T06:03:36.796Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/wxdYo9uePsQj5ynvEEKLhg/1771059251/56000/56860/56860.m3u8"}
+[2026-02-14T06:03:41.224Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/206470559/master/206470559_240p.m3u8 
+[2026-02-14T06:03:42.475Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/206470559/master/206470559_240p.m3u8"}
+[2026-02-14T06:03:43.616Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/222890520/master/222890520_240p.m3u8 
+[2026-02-14T06:03:44.073Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/222890520/master/222890520_240p.m3u8"}
+[2026-02-14T06:03:44.079Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8","quality":"240p","videoId":"start-488"}
+[2026-02-14T06:03:45.052Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:03:46.436Z] [DEBUG] Selected primary URL from 3 candidates {"selected":"https://astin-cowing.mushroomtrack.com/hls/wxdYo9uePsQj5ynvEEKLhg/1771059251/56000/56860/56860.m3u8","allScores":[{"url":"https://astin-cowing.mushroomtrack.com/hls/wxdYo9uePsQj5ynvEEKLhg/1771059251/560","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-02/72151024/72151024_240p.m3u8","score":1090},{"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8","score":1090}]}
+[2026-02-14T06:03:46.436Z] [INFO] Selected stream URL: https://astin-cowing.mushroomtrack.com/hls/wxdYo9uePsQj5ynvEEKLhg/1771059251/56000/56860/56860.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:03:46.437Z] [DEBUG] Collected 3 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:03:46.447Z] [INFO] Video detail scraped: START-488 いいなり温泉旅行 神木麗 {"id":"start-488","hasStream":true}
+[2026-02-14T06:03:46.448Z] [INFO] Saved 1 videos to disk 
+[2026-02-14T06:03:46.449Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T06:03:46.475Z] [INFO] Browser closed 
+[2026-02-14T06:15:59.049Z] [INFO] Loaded 1 videos from disk 
+[2026-02-14T06:15:59.050Z] [INFO] Loaded 0 categories from disk 
+[2026-02-14T06:15:59.051Z] [INFO] Initializing browser with anti-bot measures... 
+[2026-02-14T06:15:59.264Z] [INFO] Browser initialized with anti-bot measures 
+[2026-02-14T06:15:59.265Z] [INFO] Starting to scrape category: /hot/ 
+[2026-02-14T06:15:59.265Z] [INFO] Scraping video list: https://jable.tv/hot/ 
+[2026-02-14T06:16:13.829Z] [INFO] Found 24 videos on page 1 
+[2026-02-14T06:16:13.829Z] [INFO] Scraping video detail: adn-756 
+[2026-02-14T06:16:19.677Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/wOJivjjCcSBGlL1KTYjNSA/1771059956/56000/56739/56739.m3u8"}
+[2026-02-14T06:16:23.396Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:16:23.556Z] [DEBUG] Found m3u8 URL {"url":"https://edge17-lax.live.mmcdn.com/live-hls/amlst:jennycutey-sd-8f5403858ab898fa7754642db8d5316a8d2a7c9267d195eb7e995c4b423e9ed0_trns_h264/playlist.m3u8"}
+[2026-02-14T06:16:23.787Z] [DEBUG] Found m3u8 URL {"url":"https://edge17-lax.live.mmcdn.com/live-hls/amlst:jennycutey-sd-8f5403858ab898fa7754642db8d5316a8d2a7c9267d195eb7e995c4b423e9ed0_trns_h264/chunklist_w763922040_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:16:24.960Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:16:27.366Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:16:29.638Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:16:30.687Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:16:31.646Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"adn-756"}
+[2026-02-14T06:16:33.320Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/wOJivjjCcSBGlL1KTYjNSA/1771059956/56000/56739/56739.m3u8","quality":"unknown","videoId":"adn-756"}
+[2026-02-14T06:16:34.622Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/wOJivjjCcSBGlL1KTYjNSA/1771059956/56000/56739/56739.m3u8"}
+[2026-02-14T06:16:39.008Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:16:40.102Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:16:41.185Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:16:43.431Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:16:43.949Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://astin-cowing.mushroomtrack.com/hls/wOJivjjCcSBGlL1KTYjNSA/1771059956/56000/56739/56739.m3u8","allScores":[{"url":"https://astin-cowing.mushroomtrack.com/hls/wOJivjjCcSBGlL1KTYjNSA/1771059956/560","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:16:43.950Z] [INFO] Selected stream URL: https://astin-cowing.mushroomtrack.com/hls/wOJivjjCcSBGlL1KTYjNSA/1771059956/56000/56739/56739.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:16:43.950Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:16:43.955Z] [INFO] Video detail scraped: ADN-756 「你老婆借我一個月。」我無法拒絕的狀況下，美乳老婆被上司抱著過夜。 栗山莉緒 {"id":"adn-756","hasStream":true}
+[2026-02-14T06:16:43.955Z] [INFO] Scraping video detail: fns-055 
+[2026-02-14T06:16:49.826Z] [DEBUG] Found m3u8 URL {"url":"https://asutin-billion.mushroomtrack.com/hls/xAygbhIOgcpugAoGSU2Qmg/1771059890/56000/56755/56755.m3u8"}
+[2026-02-14T06:16:55.252Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:16:56.313Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:16:58.713Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:16:59.725Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:17:00.760Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"fns-055"}
+[2026-02-14T06:17:04.984Z] [DEBUG] Found m3u8 URL {"url":"https://asutin-billion.mushroomtrack.com/hls/xAygbhIOgcpugAoGSU2Qmg/1771059890/56000/56755/56755.m3u8","quality":"unknown","videoId":"fns-055"}
+[2026-02-14T06:17:05.255Z] [DEBUG] Found m3u8 URL {"url":"https://asutin-billion.mushroomtrack.com/hls/xAygbhIOgcpugAoGSU2Qmg/1771059890/56000/56755/56755.m3u8"}
+[2026-02-14T06:17:25.483Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:17:26.564Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:17:27.695Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:17:29.083Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://asutin-billion.mushroomtrack.com/hls/xAygbhIOgcpugAoGSU2Qmg/1771059890/56000/56755/56755.m3u8","allScores":[{"url":"https://asutin-billion.mushroomtrack.com/hls/xAygbhIOgcpugAoGSU2Qmg/1771059890/5","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:17:29.083Z] [INFO] Selected stream URL: https://asutin-billion.mushroomtrack.com/hls/xAygbhIOgcpugAoGSU2Qmg/1771059890/56000/56755/56755.m3u... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:17:29.083Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:17:29.090Z] [INFO] Video detail scraped: FNS-055 問題児たちが集まる汚部屋で射精の的にされ全身を精子まみれにされ汚された私 RARA {"id":"fns-055","hasStream":true}
+[2026-02-14T06:17:29.090Z] [INFO] Scraping video detail: jur-615 
+[2026-02-14T06:17:30.136Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:17:35.384Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/SG8FxW8Lcj7nfqzfYbIv4Q/1771059779/56000/56639/56639.m3u8"}
+[2026-02-14T06:17:40.820Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:17:41.904Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:17:44.310Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:17:45.320Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:17:46.317Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"jur-615"}
+[2026-02-14T06:17:47.745Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/SG8FxW8Lcj7nfqzfYbIv4Q/1771059779/56000/56639/56639.m3u8","quality":"unknown","videoId":"jur-615"}
+[2026-02-14T06:17:48.702Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/SG8FxW8Lcj7nfqzfYbIv4Q/1771059779/56000/56639/56639.m3u8"}
+[2026-02-14T06:17:54.053Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:17:54.943Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:17:56.015Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:17:57.413Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://asf-doc.mushroomtrack.com/hls/SG8FxW8Lcj7nfqzfYbIv4Q/1771059779/56000/56639/56639.m3u8","allScores":[{"url":"https://asf-doc.mushroomtrack.com/hls/SG8FxW8Lcj7nfqzfYbIv4Q/1771059779/56000/56","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:17:57.414Z] [INFO] Selected stream URL: https://asf-doc.mushroomtrack.com/hls/SG8FxW8Lcj7nfqzfYbIv4Q/1771059779/56000/56639/56639.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:17:57.414Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:17:57.421Z] [INFO] Video detail scraped: JUR-615 老婆懷孕中 連自慰都被禁止的我…被巨乳岳母一次又一次的無套內射性愛。 七海蒂娜 {"id":"jur-615","hasStream":true}
+[2026-02-14T06:17:57.421Z] [INFO] Scraping video detail: same-202 
+[2026-02-14T06:17:58.420Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:18:00.192Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/cSFeLNdsrbRuYRY3ewF1AA/1771060201/56000/56792/56792.m3u8"}
+[2026-02-14T06:18:07.071Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:18:07.995Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:18:10.403Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:18:12.469Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:18:12.806Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:18:17.891Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/cSFeLNdsrbRuYRY3ewF1AA/1771060201/56000/56792/56792.m3u8","quality":"unknown","videoId":"same-202"}
+[2026-02-14T06:18:18.808Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/cSFeLNdsrbRuYRY3ewF1AA/1771060201/56000/56792/56792.m3u8"}
+[2026-02-14T06:18:23.285Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:18:24.405Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:18:24.412Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"same-202"}
+[2026-02-14T06:18:25.353Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:18:26.780Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://asf-doc.mushroomtrack.com/hls/cSFeLNdsrbRuYRY3ewF1AA/1771060201/56000/56792/56792.m3u8","allScores":[{"url":"https://asf-doc.mushroomtrack.com/hls/cSFeLNdsrbRuYRY3ewF1AA/1771060201/56000/56","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:18:26.780Z] [INFO] Selected stream URL: https://asf-doc.mushroomtrack.com/hls/cSFeLNdsrbRuYRY3ewF1AA/1771060201/56000/56792/56792.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:18:26.780Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:18:26.787Z] [INFO] Video detail scraped: SAME-202 那個超討人厭的傢伙侵犯了美巨乳OL，但他的腰技實在讓人忘都忘不了… 小野坂唯香 {"id":"same-202","hasStream":true}
+[2026-02-14T06:18:26.787Z] [INFO] Scraping video detail: abf-308 
+[2026-02-14T06:18:27.773Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:18:33.424Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/xomZWfb7zgRnMe36zOnhdA/1771060205/56000/56784/56784.m3u8"}
+[2026-02-14T06:18:37.615Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:18:38.692Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:18:41.091Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:18:42.099Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:18:43.134Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"abf-308"}
+[2026-02-14T06:18:47.743Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/xomZWfb7zgRnMe36zOnhdA/1771060205/56000/56784/56784.m3u8","quality":"unknown","videoId":"abf-308"}
+[2026-02-14T06:18:48.140Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/xomZWfb7zgRnMe36zOnhdA/1771060205/56000/56784/56784.m3u8"}
+[2026-02-14T06:18:52.121Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:18:53.217Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:18:54.324Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:18:55.750Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://adoda-smart-coin.mushroomtrack.com/hls/xomZWfb7zgRnMe36zOnhdA/1771060205/56000/56784/56784.m3u8","allScores":[{"url":"https://adoda-smart-coin.mushroomtrack.com/hls/xomZWfb7zgRnMe36zOnhdA/1771060205","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:18:55.750Z] [INFO] Selected stream URL: https://adoda-smart-coin.mushroomtrack.com/hls/xomZWfb7zgRnMe36zOnhdA/1771060205/56000/56784/56784.m... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:18:55.750Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:18:55.758Z] [INFO] Video detail scraped: ABF-308 平日是女老師，週末是美乳飛機杯。 瀧本雫葉 {"id":"abf-308","hasStream":true}
+[2026-02-14T06:18:55.758Z] [INFO] Scraping video detail: same-215 
+[2026-02-14T06:18:56.578Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:19:01.764Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/s92UUyP-eUyL1tz6dVldtw/1771059965/56000/56794/56794.m3u8"}
+[2026-02-14T06:19:07.215Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:19:08.191Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:19:10.438Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:19:11.608Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:19:12.444Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"same-215"}
+[2026-02-14T06:19:12.847Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:19:14.248Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/s92UUyP-eUyL1tz6dVldtw/1771059965/56000/56794/56794.m3u8","quality":"unknown","videoId":"same-215"}
+[2026-02-14T06:19:15.165Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/s92UUyP-eUyL1tz6dVldtw/1771059965/56000/56794/56794.m3u8"}
+[2026-02-14T06:19:20.709Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:19:21.807Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:19:22.891Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:19:24.471Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://asf-doc.mushroomtrack.com/hls/s92UUyP-eUyL1tz6dVldtw/1771059965/56000/56794/56794.m3u8","allScores":[{"url":"https://asf-doc.mushroomtrack.com/hls/s92UUyP-eUyL1tz6dVldtw/1771059965/56000/56","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:19:24.471Z] [INFO] Selected stream URL: https://asf-doc.mushroomtrack.com/hls/s92UUyP-eUyL1tz6dVldtw/1771059965/56000/56794/56794.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:19:24.471Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:19:24.478Z] [INFO] Video detail scraped: SAME-215 剛失去最愛的雙親不久，巨乳妹子就被無差別強●了 小鈴蜜柑 {"id":"same-215","hasStream":true}
+[2026-02-14T06:19:24.478Z] [INFO] Scraping video detail: cawd-941 
+[2026-02-14T06:19:25.340Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:19:28.087Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/99IcewYy3Q9qKG_zkkc0nA/1771060351/56000/56745/56745.m3u8"}
+[2026-02-14T06:19:34.070Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:19:35.068Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:19:37.633Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:19:38.478Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:19:39.640Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"cawd-941"}
+[2026-02-14T06:19:41.047Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/99IcewYy3Q9qKG_zkkc0nA/1771060351/56000/56745/56745.m3u8","quality":"unknown","videoId":"cawd-941"}
+[2026-02-14T06:19:41.317Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/99IcewYy3Q9qKG_zkkc0nA/1771060351/56000/56745/56745.m3u8"}
+[2026-02-14T06:19:47.009Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:19:48.089Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:19:49.056Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:19:51.294Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:19:51.414Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://akuma-trstin.mushroomtrack.com/hls/99IcewYy3Q9qKG_zkkc0nA/1771060351/56000/56745/56745.m3u8","allScores":[{"url":"https://akuma-trstin.mushroomtrack.com/hls/99IcewYy3Q9qKG_zkkc0nA/1771060351/560","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:19:51.414Z] [INFO] Selected stream URL: https://akuma-trstin.mushroomtrack.com/hls/99IcewYy3Q9qKG_zkkc0nA/1771060351/56000/56745/56745.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:19:51.414Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:19:51.419Z] [INFO] Video detail scraped: CAWD-941 最強身材雙重痴女巨乳姐姐逆搭訕派對！中出！追擊連續射精！女同志親吻！超人氣頂級女優2人的真實本性完全曝光紀錄片特別篇 伊藤舞雪 神宮寺奈緒 {"id":"cawd-941","hasStream":true}
+[2026-02-14T06:19:51.419Z] [INFO] Scraping video detail: ipzz-776 
+[2026-02-14T06:19:57.593Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/QVe0VQuMld-11263wj8-mQ/1771059968/56000/56759/56759.m3u8"}
+[2026-02-14T06:20:02.259Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:20:03.321Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:20:05.565Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:20:07.618Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:20:07.802Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:20:12.682Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/QVe0VQuMld-11263wj8-mQ/1771059968/56000/56759/56759.m3u8","quality":"unknown","videoId":"ipzz-776"}
+[2026-02-14T06:20:13.036Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/QVe0VQuMld-11263wj8-mQ/1771059968/56000/56759/56759.m3u8"}
+[2026-02-14T06:20:17.396Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:20:18.470Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:20:18.475Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"ipzz-776"}
+[2026-02-14T06:20:19.617Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:20:21.844Z] [DEBUG] Found m3u8 URL {"url":"https://edge22-phx.live.mmcdn.com/live-hls/amlst:katie_dierse-sd-e528b193d2423e621a1928a28c8c4acace86ff24a0f2d5e485b1e73ed72a2bce_trns_h264/playlist.m3u8"}
+[2026-02-14T06:20:22.037Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:20:22.105Z] [DEBUG] Found m3u8 URL {"url":"https://edge22-phx.live.mmcdn.com/live-hls/amlst:katie_dierse-sd-e528b193d2423e621a1928a28c8c4acace86ff24a0f2d5e485b1e73ed72a2bce_trns_h264/chunklist_w1225495488_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:20:24.479Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:20:25.782Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://astin-cowing.mushroomtrack.com/hls/QVe0VQuMld-11263wj8-mQ/1771059968/56000/56759/56759.m3u8","allScores":[{"url":"https://astin-cowing.mushroomtrack.com/hls/QVe0VQuMld-11263wj8-mQ/1771059968/560","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:20:25.782Z] [INFO] Selected stream URL: https://astin-cowing.mushroomtrack.com/hls/QVe0VQuMld-11263wj8-mQ/1771059968/56000/56759/56759.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:20:25.782Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:20:25.789Z] [INFO] Video detail scraped: IPZZ-776 破格の報酬に目がくらみ富裕層集まるリゾートへ向かった私を待っていた欲望渦巻くキメセク乱交パーティーinナイトプール 雛乃花音 {"id":"ipzz-776","hasStream":true}
+[2026-02-14T06:20:25.789Z] [INFO] Scraping video detail: miab-603 
+[2026-02-14T06:20:26.774Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:20:29.397Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/Npv7E7HY3KkwSaRuOe_12w/1771060818/56000/56803/56803.m3u8"}
+[2026-02-14T06:20:35.154Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:20:36.303Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:20:38.568Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:20:41.016Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:20:41.489Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:20:44.191Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/Npv7E7HY3KkwSaRuOe_12w/1771060818/56000/56803/56803.m3u8","quality":"unknown","videoId":"miab-603"}
+[2026-02-14T06:20:45.268Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/Npv7E7HY3KkwSaRuOe_12w/1771060818/56000/56803/56803.m3u8"}
+[2026-02-14T06:20:50.637Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/162276614/master/162276614_240p.m3u8 
+[2026-02-14T06:20:51.693Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/162276614/master/162276614_240p.m3u8"}
+[2026-02-14T06:20:51.698Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/162276614/162276614_240p.m3u8","quality":"240p","videoId":"miab-603"}
+[2026-02-14T06:20:52.756Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/162276614/162276614_240p.m3u8"}
+[2026-02-14T06:20:54.997Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://akuma-trstin.mushroomtrack.com/hls/Npv7E7HY3KkwSaRuOe_12w/1771060818/56000/56803/56803.m3u8","allScores":[{"url":"https://akuma-trstin.mushroomtrack.com/hls/Npv7E7HY3KkwSaRuOe_12w/1771060818/560","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-19/162276614/162276614_240p.m3u8","score":1090}]}
+[2026-02-14T06:20:54.997Z] [INFO] Selected stream URL: https://akuma-trstin.mushroomtrack.com/hls/Npv7E7HY3KkwSaRuOe_12w/1771060818/56000/56803/56803.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:20:54.997Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:20:55.003Z] [INFO] Video detail scraped: MIAB-603 個人計程車NTR 喝醉回家的美巨乳女友被載上車，爛醉狀態下消失在酒店街… 宮西光 {"id":"miab-603","hasStream":true}
+[2026-02-14T06:20:55.003Z] [INFO] Scraping video detail: snos-101 
+[2026-02-14T06:20:55.166Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-19/162276614/162276614_240p.m3u8"}
+[2026-02-14T06:20:58.779Z] [DEBUG] Found m3u8 URL {"url":"https://anono-cloneing.mushroomtrack.com/hls/r1M2zM2AGbFhxZ60idvBwg/1771059960/56000/56570/56570.m3u8"}
+[2026-02-14T06:21:04.814Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:21:05.875Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:21:08.280Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:21:09.501Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:21:10.288Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"snos-101"}
+[2026-02-14T06:21:14.630Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/47eyLn_J_eA_rqmkJb0oAA/1771060861/56000/56570/56570.m3u8","quality":"unknown","videoId":"snos-101"}
+[2026-02-14T06:21:15.678Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/47eyLn_J_eA_rqmkJb0oAA/1771060861/56000/56570/56570.m3u8"}
+[2026-02-14T06:21:19.450Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:21:20.529Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:21:21.511Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:21:23.776Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:21:24.158Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://akuma-trstin.mushroomtrack.com/hls/47eyLn_J_eA_rqmkJb0oAA/1771060861/56000/56570/56570.m3u8","allScores":[{"url":"https://akuma-trstin.mushroomtrack.com/hls/47eyLn_J_eA_rqmkJb0oAA/1771060861/560","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:21:24.158Z] [INFO] Selected stream URL: https://akuma-trstin.mushroomtrack.com/hls/47eyLn_J_eA_rqmkJb0oAA/1771060861/56000/56570/56570.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:21:24.158Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:21:24.164Z] [INFO] Video detail scraped: SNOS-101 一大早打炮還要刷牙嗎？黏黏膩膩、親來親去、全身交纏在一起，第一次過夜的飯店性愛自拍 初美菜乃花 {"id":"snos-101","hasStream":true}
+[2026-02-14T06:21:24.164Z] [INFO] Scraping video detail: start-508 
+[2026-02-14T06:21:30.663Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/fQYcQkQ-ZNBOxui6ctBaxQ/1771060103/56000/56797/56797.m3u8"}
+[2026-02-14T06:21:35.891Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:21:36.986Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:21:39.485Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:21:40.585Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:21:41.490Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"start-508"}
+[2026-02-14T06:21:43.088Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/fQYcQkQ-ZNBOxui6ctBaxQ/1771060103/56000/56797/56797.m3u8","quality":"unknown","videoId":"start-508"}
+[2026-02-14T06:21:43.991Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/fQYcQkQ-ZNBOxui6ctBaxQ/1771060103/56000/56797/56797.m3u8"}
+[2026-02-14T06:21:49.288Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:21:50.358Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:21:51.491Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:21:53.667Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://asf-doc.mushroomtrack.com/hls/fQYcQkQ-ZNBOxui6ctBaxQ/1771060103/56000/56797/56797.m3u8","allScores":[{"url":"https://asf-doc.mushroomtrack.com/hls/fQYcQkQ-ZNBOxui6ctBaxQ/1771060103/56000/56","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:21:53.667Z] [INFO] Selected stream URL: https://asf-doc.mushroomtrack.com/hls/fQYcQkQ-ZNBOxui6ctBaxQ/1771060103/56000/56797/56797.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:21:53.667Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:21:53.672Z] [INFO] Video detail scraped: START-508 打烊後盤點拖太久，錯過了末班車的我，只好借住巨乳打工妹子家，她拼命拒絕素顏的模樣太可愛，讓我點燃了慾火，沒想到反而被她從晚上幹到早上把我精液全部內射榨乾 神木麗 {"id":"start-508","hasStream":true}
+[2026-02-14T06:21:53.672Z] [INFO] Scraping video detail: snos-112 
+[2026-02-14T06:21:53.893Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:21:57.226Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/tfC5mNQQch6x5UFEhYcTyQ/1771060064/56000/56783/56783.m3u8"}
+[2026-02-14T06:22:02.963Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:22:03.991Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:22:06.518Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:22:07.389Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:22:10.131Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/tfC5mNQQch6x5UFEhYcTyQ/1771060064/56000/56783/56783.m3u8","quality":"unknown","videoId":"snos-112"}
+[2026-02-14T06:22:10.423Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/tfC5mNQQch6x5UFEhYcTyQ/1771060064/56000/56783/56783.m3u8"}
+[2026-02-14T06:22:15.137Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:22:16.051Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:22:16.057Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"snos-112"}
+[2026-02-14T06:22:17.031Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:22:18.638Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://hot-box-gen.mushroomtrack.com/hls/tfC5mNQQch6x5UFEhYcTyQ/1771060064/56000/56783/56783.m3u8","allScores":[{"url":"https://hot-box-gen.mushroomtrack.com/hls/tfC5mNQQch6x5UFEhYcTyQ/1771060064/5600","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:22:18.638Z] [INFO] Selected stream URL: https://hot-box-gen.mushroomtrack.com/hls/tfC5mNQQch6x5UFEhYcTyQ/1771060064/56000/56783/56783.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:22:18.638Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:22:18.645Z] [INFO] Video detail scraped: SNOS-112 巨乳グラドルはやはり痴●に狙われやすいらしい 紫堂留衣 {"id":"snos-112","hasStream":true}
+[2026-02-14T06:22:18.645Z] [INFO] Scraping video detail: mida-509 
+[2026-02-14T06:22:19.288Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:22:22.250Z] [DEBUG] Found m3u8 URL {"url":"https://asutin-billion.mushroomtrack.com/hls/jqnuox0mytdDqvFR2uFhZg/1771060864/56000/56816/56816.m3u8"}
+[2026-02-14T06:22:27.931Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:22:28.835Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:22:31.244Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:22:32.265Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:22:33.249Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"mida-509"}
+[2026-02-14T06:22:34.885Z] [DEBUG] Found m3u8 URL {"url":"https://asutin-billion.mushroomtrack.com/hls/jqnuox0mytdDqvFR2uFhZg/1771060864/56000/56816/56816.m3u8","quality":"unknown","videoId":"mida-509"}
+[2026-02-14T06:22:35.153Z] [DEBUG] Found m3u8 URL {"url":"https://asutin-billion.mushroomtrack.com/hls/jqnuox0mytdDqvFR2uFhZg/1771060864/56000/56816/56816.m3u8"}
+[2026-02-14T06:22:40.607Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/213782797/master/213782797_240p.m3u8 
+[2026-02-14T06:22:41.769Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/213782797/master/213782797_240p.m3u8"}
+[2026-02-14T06:22:41.772Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/213782797/213782797_240p.m3u8","quality":"240p","videoId":"mida-509"}
+[2026-02-14T06:22:42.868Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/213782797/213782797_240p.m3u8"}
+[2026-02-14T06:22:44.434Z] [DEBUG] Selected primary URL from 3 candidates {"selected":"https://asutin-billion.mushroomtrack.com/hls/jqnuox0mytdDqvFR2uFhZg/1771060864/56000/56816/56816.m3u8","allScores":[{"url":"https://asutin-billion.mushroomtrack.com/hls/jqnuox0mytdDqvFR2uFhZg/1771060864/5","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090},{"url":"https://media-hls.saawsedge.com/b-hls-06/213782797/213782797_240p.m3u8","score":1090}]}
+[2026-02-14T06:22:44.434Z] [INFO] Selected stream URL: https://asutin-billion.mushroomtrack.com/hls/jqnuox0mytdDqvFR2uFhZg/1771060864/56000/56816/56816.m3u... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:22:44.434Z] [DEBUG] Collected 3 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:22:44.441Z] [INFO] Video detail scraped: MIDA-509 與國寶級巨乳美少女在旅館過夜打炮 無劇本的超甜蜜愛愛 濃厚淫蕩舒服高潮的真槍實彈打炮影片 福田悠亞 {"id":"mida-509","hasStream":true}
+[2026-02-14T06:22:44.441Z] [INFO] Scraping video detail: jur-614 
+[2026-02-14T06:22:45.333Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-06/213782797/213782797_240p.m3u8"}
+[2026-02-14T06:22:48.439Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/YqulUNVOwheDRDnTPEnMYw/1771060892/56000/56802/56802.m3u8"}
+[2026-02-14T06:22:54.219Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:22:55.376Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:22:57.792Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:23:00.195Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:23:02.125Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:23:02.203Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"jur-614"}
+[2026-02-14T06:23:02.601Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:23:10.696Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:23:11.779Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:23:12.980Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:23:15.431Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:23:17.890Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:23:20.298Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:23:20.769Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/YqulUNVOwheDRDnTPEnMYw/1771060892/56000/56802/56802.m3u8","quality":"unknown","videoId":"jur-614"}
+[2026-02-14T06:23:22.216Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/YqulUNVOwheDRDnTPEnMYw/1771060892/56000/56802/56802.m3u8"}
+[2026-02-14T06:23:28.969Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://adoda-smart-coin.mushroomtrack.com/hls/YqulUNVOwheDRDnTPEnMYw/1771060892/56000/56802/56802.m3u8","allScores":[{"url":"https://adoda-smart-coin.mushroomtrack.com/hls/YqulUNVOwheDRDnTPEnMYw/1771060892","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:23:28.969Z] [INFO] Selected stream URL: https://adoda-smart-coin.mushroomtrack.com/hls/YqulUNVOwheDRDnTPEnMYw/1771060892/56000/56802/56802.m... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:23:28.969Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:23:28.975Z] [INFO] Video detail scraped: JUR-614 老公不在家，我在市民游泳池被從早舔到晚，全身都被附近黏人的中年大叔反覆品嘗。一推就倒的纖細翹臀人妻，穿著競技泳裝的羞羞臉無套內射打炮。 北川遥 {"id":"jur-614","hasStream":true}
+[2026-02-14T06:23:28.975Z] [INFO] Scraping video detail: cawd-942 
+[2026-02-14T06:23:32.818Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/Q5v7OpyqHCqB5quyxUSOmQ/1771060707/56000/56786/56786.m3u8"}
+[2026-02-14T06:23:38.824Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:23:39.722Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:23:41.957Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:23:43.128Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:23:43.963Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"cawd-942"}
+[2026-02-14T06:23:45.735Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/Q5v7OpyqHCqB5quyxUSOmQ/1771060707/56000/56786/56786.m3u8","quality":"unknown","videoId":"cawd-942"}
+[2026-02-14T06:23:46.092Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/Q5v7OpyqHCqB5quyxUSOmQ/1771060707/56000/56786/56786.m3u8"}
+[2026-02-14T06:23:51.551Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:23:52.492Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:23:53.439Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:23:55.726Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:23:56.099Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://astin-cowing.mushroomtrack.com/hls/Q5v7OpyqHCqB5quyxUSOmQ/1771060707/56000/56786/56786.m3u8","allScores":[{"url":"https://astin-cowing.mushroomtrack.com/hls/Q5v7OpyqHCqB5quyxUSOmQ/1771060707/560","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:23:56.100Z] [INFO] Selected stream URL: https://astin-cowing.mushroomtrack.com/hls/Q5v7OpyqHCqB5quyxUSOmQ/1771060707/56000/56786/56786.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:23:56.100Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:23:56.106Z] [INFO] Video detail scraped: CAWD-942 國內最可愛、身材最頂尖的大樓清潔工 AV出道！？腰圍54cm美巨乳 小泉楓（20歲） AV出演 小泉楓 {"id":"cawd-942","hasStream":true}
+[2026-02-14T06:23:56.106Z] [INFO] Scraping video detail: royd-288 
+[2026-02-14T06:23:59.845Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/iFoJQeXOcnm3omAmusfOqw/1771060876/56000/56725/56725.m3u8"}
+[2026-02-14T06:24:05.659Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:24:06.747Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:24:08.991Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:24:10.326Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:24:11.003Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"royd-288"}
+[2026-02-14T06:24:11.377Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:24:13.781Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:24:16.025Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:24:18.025Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/iFoJQeXOcnm3omAmusfOqw/1771060876/56000/56725/56725.m3u8","quality":"unknown","videoId":"royd-288"}
+[2026-02-14T06:24:19.323Z] [DEBUG] Found m3u8 URL {"url":"https://astin-cowing.mushroomtrack.com/hls/iFoJQeXOcnm3omAmusfOqw/1771060876/56000/56725/56725.m3u8"}
+[2026-02-14T06:24:23.849Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:24:24.781Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:24:25.804Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:24:27.404Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://astin-cowing.mushroomtrack.com/hls/iFoJQeXOcnm3omAmusfOqw/1771060876/56000/56725/56725.m3u8","allScores":[{"url":"https://astin-cowing.mushroomtrack.com/hls/iFoJQeXOcnm3omAmusfOqw/1771060876/560","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:24:27.404Z] [INFO] Selected stream URL: https://astin-cowing.mushroomtrack.com/hls/iFoJQeXOcnm3omAmusfOqw/1771060876/56000/56725/56725.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:24:27.404Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:24:27.410Z] [INFO] Video detail scraped: ROYD-288 鄰居轉蛋抽到UR級別！搬來隔壁的竟然是個不穿內衣、奶頭若隱若現的美巨乳大姐姐。 百永紗里奈 {"id":"royd-288","hasStream":true}
+[2026-02-14T06:24:27.410Z] [INFO] Scraping video detail: ipzz-798 
+[2026-02-14T06:24:28.243Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:24:31.099Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/iHdbAuIRHRjEClnxZvBnmQ/1771060413/56000/56762/56762.m3u8"}
+[2026-02-14T06:24:37.076Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:24:38.038Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:24:40.448Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:24:41.453Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:24:42.462Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"ipzz-798"}
+[2026-02-14T06:24:47.121Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/iHdbAuIRHRjEClnxZvBnmQ/1771060413/56000/56762/56762.m3u8","quality":"unknown","videoId":"ipzz-798"}
+[2026-02-14T06:24:47.415Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/iHdbAuIRHRjEClnxZvBnmQ/1771060413/56000/56762/56762.m3u8"}
+[2026-02-14T06:24:51.578Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:24:52.662Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:24:53.738Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:24:55.167Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://hot-box-gen.mushroomtrack.com/hls/iHdbAuIRHRjEClnxZvBnmQ/1771060413/56000/56762/56762.m3u8","allScores":[{"url":"https://hot-box-gen.mushroomtrack.com/hls/iHdbAuIRHRjEClnxZvBnmQ/1771060413/5600","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:24:55.167Z] [INFO] Selected stream URL: https://hot-box-gen.mushroomtrack.com/hls/iHdbAuIRHRjEClnxZvBnmQ/1771060413/56000/56762/56762.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:24:55.167Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:24:55.174Z] [INFO] Video detail scraped: IPZZ-798 SNS総フォロワー40万人の美女ラッパー RINOA AV解禁 セクシーな楽曲を手掛ける女のSEXはR指定いや、R18超えー。 RINOA {"id":"ipzz-798","hasStream":true}
+[2026-02-14T06:24:55.174Z] [INFO] Scraping video detail: ebwh-294 
+[2026-02-14T06:24:55.975Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:04.356Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/MvrlkyRvEj0y7_34wnZzPA/1771060211/56000/56516/56516.m3u8"}
+[2026-02-14T06:25:08.338Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:25:09.304Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:11.759Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:14.001Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:16.378Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:17.174Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:25:18.386Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"ebwh-294"}
+[2026-02-14T06:25:19.834Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/XJ5NCNmO_kKFgyrbffXTiA/1771061113/56000/56516/56516.m3u8","quality":"unknown","videoId":"ebwh-294"}
+[2026-02-14T06:25:21.274Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/XJ5NCNmO_kKFgyrbffXTiA/1771061113/56000/56516/56516.m3u8"}
+[2026-02-14T06:25:25.624Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:25:26.686Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:25:27.750Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:29.850Z] [DEBUG] Found m3u8 URL {"url":"https://edge20-sea.live.mmcdn.com/live-hls/amlst:baeasian-sd-0942baa552183f98214b8510064db214a13965445711bd77e0df4eaf1b3f69b0_trns_h264/playlist.m3u8"}
+[2026-02-14T06:25:29.981Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:30.167Z] [DEBUG] Found m3u8 URL {"url":"https://edge20-sea.live.mmcdn.com/live-hls/amlst:baeasian-sd-0942baa552183f98214b8510064db214a13965445711bd77e0df4eaf1b3f69b0_trns_h264/chunklist_w1701286068_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:25:32.327Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:34.808Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:36.903Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://adoda-smart-coin.mushroomtrack.com/hls/XJ5NCNmO_kKFgyrbffXTiA/1771061113/56000/56516/56516.m3u8","allScores":[{"url":"https://adoda-smart-coin.mushroomtrack.com/hls/XJ5NCNmO_kKFgyrbffXTiA/1771061113","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:25:36.903Z] [INFO] Selected stream URL: https://adoda-smart-coin.mushroomtrack.com/hls/XJ5NCNmO_kKFgyrbffXTiA/1771061113/56000/56516/56516.m... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:25:36.903Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:25:36.910Z] [INFO] Video detail scraped: EBWH-294 被各種手段下春藥，100天後小穴完全沉溺於公公肉棒的，溫柔豐滿巨乳人妻 柏木文香 {"id":"ebwh-294","hasStream":true}
+[2026-02-14T06:25:36.910Z] [INFO] Scraping video detail: waaa-610 
+[2026-02-14T06:25:37.048Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:40.503Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/J7OyvuSZFRtZEYNpm5_q4w/1771060861/56000/56847/56847.m3u8"}
+[2026-02-14T06:25:46.666Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:25:47.746Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:49.159Z] [DEBUG] Found m3u8 URL {"url":"https://edge36-phx.live.mmcdn.com/live-hls/amlst:euphoria_life-sd-2d9d27fe318f7f2fd4d9009e540b56e6c0a5097b8069d686988535ac6897037b_trns_h264/playlist.m3u8"}
+[2026-02-14T06:25:49.404Z] [DEBUG] Found m3u8 URL {"url":"https://edge36-phx.live.mmcdn.com/live-hls/amlst:euphoria_life-sd-2d9d27fe318f7f2fd4d9009e540b56e6c0a5097b8069d686988535ac6897037b_trns_h264/chunklist_w1587066871_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:25:50.176Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:52.577Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:55.074Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:57.325Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:25:59.785Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:26:02.245Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:26:04.706Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:26:06.914Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://jable.tv/videos/waaa-610/\", waiting until \"networkidle\"\u001b[22m\n"}
+[2026-02-14T06:26:06.945Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:26:09.412Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:26:13.677Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/J7OyvuSZFRtZEYNpm5_q4w/1771060861/56000/56847/56847.m3u8"}
+[2026-02-14T06:26:19.858Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:26:22.469Z] [DEBUG] Found m3u8 URL {"url":"https://edge7-lax.live.mmcdn.com/live-hls/amlst:alissgrey-sd-068577b5ed204bb1292827e4390cdf95af7bf30b5ba64f3681c5fc35c3840cae_trns_h264/playlist.m3u8"}
+[2026-02-14T06:26:22.694Z] [DEBUG] Found m3u8 URL {"url":"https://edge7-lax.live.mmcdn.com/live-hls/amlst:alissgrey-sd-068577b5ed204bb1292827e4390cdf95af7bf30b5ba64f3681c5fc35c3840cae_trns_h264/chunklist_w539962631_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:26:23.607Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/222890520/master/222890520_240p.m3u8"}
+[2026-02-14T06:26:24.592Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:26:26.849Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:26:29.298Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/222890520/222890520_240p.m3u8"}
+[2026-02-14T06:26:29.665Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:26:32.243Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/J7OyvuSZFRtZEYNpm5_q4w/1771060861/56000/56847/56847.m3u8","quality":"unknown","videoId":"waaa-610"}
+[2026-02-14T06:26:32.545Z] [DEBUG] Found m3u8 URL {"url":"https://hot-box-gen.mushroomtrack.com/hls/J7OyvuSZFRtZEYNpm5_q4w/1771060861/56000/56847/56847.m3u8"}
+[2026-02-14T06:26:37.855Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:26:38.964Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:26:38.969Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"waaa-610"}
+[2026-02-14T06:26:39.230Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:26:41.634Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:26:42.261Z] [DEBUG] Found m3u8 URL {"url":"https://edge9-phx.live.mmcdn.com/live-hls/amlst:jennycutey-sd-8f5403858ab898fa7754642db8d5316a8d2a7c9267d195eb7e995c4b423e9ed0_trns_h264/playlist.m3u8"}
+[2026-02-14T06:26:42.497Z] [DEBUG] Found m3u8 URL {"url":"https://edge9-phx.live.mmcdn.com/live-hls/amlst:jennycutey-sd-8f5403858ab898fa7754642db8d5316a8d2a7c9267d195eb7e995c4b423e9ed0_trns_h264/chunklist_w361757479_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:26:43.884Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:26:46.296Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:26:47.835Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://hot-box-gen.mushroomtrack.com/hls/J7OyvuSZFRtZEYNpm5_q4w/1771060861/56000/56847/56847.m3u8","allScores":[{"url":"https://hot-box-gen.mushroomtrack.com/hls/J7OyvuSZFRtZEYNpm5_q4w/1771060861/5600","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:26:47.835Z] [INFO] Selected stream URL: https://hot-box-gen.mushroomtrack.com/hls/J7OyvuSZFRtZEYNpm5_q4w/1771060861/56000/56847/56847.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:26:47.835Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:26:47.838Z] [INFO] Video detail scraped: WAAA-610 按摩過程鮑魚和菊花都開放觀賞，舔也行、摸也行、插也可以。巨乳纖瘦、全裸上陣的巨乳按摩師，神級服務的紳士舒壓會館。 五日市芽依 {"id":"waaa-610","hasStream":true}
+[2026-02-14T06:26:47.838Z] [INFO] Scraping video detail: pred-829 
+[2026-02-14T06:26:48.546Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:26:54.504Z] [DEBUG] Found m3u8 URL {"url":"https://home-clone-clear.mushroomtrack.com/hls/p2q5QjCGoQ-DxLqUxJktpA/1771060796/56000/56859/56859.m3u8"}
+[2026-02-14T06:26:59.294Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:27:00.357Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:02.581Z] [DEBUG] Found m3u8 URL {"url":"https://edge29-sea.live.mmcdn.com/live-hls/amlst:doubedeesarai-sd-735ae686460f1ddbc1b505db9eab24fb1194221c89f25ad05a6aa7871b7513fb_trns_h264/playlist.m3u8"}
+[2026-02-14T06:27:02.693Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:02.837Z] [DEBUG] Found m3u8 URL {"url":"https://edge29-sea.live.mmcdn.com/live-hls/amlst:doubedeesarai-sd-735ae686460f1ddbc1b505db9eab24fb1194221c89f25ad05a6aa7871b7513fb_trns_h264/chunklist_w1649366546_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:27:04.928Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:07.188Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:08.635Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:27:09.192Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"pred-829"}
+[2026-02-14T06:27:09.586Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:13.562Z] [DEBUG] Found m3u8 URL {"url":"https://home-clone-clear.mushroomtrack.com/hls/p2q5QjCGoQ-DxLqUxJktpA/1771060796/56000/56859/56859.m3u8","quality":"unknown","videoId":"pred-829"}
+[2026-02-14T06:27:15.089Z] [DEBUG] Found m3u8 URL {"url":"https://home-clone-clear.mushroomtrack.com/hls/p2q5QjCGoQ-DxLqUxJktpA/1771060796/56000/56859/56859.m3u8"}
+[2026-02-14T06:27:18.802Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:27:19.863Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:27:20.785Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:23.016Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:24.226Z] [DEBUG] Found m3u8 URL {"url":"https://edge6-sea.live.mmcdn.com/live-hls/amlst:swt_shadow-sd-7c7adb4bb12a2d3eb372360494284167d599c5ebaf4e88676bd896ce3dfd45a1_trns_h264/playlist.m3u8"}
+[2026-02-14T06:27:24.485Z] [DEBUG] Found m3u8 URL {"url":"https://edge6-sea.live.mmcdn.com/live-hls/amlst:swt_shadow-sd-7c7adb4bb12a2d3eb372360494284167d599c5ebaf4e88676bd896ce3dfd45a1_trns_h264/chunklist_w1157784708_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:27:25.423Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:27.659Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:28.979Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://home-clone-clear.mushroomtrack.com/hls/p2q5QjCGoQ-DxLqUxJktpA/1771060796/56000/56859/56859.m3u8","allScores":[{"url":"https://home-clone-clear.mushroomtrack.com/hls/p2q5QjCGoQ-DxLqUxJktpA/1771060796","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:27:28.979Z] [INFO] Selected stream URL: https://home-clone-clear.mushroomtrack.com/hls/p2q5QjCGoQ-DxLqUxJktpA/1771060796/56000/56859/56859.m... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:27:28.979Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:27:28.986Z] [INFO] Video detail scraped: PRED-829 安慰考試失敗的學生只能插入10秒…卻因為下面太合適，瘋狂跨上去用騎乘位騎到失控的巨乳家庭教師 楪可憐 {"id":"pred-829","hasStream":true}
+[2026-02-14T06:27:28.986Z] [INFO] Scraping video detail: dass-852 
+[2026-02-14T06:27:30.066Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:32.954Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/SgLYV1J1pqSuImwe3sHE1w/1771060873/56000/56777/56777.m3u8"}
+[2026-02-14T06:27:38.392Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:27:39.455Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:41.687Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:41.716Z] [DEBUG] Found m3u8 URL {"url":"https://edge14-phx.live.mmcdn.com/live-hls/amlst:swt_shadow-sd-7c7adb4bb12a2d3eb372360494284167d599c5ebaf4e88676bd896ce3dfd45a1_trns_h264/playlist.m3u8"}
+[2026-02-14T06:27:41.971Z] [DEBUG] Found m3u8 URL {"url":"https://edge14-phx.live.mmcdn.com/live-hls/amlst:swt_shadow-sd-7c7adb4bb12a2d3eb372360494284167d599c5ebaf4e88676bd896ce3dfd45a1_trns_h264/chunklist_w622100240_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:27:43.933Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:46.384Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:48.619Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:51.024Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:53.572Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:55.973Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:58.368Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:27:58.987Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://jable.tv/videos/dass-852/\", waiting until \"networkidle\"\u001b[22m\n"}
+[2026-02-14T06:28:00.823Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:28:07.440Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/SgLYV1J1pqSuImwe3sHE1w/1771060873/56000/56777/56777.m3u8"}
+[2026-02-14T06:28:12.732Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/208559725/master/208559725_240p.m3u8"}
+[2026-02-14T06:28:13.828Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-17/208559725/208559725_240p.m3u8"}
+[2026-02-14T06:28:16.239Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-17/208559725/208559725_240p.m3u8"}
+[2026-02-14T06:28:16.524Z] [DEBUG] Found m3u8 URL {"url":"https://edge36-phx.live.mmcdn.com/live-hls/amlst:shena_nomy-sd-b3a5c958d59bee67157f7a86320b47af8741a8ae3bf999ae39018102f86a88cd_trns_h264/playlist.m3u8"}
+[2026-02-14T06:28:16.761Z] [DEBUG] Found m3u8 URL {"url":"https://edge36-phx.live.mmcdn.com/live-hls/amlst:shena_nomy-sd-b3a5c958d59bee67157f7a86320b47af8741a8ae3bf999ae39018102f86a88cd_trns_h264/chunklist_w1398411366_b448000_t64RlBTOjI5Ljk3MDAyOTk3MDAyOTk3.m3u8"}
+[2026-02-14T06:28:18.649Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-17/208559725/208559725_240p.m3u8"}
+[2026-02-14T06:28:21.069Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-17/208559725/208559725_240p.m3u8"}
+[2026-02-14T06:28:23.481Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-17/208559725/208559725_240p.m3u8"}
+[2026-02-14T06:28:24.055Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:28:26.617Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/SgLYV1J1pqSuImwe3sHE1w/1771060873/56000/56777/56777.m3u8","quality":"unknown","videoId":"dass-852"}
+[2026-02-14T06:28:27.045Z] [DEBUG] Found m3u8 URL {"url":"https://adoda-smart-coin.mushroomtrack.com/hls/SgLYV1J1pqSuImwe3sHE1w/1771060873/56000/56777/56777.m3u8"}
+[2026-02-14T06:28:32.404Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:28:33.505Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:28:33.510Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"dass-852"}
+[2026-02-14T06:28:34.428Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:28:36.802Z] [DEBUG] Found m3u8 URL {"url":"https://edge26-chi.live.mmcdn.com/live-hls/amlst:dakota_leex-sd-7a02074762e49b553c8d071db4625d7d63694bdf8075d19069648367bc760a64_trns_h264/playlist.m3u8"}
+[2026-02-14T06:28:37.077Z] [DEBUG] Found m3u8 URL {"url":"https://edge26-chi.live.mmcdn.com/live-hls/amlst:dakota_leex-sd-7a02074762e49b553c8d071db4625d7d63694bdf8075d19069648367bc760a64_trns_h264/chunklist_w1820981132_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:28:37.496Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:28:39.891Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:28:41.770Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://adoda-smart-coin.mushroomtrack.com/hls/SgLYV1J1pqSuImwe3sHE1w/1771060873/56000/56777/56777.m3u8","allScores":[{"url":"https://adoda-smart-coin.mushroomtrack.com/hls/SgLYV1J1pqSuImwe3sHE1w/1771060873","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:28:41.771Z] [INFO] Selected stream URL: https://adoda-smart-coin.mushroomtrack.com/hls/SgLYV1J1pqSuImwe3sHE1w/1771060873/56000/56777/56777.m... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:28:41.771Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:28:41.776Z] [INFO] Video detail scraped: DASS-852 お嬢さん。わしの綺麗なザー汁、なんぼでもナカに出させてくれや！ローションぬるぬるオイルどばどヴァ爆乳大好き親父のマジ下品しつけぇトランス性交 美園和花 {"id":"dass-852","hasStream":true}
+[2026-02-14T06:28:41.776Z] [INFO] Scraping video detail: mida-494 
+[2026-02-14T06:28:42.293Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:28:48.177Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/vnUWqTOxvPl5YTENFoZyIA/1771060986/56000/56804/56804.m3u8"}
+[2026-02-14T06:28:53.081Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:28:54.237Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:28:56.265Z] [DEBUG] Found m3u8 URL {"url":"https://edge22-phx.live.mmcdn.com/live-hls/amlst:euphoria_life-sd-2d9d27fe318f7f2fd4d9009e540b56e6c0a5097b8069d686988535ac6897037b_trns_h264/playlist.m3u8"}
+[2026-02-14T06:28:56.561Z] [DEBUG] Found m3u8 URL {"url":"https://edge22-phx.live.mmcdn.com/live-hls/amlst:euphoria_life-sd-2d9d27fe318f7f2fd4d9009e540b56e6c0a5097b8069d686988535ac6897037b_trns_h264/chunklist_w439655901_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:28:56.664Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:28:59.096Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:01.525Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:03.789Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:06.054Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:08.487Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:10.912Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:13.337Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:14.982Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:29:15.348Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"mida-494"}
+[2026-02-14T06:29:15.606Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:19.778Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/vnUWqTOxvPl5YTENFoZyIA/1771060986/56000/56804/56804.m3u8","quality":"unknown","videoId":"mida-494"}
+[2026-02-14T06:29:20.010Z] [DEBUG] Found m3u8 URL {"url":"https://asf-doc.mushroomtrack.com/hls/vnUWqTOxvPl5YTENFoZyIA/1771060986/56000/56804/56804.m3u8"}
+[2026-02-14T06:29:28.609Z] [DEBUG] Found m3u8 URL {"url":"https://edge14-phx.live.mmcdn.com/live-hls/amlst:rachelaspen-sd-d9e09e3ce287525d90e27254cc1db32025b8f438613e01d58812a0c5614821f3_trns_h264/playlist.m3u8"}
+[2026-02-14T06:29:28.851Z] [DEBUG] Found m3u8 URL {"url":"https://edge14-phx.live.mmcdn.com/live-hls/amlst:rachelaspen-sd-d9e09e3ce287525d90e27254cc1db32025b8f438613e01d58812a0c5614821f3_trns_h264/chunklist_w1257748735_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:29:41.531Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:29:42.600Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:29:43.697Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:45.286Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://asf-doc.mushroomtrack.com/hls/vnUWqTOxvPl5YTENFoZyIA/1771060986/56000/56804/56804.m3u8","allScores":[{"url":"https://asf-doc.mushroomtrack.com/hls/vnUWqTOxvPl5YTENFoZyIA/1771060986/56000/56","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:29:45.287Z] [INFO] Selected stream URL: https://asf-doc.mushroomtrack.com/hls/vnUWqTOxvPl5YTENFoZyIA/1771060986/56000/56804/56804.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:29:45.287Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:29:45.292Z] [INFO] Video detail scraped: MIDA-494 迎新NTR 剛到東京、遠距離戀愛的美巨乳女友，在網球社的迎新聚會裡，被專吃一年級新生的渣男幹了一整晚，不停高潮的故事。 純白彩永 {"id":"mida-494","hasStream":true}
+[2026-02-14T06:29:45.292Z] [INFO] Scraping video detail: ipzz-766 
+[2026-02-14T06:29:46.111Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:48.924Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/LwHvv8uWROXFjM94Mf3fsw/1771060871/56000/56757/56757.m3u8"}
+[2026-02-14T06:29:54.875Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:29:55.960Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:58.304Z] [DEBUG] Found m3u8 URL {"url":"https://edge15-phx.live.mmcdn.com/live-hls/amlst:shena_nomy-sd-b3a5c958d59bee67157f7a86320b47af8741a8ae3bf999ae39018102f86a88cd_trns_h264/playlist.m3u8"}
+[2026-02-14T06:29:58.420Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:29:58.543Z] [DEBUG] Found m3u8 URL {"url":"https://edge15-phx.live.mmcdn.com/live-hls/amlst:shena_nomy-sd-b3a5c958d59bee67157f7a86320b47af8741a8ae3bf999ae39018102f86a88cd_trns_h264/chunklist_w1899570084_b448000_t64RlBTOjI5Ljk3MDAyOTk3MDAyOTk3.m3u8"}
+[2026-02-14T06:30:00.839Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:03.241Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:05.643Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:06.215Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:30:11.503Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/LwHvv8uWROXFjM94Mf3fsw/1771060871/56000/56757/56757.m3u8","quality":"unknown","videoId":"ipzz-766"}
+[2026-02-14T06:30:12.588Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/LwHvv8uWROXFjM94Mf3fsw/1771060871/56000/56757/56757.m3u8"}
+[2026-02-14T06:30:16.007Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:30:17.114Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:30:17.118Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"ipzz-766"}
+[2026-02-14T06:30:18.204Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:20.617Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:20.715Z] [DEBUG] Found m3u8 URL {"url":"https://edge10-sea.live.mmcdn.com/live-hls/amlst:bkws985-sd-995be36a8ad3ce034cbabb565d74d7098d936837e77f79aba692e5e90b3ab4f2_trns_h264/playlist.m3u8"}
+[2026-02-14T06:30:20.963Z] [DEBUG] Found m3u8 URL {"url":"https://edge10-sea.live.mmcdn.com/live-hls/amlst:bkws985-sd-995be36a8ad3ce034cbabb565d74d7098d936837e77f79aba692e5e90b3ab4f2_trns_h264/chunklist_w414580694_b408000_t64RlBTOjI5Ljk3MDAyOTk3MDAyOTk3.m3u8"}
+[2026-02-14T06:30:23.022Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:25.423Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:26.369Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://akuma-trstin.mushroomtrack.com/hls/LwHvv8uWROXFjM94Mf3fsw/1771060871/56000/56757/56757.m3u8","allScores":[{"url":"https://akuma-trstin.mushroomtrack.com/hls/LwHvv8uWROXFjM94Mf3fsw/1771060871/560","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:30:26.370Z] [INFO] Selected stream URL: https://akuma-trstin.mushroomtrack.com/hls/LwHvv8uWROXFjM94Mf3fsw/1771060871/56000/56757/56757.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:30:26.370Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:30:26.376Z] [INFO] Video detail scraped: IPZZ-766 仕事終わり制服リフレを呼んだら自分の教え子が…。 お互い弱みを握った教師と生徒の背徳的でイケナイ関係 佐佐木明希 {"id":"ipzz-766","hasStream":true}
+[2026-02-14T06:30:26.376Z] [INFO] Scraping video detail: waaa-611 
+[2026-02-14T06:30:32.534Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/AYyXQHjxvz02hMp40aqykQ/1771060872/56000/56848/56848.m3u8"}
+[2026-02-14T06:30:37.285Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:30:38.383Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:40.628Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:40.973Z] [DEBUG] Found m3u8 URL {"url":"https://edge5-sea.live.mmcdn.com/live-hls/amlst:alissgrey-sd-068577b5ed204bb1292827e4390cdf95af7bf30b5ba64f3681c5fc35c3840cae_trns_h264/playlist.m3u8"}
+[2026-02-14T06:30:41.233Z] [DEBUG] Found m3u8 URL {"url":"https://edge5-sea.live.mmcdn.com/live-hls/amlst:alissgrey-sd-068577b5ed204bb1292827e4390cdf95af7bf30b5ba64f3681c5fc35c3840cae_trns_h264/chunklist_w497928718_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:30:42.873Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:45.286Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:47.530Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:49.779Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:52.021Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:54.437Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:56.953Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:59.366Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:30:59.667Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://jable.tv/videos/waaa-611/\", waiting until \"networkidle\"\u001b[22m\n"}
+[2026-02-14T06:31:01.818Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:08.831Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/AYyXQHjxvz02hMp40aqykQ/1771060872/56000/56848/56848.m3u8"}
+[2026-02-14T06:31:13.299Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:31:14.460Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:16.882Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:17.263Z] [DEBUG] Found m3u8 URL {"url":"https://edge26-sea.live.mmcdn.com/live-hls/amlst:shena_nomy-sd-b3a5c958d59bee67157f7a86320b47af8741a8ae3bf999ae39018102f86a88cd_trns_h264/playlist.m3u8"}
+[2026-02-14T06:31:17.519Z] [DEBUG] Found m3u8 URL {"url":"https://edge26-sea.live.mmcdn.com/live-hls/amlst:shena_nomy-sd-b3a5c958d59bee67157f7a86320b47af8741a8ae3bf999ae39018102f86a88cd_trns_h264/chunklist_w2058736560_b448000_t64RlBTOjI5Ljk3MDAyOTk3MDAyOTk3.m3u8"}
+[2026-02-14T06:31:19.339Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:21.757Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:24.014Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:24.889Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:31:30.201Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/AYyXQHjxvz02hMp40aqykQ/1771060872/56000/56848/56848.m3u8","quality":"unknown","videoId":"waaa-611"}
+[2026-02-14T06:31:31.231Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/AYyXQHjxvz02hMp40aqykQ/1771060872/56000/56848/56848.m3u8"}
+[2026-02-14T06:31:34.706Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:31:35.798Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:31:35.803Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"waaa-611"}
+[2026-02-14T06:31:36.894Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:39.303Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:39.504Z] [DEBUG] Found m3u8 URL {"url":"https://edge23-sea.live.mmcdn.com/live-hls/amlst:rachelaspen-sd-d9e09e3ce287525d90e27254cc1db32025b8f438613e01d58812a0c5614821f3_trns_h264/playlist.m3u8"}
+[2026-02-14T06:31:39.763Z] [DEBUG] Found m3u8 URL {"url":"https://edge23-sea.live.mmcdn.com/live-hls/amlst:rachelaspen-sd-d9e09e3ce287525d90e27254cc1db32025b8f438613e01d58812a0c5614821f3_trns_h264/chunklist_w2104063372_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:31:41.720Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:44.126Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:46.535Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:48.959Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:51.371Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:53.778Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:56.187Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:31:58.435Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://jable.tv/videos/waaa-611/\", waiting until \"networkidle\"\u001b[22m\n"}
+[2026-02-14T06:31:58.603Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:01.016Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:05.131Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/AYyXQHjxvz02hMp40aqykQ/1771060872/56000/56848/56848.m3u8"}
+[2026-02-14T06:32:09.844Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:32:10.904Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:32:11.791Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:14.023Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:14.402Z] [DEBUG] Found m3u8 URL {"url":"https://edge36-phx.live.mmcdn.com/live-hls/amlst:unbelievable__-sd-d83fa6ad5c182a5b652e83af1d11f8e02e50f15857496bb9d071bd078f757f07_trns_h264/playlist.m3u8"}
+[2026-02-14T06:32:14.638Z] [DEBUG] Found m3u8 URL {"url":"https://edge36-phx.live.mmcdn.com/live-hls/amlst:unbelievable__-sd-d83fa6ad5c182a5b652e83af1d11f8e02e50f15857496bb9d071bd078f757f07_trns_h264/chunklist_w1576668996_b448000_t64RlBTOjI1LjA=.m3u8"}
+[2026-02-14T06:32:16.414Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:18.089Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://akuma-trstin.mushroomtrack.com/hls/AYyXQHjxvz02hMp40aqykQ/1771060872/56000/56848/56848.m3u8","allScores":[{"url":"https://akuma-trstin.mushroomtrack.com/hls/AYyXQHjxvz02hMp40aqykQ/1771060872/560","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:32:18.089Z] [INFO] Selected stream URL: https://akuma-trstin.mushroomtrack.com/hls/AYyXQHjxvz02hMp40aqykQ/1771060872/56000/56848/56848.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:32:18.089Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:32:18.095Z] [INFO] Video detail scraped: WAAA-611 「像我這樣的阿姨可以嗎…？」失去作為女人自信的巨乳人妻，沈迷於和專情的打工男孩無套內射的出軌關係 根尾明里 {"id":"waaa-611","hasStream":true}
+[2026-02-14T06:32:18.097Z] [INFO] Saved 25 videos to disk 
+[2026-02-14T06:32:18.097Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T06:32:18.819Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:20.308Z] [INFO] Scraping video list: https://jable.tv/hot/page/2/ 
+[2026-02-14T06:32:21.211Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:37.342Z] [INFO] Found 4 videos on page 2 
+[2026-02-14T06:32:37.343Z] [INFO] Scraping video detail: waaa-615 
+[2026-02-14T06:32:39.339Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/RqQ7Dx57YHHX1WXy1G91_w/1771061467/56000/56850/56850.m3u8"}
+[2026-02-14T06:32:44.968Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:32:45.912Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:48.209Z] [DEBUG] Found m3u8 URL {"url":"https://edge20-sea.live.mmcdn.com/live-hls/amlst:shena_nomy-sd-b3a5c958d59bee67157f7a86320b47af8741a8ae3bf999ae39018102f86a88cd_trns_h264/playlist.m3u8"}
+[2026-02-14T06:32:48.240Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:48.485Z] [DEBUG] Found m3u8 URL {"url":"https://edge20-sea.live.mmcdn.com/live-hls/amlst:shena_nomy-sd-b3a5c958d59bee67157f7a86320b47af8741a8ae3bf999ae39018102f86a88cd_trns_h264/chunklist_w1644960298_b448000_t64RlBTOjI5Ljk3MDAyOTk3MDAyOTk3.m3u8"}
+[2026-02-14T06:32:51.323Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:53.563Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:55.798Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:32:58.055Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:00.461Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:02.870Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:05.274Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:07.344Z] [WARN] Attempt 1/3 failed {"error":"page.goto: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://jable.tv/videos/waaa-615/\", waiting until \"networkidle\"\u001b[22m\n"}
+[2026-02-14T06:33:07.518Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:09.763Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:14.025Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/RqQ7Dx57YHHX1WXy1G91_w/1771061467/56000/56850/56850.m3u8"}
+[2026-02-14T06:33:20.147Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:33:21.319Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:22.132Z] [DEBUG] Found m3u8 URL {"url":"https://edge9-sea.live.mmcdn.com/live-hls/amlst:ella_lee15-sd-79cdfea304be084a369ffe2de387c142be1be00eec96161830cfa80c7cdcf417_trns_h264/playlist.m3u8"}
+[2026-02-14T06:33:22.404Z] [DEBUG] Found m3u8 URL {"url":"https://edge9-sea.live.mmcdn.com/live-hls/amlst:ella_lee15-sd-79cdfea304be084a369ffe2de387c142be1be00eec96161830cfa80c7cdcf417_trns_h264/chunklist_w21904595_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:33:23.586Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:25.856Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:27.234Z] [INFO] Extracted internal video ID: null 
+[2026-02-14T06:33:27.861Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","quality":"240p","videoId":"waaa-615"}
+[2026-02-14T06:33:28.287Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:29.794Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/RqQ7Dx57YHHX1WXy1G91_w/1771061467/56000/56850/56850.m3u8","quality":"unknown","videoId":"waaa-615"}
+[2026-02-14T06:33:30.817Z] [DEBUG] Found m3u8 URL {"url":"https://akuma-trstin.mushroomtrack.com/hls/RqQ7Dx57YHHX1WXy1G91_w/1771061467/56000/56850/56850.m3u8"}
+[2026-02-14T06:33:35.884Z] [DEBUG] Skipping master playlist: https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8 
+[2026-02-14T06:33:36.947Z] [DEBUG] Found m3u8 URL {"url":"https://edge-hls.saawsedge.com/hls/205885574/master/205885574_240p.m3u8"}
+[2026-02-14T06:33:37.879Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:40.345Z] [DEBUG] Found m3u8 URL {"url":"https://edge19-sea.live.mmcdn.com/live-hls/amlst:doubedeesarai-sd-735ae686460f1ddbc1b505db9eab24fb1194221c89f25ad05a6aa7871b7513fb_trns_h264/playlist.m3u8"}
+[2026-02-14T06:33:40.346Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:40.672Z] [DEBUG] Found m3u8 URL {"url":"https://edge19-sea.live.mmcdn.com/live-hls/amlst:doubedeesarai-sd-735ae686460f1ddbc1b505db9eab24fb1194221c89f25ad05a6aa7871b7513fb_trns_h264/chunklist_w429773046_b448000_t64RlBTOjMwLjA=.m3u8"}
+[2026-02-14T06:33:42.763Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:45.268Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:46.253Z] [DEBUG] Selected primary URL from 2 candidates {"selected":"https://akuma-trstin.mushroomtrack.com/hls/RqQ7Dx57YHHX1WXy1G91_w/1771061467/56000/56850/56850.m3u8","allScores":[{"url":"https://akuma-trstin.mushroomtrack.com/hls/RqQ7Dx57YHHX1WXy1G91_w/1771061467/560","score":1520},{"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8","score":1090}]}
+[2026-02-14T06:33:46.253Z] [INFO] Selected stream URL: https://akuma-trstin.mushroomtrack.com/hls/RqQ7Dx57YHHX1WXy1G91_w/1771061467/56000/56850/56850.m3u8... {"hasBackups":true,"qualities":["240p"]}
+[2026-02-14T06:33:46.253Z] [DEBUG] Collected 2 m3u8 URLs {"qualities":["240p"]}
+[2026-02-14T06:33:46.262Z] [INFO] Video detail scraped: WAAA-615 「我心愛的苗條巨乳女王竟然有了男友…」單戀隔壁離婚巨乳阿姨10年的異常性慾青年，在垃圾屋裡監禁求愛，用春藥高潮調教害怕的她，汗水淋漓懷孕同居無套內射交配 JULIA {"id":"waaa-615","hasStream":true}
+[2026-02-14T06:33:46.263Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T06:33:46.263Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T06:33:47.567Z] [DEBUG] Found m3u8 URL {"url":"https://media-hls.saawsedge.com/b-hls-18/205885574/205885574_240p.m3u8"}
+[2026-02-14T06:33:47.629Z] [INFO] Scraping video list: https://jable.tv/hot/page/3/ 
+[2026-02-14T06:34:03.817Z] [INFO] Found 4 videos on page 3 
+[2026-02-14T06:34:03.820Z] [INFO] Saved 26 videos to disk 
+[2026-02-14T06:34:03.820Z] [INFO] Saved 0 categories to disk 
+[2026-02-14T06:34:05.346Z] [INFO] Finished scraping category: /hot/, found 32 videos 
+[2026-02-14T06:34:05.402Z] [INFO] Browser closed 
